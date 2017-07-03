@@ -1,0 +1,115 @@
+header{
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+header .fa{
+    color: #fff;
+    font-size: 18px;
+}
+header .header-top{
+   
+    padding: 10px;
+    background: #b30000;
+}
+header .header-top .location{
+    font-size: 18px;    
+    color: #fff;
+}
+
+header .header-top .search{
+    margin-right: 20px;
+}
+/*本地歌曲>歌手　的样式
+作者：陈嘉验*/
+
+
+header .tabs{
+    background: #fff;
+}
+header .tabs .tab-list{
+    display: flex;
+    justify-content: space-between;
+}
+header .tabs .tab-list li{
+    padding: 10px 28px;;
+    border-bottom:2px solid transparent;
+    font-size: 16px;
+}
+header .tabs .tab-list li:hover,
+header .tabs .tab-list li.active{
+    border-bottom-color: #b30000;
+    color: #b30000;
+}
+
+
+main{
+    margin-top: 76px;
+    background: url(../img/local_songs-bg.png) no-repeat ;
+}
+
+main .cjy-songer .cjy-songer-list{}
+main .cjy-songer .cjy-songer-list li{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid #6f6964;
+}
+main .cjy-songer .cjy-songer-list li .cjy-songer-face{
+    margin-right: 20px;
+}
+
+main .cjy-songer .cjy-songer-list li .cjy-songer-info .cjy-songer-name{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+main .cjy-songer .cjy-songer-list li .cjy-songer-info .cjy-songer-num{
+    font-size: 16px;
+    color: #6f6964;
+}
+main .cjy-songer .cjy-songer-list li .cjy-songer-menu{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+main .play{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, .8);
+}
+main .play .play-info{
+    width: 70%;
+}
+main .play .play-info img{
+    float: left;
+    margin-right: 10px;
+}
+main .play .play-info .play-name{
+    margin-top: 20px;
+    font-size: 16px;
+}
+main .play .play-info .play-songer{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #94908b;
+}
+main .play .play-control{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 30%;
+    transform: translateY(-50%);    
+}
+main .play .play-control li{
+    color: #b30000;
+}

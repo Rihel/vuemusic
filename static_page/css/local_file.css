@@ -1,0 +1,124 @@
+/*本地歌曲>文件夹　的样式
+作者：陈嘉验*/
+
+header{
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+header .fa{
+    color: #fff;
+    font-size: 18px;
+}
+header .header-top{
+    padding: 10px;
+    background: #b30000;
+}
+header .header-top .location{
+    font-size: 18px;    
+    color: #fff;
+}
+
+header .header-top .search{
+    margin-right: 20px;
+}
+
+
+
+header .tabs{
+    background: #fff;
+}
+header .tabs .tab-list{
+    display: flex;
+    justify-content: space-between;
+}
+header .tabs .tab-list li{
+    padding: 10px 28px;;
+    border-bottom:2px solid transparent;
+    font-size: 16px;
+}
+header .tabs .tab-list li:hover,
+header .tabs .tab-list li.active{
+    border-bottom-color: #b30000;
+    color: #b30000;
+}
+
+
+main{
+    margin-top: 76px;
+    background: url(../img/local_songs-bg.png) no-repeat ;
+}
+main .cjy-files{}
+main .cjy-files .cjy-files-list{}
+main .cjy-files .cjy-files-list li{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #9e9688;
+    color: #9e9688;
+}
+main .cjy-files .cjy-files-list li .cjy-files-name{
+    display: inline-block;
+    margin-left: 10px;
+}
+main .cjy-files .cjy-files-list li .cjy-files-name h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+main .cjy-files .cjy-files-list li .cjy-files-name p{
+    font-size: 14px;
+    color: #9e9688;
+}
+main .cjy-files .cjy-files-list .cjy-files-meun{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+main .cjy-files .cjy-files-num{
+    padding: 40px 0;
+    font-size: 14px;
+    color: #9e9688;
+    text-align: center;
+}
+main .play{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, .8);
+}
+main .play .play-info{
+    width: 70%;
+}
+main .play .play-info img{
+    float: left;
+    margin-right: 10px;
+}
+main .play .play-info .play-name{
+    margin-top: 20px;
+    font-size: 16px;
+}
+main .play .play-info .play-songer{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #94908b;
+}
+main .play .play-control{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 30%;
+    transform: translateY(-50%);    
+}
+main .play .play-control li{
+    color: #b30000;
+}
