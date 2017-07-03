@@ -4,21 +4,21 @@
 
 /*===============common style start=================*/
 
-container {
+.container {
   width: 90%;
   margin: 0 auto;
 }
 
-pull-left {
+.pull-left {
   float: left;
 }
 
-pull-right {
+.pull-right {
   float: right;
 }
 
-clearfix:before,
-clearfix:after {
+.clearfix:before,
+.clearfix:after {
   display: block;
   content: '';
   clear: both;
