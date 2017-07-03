@@ -1,0 +1,1 @@
+alert('hell word')
