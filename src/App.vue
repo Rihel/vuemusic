@@ -17,4 +17,6 @@ export default {
 @import 'assets/scss/scssBypages/userCenter/userCenter';
 @import 'assets/css/recommend.css';
 @import 'assets/css/wyf-music.css';
+@import 'assets/scss/scssBypages/lists/lists';
+@import 'assets/scss/scssBypages/songSheet/songSheet';
 </style>

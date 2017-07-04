@@ -1,0 +1,49 @@
+/*songsSheet页面样式
+*  作者：Lewis
+*/
+.zql-songs-items {
+  padding: 15px;
+  figure {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #a79f8d;
+    .zql-songs-pic {
+      position: relative;
+      width: 33%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      i {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: #fff;
+      }
+    }
+    figcaption {
+      display: flex;
+      width: 60%;
+      margin-left: 15px;
+      justify-content: space-between;
+      align-items: center;
+      dt {
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      dd {
+        line-height: 24px;
+        font-size: 17px;
+        cursor:pointer;
+        span {
+          margin-right: 5px;
+          font-size: 17px;
+        }
+      }
+      i {
+        color: #a79f8d;
+      }
+    }
+  }
+}
