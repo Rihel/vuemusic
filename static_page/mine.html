@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <style>
+        header {
+            width: 100%;
+        }
+
+        header .nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 1.8vh 0;
+            background: #b30000;
+        }
+
+        header .nav li {
+            text-align: center;
+            font-size: 5vw;
+            color: #fff;
+        }
+
+
+
+        .jem-main {
+            width: 100%;
+            height: 94vh;
+            background: url('img/my-bg.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .jem-main .jem-my-content {
+            height: 100%;
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        .jem-main .jem-my-content li.jem-my {
+            padding: 0 9.4vw;
+        }
+        .jem-main .jem-my-content li.jem-my span {
+            font-size: 3vw;
+        }        
+        /*for user-info*/
+
+        .jem-main .jem-my-content .jem-user-info {
+            display: flex;
+            height: 13vh;
+            padding: 0 5.4vw;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            background-color: rgba(0, 0, 0, .1);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .jem-main .jem-my-content .jem-user-info img {
+            width: 15vw;
+        }
+
+        .jem-main .jem-my-content .jem-user-info .jem-user-content {
+            width: 70vw;
+            height: 100%;
+            padding-top: 3vh;
+        }
+
+        .jem-main .jem-my-content .jem-user-info .jem-user-content p {
+            margin-bottom: 2vh;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-user-info .jem-user-content ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .jem-main .jem-my-content .jem-user-info .jem-user-content ul li {
+            font-size: 2vh;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-user-info .jem-user-content ul li.jem-detail-info {
+            padding-right: 2.5vw;
+            border-right: 1px solid #000;
+        }
+        /*for lcoal-music*/
+        /*for recent-play*/
+        /*for mydownload*/
+
+        .jem-main .jem-my-content .jem-music-state {
+            display: flex;
+            height: 11vh;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .jem-main .jem-my-content .jem-music-state img {
+            width: 7vw;
+            height: 7vw;
+        }
+
+        .jem-main .jem-my-content .jem-music-state p {
+            width: 70vw;
+            height: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            line-height: 11vh;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-music-state p span {
+            padding-left: 2vw;
+            color: #2f2e2e;
+        }
+
+        .jem-main .jem-my-content .jem-music-state p i {
+            line-height: 11vh;
+            color: #918e82;
+            transform: scale(1.5)
+        }
+
+        .jem-main .jem-my-content .jem-recent-play p i,
+        .jem-main .jem-my-content .jem-mydownload p i {
+            color: #000;
+        }
+
+        .jem-main .jem-my-content .jem-mydownload {
+            width: 82vw;
+            margin-left: 9.4vw;
+            padding: 0!important;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .jem-main .jem-my-content .jem-mydownload p {
+            width: 70vw;
+            border: none;
+        }
+        /*for self-list*/
+
+        .jem-main .jem-my-content .jem-self-list {
+            width: 82vw;
+            margin-left: 9.4vw;
+            padding-top: 4vh;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .jem-main .jem-my-content .jem-self-list .list-title {
+            font-size: 4vw;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-self-list .list-title span {
+            font-size: 3vw;
+            color: #222;
+            transform: scale(.8);
+        }
+
+        .jem-main .jem-my-content .jem-self-list .star {
+            display: flex;
+            height: 12vh;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .jem-main .jem-my-content .jem-self-list .star img {
+            width: 12vw;
+            height: 12vw;
+        }
+
+        .jem-main .jem-my-content .jem-self-list .what-i-like {
+            width: 59vw;
+        }
+
+        .jem-main .jem-my-content .jem-self-list .what-i-like p {
+            margin-bottom: 1vh;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-self-list i {
+            transform: scale(1.8)
+        }
+        /*for my-collect*/
+
+        .jem-main .jem-my-content .jem-my-collect {
+            width: 82vw;
+            margin-left: 9.4vw;
+            padding-top: 3vh;
+        }
+
+        .jem-main .jem-my-content .jem-my-collect .collect-title {
+            font-size: 5vw;
+            font-weight: bold;
+        }
+
+        .jem-main .jem-my-content .jem-my-collect .collect-title ul li {
+            float: left;
+            margin-top: 1vh;
+            padding: 0 2vw;
+            font-size: 3vw;
+            transform: scale(.9);
+        }
+
+        .jem-main .jem-my-content .jem-my-collect .collect-title ul .album {
+            border: 1px solid #000;
+            border-top: 0;
+            border-bottom: 0;
+        }
+        .jem-main .jem-my-content .jem-my-collect p {
+            padding-top: 5vh;
+            font-size: 3vw;
+            text-align: center;
+        }
+        .jem-main .jem-my-content .jem-my-collect p img {
+            display: inline-block;
+            width: 7vw;
+            vertical-align: bottom;
+            transform: translateY(.5vh);
+        }        
+
+
+
+
+
+
+
+
+
+
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            width: 100%;
+            height: 8vh;
+            padding: 5px;
+            background: rgba(255, 255, 255, .9);
+            justify-content: space-between;
+        }
+
+        footer .jem-info {
+            display: flex;
+            width: 51vw;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        footer .jem-info .jem-cover {
+            width: 12vw;
+            height: 100%;
+        }
+
+        footer .jem-info .jem-song-name {
+            padding: 1vh 0;
+            font-size: 4vw;
+            font-weight: bold;
+        }
+
+        footer .jem-play-ctrl {
+            display: flex;
+            width: 37vw;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer .jem-play-ctrl i {
+            font-size: 4vw;
+            color: #b30000;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <ul class="nav">
+            <li><i class="fa fa-bars"></i></li>
+            <li>我的</li>
+            <li>音乐</li>
+            <li>动态</li>
+            <li><i class="fa fa-search"></i></li>
+        </ul>
+    </header>
+
+
+    <section class="jem-main">
+        <ul class="jem-my-content">
+            <li class="jem-user-info">
+                <img class="jem-head" src="img/my-head.png" alt="fff">
+                <div class="jem-user-content">
+                    <p class="jem-user-name">小草的幽思</p>
+                    <ul>
+                        <li class="jem-detail-info">动态6</li>
+                        <li class="jem-detail-info">关注8</li>
+                        <li class="jem-detail-info">粉丝15</li>
+                        <li></li>
+                        <li></li>
+                        <li>随便听听</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="jem-music-state jem-music-state jem-my">
+                <img class="local-music-icon" src="img/my-local-music-icon.png" alt="fff">
+                <p class="clearfix">本地音乐 <span>207首</span> <i class="fa fa-play-circle-o pull-right"></i></p>
+            </li>
+            <li class="jem-recent-play jem-music-state jem-my">
+                <img class="local-music-icon" src="img/my-recent-play-icon.png" alt="fff">
+                <p class="clearfix">最近播放 <span>共34首，8首离线可播</span> <i class="fa fa-angle-right pull-right"></i></p>
+            </li>
+            <li class="jem-mydownload jem-music-state jem-my">
+                <img class="local-music-icon" src="img/my-download-icon.png" alt="fff">
+                <p class="clearfix">我的下载 <span>一首</span> <i class="fa fa-angle-right pull-right"></i></p>
+            </li>
+            <li class="jem-self-list">
+                <p class="list-title clearfix">自建歌单 <span class="pull-right">+新建</span></p>
+                <div class="star">
+                    <img src="img/my-star.png" alt="fff">
+                    <div class="what-i-like">
+                        <p>我喜欢的单曲</p>
+                        <span>0首</span>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </li>
+            <li class="jem-my-collect">
+                <div class="collect-title clearfix">我的收藏
+                    <ul class="pull-right">
+                        <li class="song-list">歌单</li>
+                        <li class="album">专辑</li>
+                        <li class="singer">歌手</li>
+                    </ul>
+                </div>
+                <p>
+                    <img src="img/my-collect-icon.png" alt="fff"> 碰到喜欢的内容，收藏一下就不会丢失啦
+                </p>
+            </li>
+
+        </ul>
+
+
+    </section>
+
+
+    <footer>
+        <div class="jem-info">
+            <img class="jem-cover" src="img/my-cover.png" alt="">
+            <div class="jem-song-info">
+                <p class="jem-song-name">不该（with AMEI）</p>
+                <p class="jem-song-singer">周杰伦</p>
+            </div>
+        </div>
+        <div class="jem-play-ctrl">
+            <i class="fa fa-play"></i>
+            <i class="fa fa-step-forward"></i>
+            <i class="fa fa-list"></i>
+        </div>
+    </footer>
+</body>
+
+
+
+
+</html>
