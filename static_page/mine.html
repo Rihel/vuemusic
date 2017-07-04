@@ -11,8 +11,14 @@
 
     <style>
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
         }
+
+
+
 
         header .nav {
             display: flex;
@@ -22,33 +28,52 @@
             background: #b30000;
         }
 
+
+
+
         header .nav li {
             text-align: center;
-            font-size: 5vw;
+            font-size: 3vh;
             color: #fff;
         }
+
+
+
 
 
 
         .jem-main {
             width: 100%;
             height: 94vh;
+            margin-top: 6.4vh;
             background: url('img/my-bg.png') no-repeat center;
             background-size: cover;
         }
+
+
+
 
         .jem-main .jem-my-content {
             height: 100%;
             background-color: rgba(255, 255, 255, .4);
         }
 
+
+
+
         .jem-main .jem-my-content li.jem-my {
             padding: 0 9.4vw;
         }
+
+
+
         .jem-main .jem-my-content li.jem-my span {
-            font-size: 3vw;
-        }        
+            font-size: 1vh;
+        }
         /*for user-info*/
+
+
+
 
         .jem-main .jem-my-content .jem-user-info {
             display: flex;
@@ -60,9 +85,16 @@
             align-items: center;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-user-info img {
-            width: 15vw;
+            width: 9vh;
+            height: 9vh;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-user-info .jem-user-content {
             width: 70vw;
@@ -70,21 +102,33 @@
             padding-top: 3vh;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-user-info .jem-user-content p {
             margin-bottom: 2vh;
-            font-size: 5vw;
+            font-size: 3vh;
             font-weight: bold;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-user-info .jem-user-content ul {
             display: flex;
             justify-content: space-between;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-user-info .jem-user-content ul li {
             font-size: 2vh;
             font-weight: bold;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-user-info .jem-user-content ul li.jem-detail-info {
             padding-right: 2.5vw;
@@ -94,6 +138,9 @@
         /*for recent-play*/
         /*for mydownload*/
 
+
+
+
         .jem-main .jem-my-content .jem-music-state {
             display: flex;
             height: 11vh;
@@ -101,24 +148,36 @@
             align-items: center;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-music-state img {
-            width: 7vw;
-            height: 7vw;
+            width: 4vh;
+            height: 4vh;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-music-state p {
             width: 70vw;
             height: 100%;
             border-bottom: 1px solid rgba(0, 0, 0, .1);
             line-height: 11vh;
-            font-size: 5vw;
+            font-size: 3vh;
             font-weight: bold;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-music-state p span {
             padding-left: 2vw;
             color: #2f2e2e;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-music-state p i {
             line-height: 11vh;
@@ -126,10 +185,16 @@
             transform: scale(1.5)
         }
 
+
+
+
         .jem-main .jem-my-content .jem-recent-play p i,
         .jem-main .jem-my-content .jem-mydownload p i {
             color: #000;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-mydownload {
             width: 82vw;
@@ -138,11 +203,17 @@
             border-bottom: 1px solid rgba(0, 0, 0, .1);
         }
 
+
+
+
         .jem-main .jem-my-content .jem-mydownload p {
             width: 70vw;
             border: none;
         }
         /*for self-list*/
+
+
+
 
         .jem-main .jem-my-content .jem-self-list {
             width: 82vw;
@@ -151,16 +222,24 @@
             border-bottom: 1px solid rgba(0, 0, 0, .1);
         }
 
+
+
+
         .jem-main .jem-my-content .jem-self-list .list-title {
-            font-size: 4vw;
+            font-size: 2.5vh;
             font-weight: bold;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-self-list .list-title span {
-            font-size: 3vw;
+            font-size: 1vh;
             color: #222;
-            transform: scale(.8);
         }
+
+
+
 
         .jem-main .jem-my-content .jem-self-list .star {
             display: flex;
@@ -169,25 +248,40 @@
             align-items: center;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-self-list .star img {
-            width: 12vw;
-            height: 12vw;
+            width: 7vh;
+            height: 7vh;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-self-list .what-i-like {
             width: 59vw;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-self-list .what-i-like p {
             margin-bottom: 1vh;
-            font-size: 5vw;
+            font-size: 3vh;
             font-weight: bold;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-self-list i {
             transform: scale(1.8)
         }
         /*for my-collect*/
+
+
+
 
         .jem-main .jem-my-content .jem-my-collect {
             width: 82vw;
@@ -195,35 +289,52 @@
             padding-top: 3vh;
         }
 
+
+
+
         .jem-main .jem-my-content .jem-my-collect .collect-title {
-            font-size: 5vw;
+            font-size: 3vh;
             font-weight: bold;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-my-collect .collect-title ul li {
             float: left;
             margin-top: 1vh;
             padding: 0 2vw;
-            font-size: 3vw;
-            transform: scale(.9);
+            font-size: 1vh;
         }
+
+
+
 
         .jem-main .jem-my-content .jem-my-collect .collect-title ul .album {
             border: 1px solid #000;
             border-top: 0;
             border-bottom: 0;
         }
+
+
+
         .jem-main .jem-my-content .jem-my-collect p {
             padding-top: 5vh;
-            font-size: 3vw;
+            font-size: 1vh;
             text-align: center;
         }
+
+
+
         .jem-main .jem-my-content .jem-my-collect p img {
             display: inline-block;
-            width: 7vw;
+            width: 4vh;
+            height: 4vh;
             vertical-align: bottom;
             transform: translateY(.5vh);
-        }        
+        }
+
+
 
 
 
@@ -238,7 +349,7 @@
 
         footer {
             position: fixed;
-            bottom: 0;
+            top: 92vh;
             display: flex;
             width: 100%;
             height: 8vh;
@@ -247,6 +358,9 @@
             justify-content: space-between;
         }
 
+
+
+
         footer .jem-info {
             display: flex;
             width: 51vw;
@@ -254,16 +368,19 @@
             justify-content: space-between;
         }
 
+
         footer .jem-info .jem-cover {
-            width: 12vw;
-            height: 100%;
+            width: 7vh;
+            height: 7vh;
         }
+
 
         footer .jem-info .jem-song-name {
             padding: 1vh 0;
-            font-size: 4vw;
+            font-size: 2.2vh;
             font-weight: bold;
         }
+
 
         footer .jem-play-ctrl {
             display: flex;
@@ -273,8 +390,9 @@
             align-items: center;
         }
 
+
         footer .jem-play-ctrl i {
-            font-size: 4vw;
+            font-size: 3vh;
             color: #b30000;
         }
     </style>
