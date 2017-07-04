@@ -20,4 +20,6 @@ export default {
 @import 'assets/css/wyf-song.css';
 @import 'assets/css/wzx-radio.css';
 @import 'assets/css/wyf-late.css';
+@import 'assets/scss/scssBypages/lists/lists';
+@import 'assets/scss/scssBypages/songSheet/songSheet';
 </style>
