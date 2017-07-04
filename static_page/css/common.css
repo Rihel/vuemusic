@@ -2,92 +2,99 @@
   作者：Lewis
 */
 
+
 /*===============common style start=================*/
 
 .container {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .pull-left {
-  float: left;
+    float: left;
 }
 
 .pull-right {
-  float: right;
+    float: right;
 }
 
 .clearfix:before,
 .clearfix:after {
-  display: block;
-  content: '';
-  clear: both;
+    display: block;
+    content: '';
+    clear: both;
 }
 
+
 /*===============common style end=================*/
+
 
 /*================header style start===============*/
 
 .header {
-  position: fixed;
-  top: 0;
-  background: #b30000;
-  width: 100%;
-  padding: 10px 0;
+    position: fixed;
+    top: 0;
+    background: #b30000;
+    width: 100%;
+    padding: 10px 0;
 }
 
 .header ul {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header ul li a {
-  color: #fbabab;
-  font-size: 25px;
+    color: #fbabab;
+    font-size: 25px;
 }
 
 .header ul li .fa {
-  color: #fff;
-  font-size: 25px;
+    color: #fff;
+    font-size: 25px;
 }
 
 .header ul li a.active {
-  color: #fff;
+    color: #fff;
 }
 
+
 /*================header style end=================*/
+
 
 /*================footer style start===============*/
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background: rgba(255, 255, 255, .7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, .7);
+    z-index: 999;
 }
 
 .footer .com-song {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .footer .com-song p {
-  margin-left: 10px;
-  font-size: 15px;
+    margin-left: 10px;
+    font-size: 15px;
 }
 
 .footer .com-song p span {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .footer .com-play span {
-  margin: 5px;
-  font-size: 15px;
-  color: #b30000;
+    margin: 5px;
+    font-size: 15px;
+    color: #b30000;
 }
+
 
 /*================footer style end=================*/
