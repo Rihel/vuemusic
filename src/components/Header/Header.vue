@@ -6,13 +6,13 @@
         <router-link to="/">我的</router-link>
       </li>
       <li>
-        <router-link to="/">音乐</router-link>
+        <router-link to="/music/recommendation">音乐</router-link>
       </li>
       <li>
-        <router-link to="/">动态</router-link>
+        <router-link to="/dynamic">动态</router-link>
       </li>
       <li>
-        <router-link to="/"><i class="fa fa-search"></i></router-link>
+        <router-link to="/search"><i class="fa fa-search"></i></router-link>
       </li>
     </ul>
   </div>

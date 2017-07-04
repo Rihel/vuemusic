@@ -1,0 +1,71 @@
+<template>
+  <div>
+    <div class="yf-view">
+      <div class="container">
+        <div class="yf-choose">
+          <router-link to="/">
+            <i class="fa fa-angle-down"></i>
+          </router-link>
+          <ul>
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div class="yf-main">
+          <h2 class="yf-title">
+            日光
+          </h2>
+          <h3 class="yf-author">
+            苏打绿
+          </h3>
+
+          <p>醒在梦境上 梦在清晨上<br> 晨在川流上 流在船岛下<br> 残留的夜蹄在稀薄中消失尽
+            <br> 游戏的念头在泡影中蔓延起
+            <br> 美好是因为挑战无私的天真
+            <br> 罪恶是因为克服背叛的恐惧
+            <br> 岛在轻浮下 浮在狂热下<br> 狂在初雷下 雷在白昼上<br> 泉水的音乐在玫瑰缝中打击
+            <br> 牧神的笛声在快乐岛中苏醒
+            <br>
+          </p>
+        </div>
+
+        <div class="yf-opation">
+          <a class="fa fa-heart-o" href="#"></a>
+          <a class="fa fa-arrow-down" href="#"></a>
+          <a class="fa fa-chain-broken" href="#"></a>
+          <a class="fa fa-commenting-o" href="#"></a>
+          <a href="#">···</a>
+        </div>
+      </div>
+    </div>
+    <div class="yf-footer">
+      <div class="container">
+        <div class="yf-rate">
+          <div class="now-rate">00:00</div>
+          <div class="view-rate">
+            <div class="zero">
+
+            </div>
+          </div>
+          <div class="all-rate">00:00</div>
+        </div>
+
+        <div class="yf-control">
+          <a class="fa fa-random" href="#"></a>
+          <a class="fa fa-step-backward" href="#"></a>
+          <a class="fa fa-play-circle-o" href="#"></a>
+          <a class="fa fa-step-forward" href="#"></a>
+          <a class="fa fa-list-ul controls" href="#"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>

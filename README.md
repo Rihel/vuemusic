@@ -1,21 +1,58 @@
-# vuemusic
+# 注意事项
+``` 
+所有人push时写上自己名字的缩写加时间
 
-> 这是优树前端班的终实训项目
+比如 wzx-1937
 
-## Build Setup
+所有人都要在自己的文件写上注释作者何人
+如
+/*recommend页面样式
+*  作者：Lewis
+*/
 
-``` bash
-# install dependencies
-npm install
+没有备注就默认是我的了，嘻嘻
 
-# serve with hot reload at localhost:8080
-npm run dev
 
-# build for production with minification
-npm run build
+src目录已更新
+现阶段请重点关注router下的index.js
+所有路由分支都写在上面
 
-# build for production and view the bundle analyzer report
-npm run build --report
+同目录下的是每个分支路由的js文件
+
+src目录下有MD文件说明每个文件夹的用途
+并请按照规定的路径进行生成或移动文件和文件夹
+
+src目录下所有如有需要改善的地方可以进行说明并更改
+
+现阶段如果阁下修改了src里面的文件，请写明修改的内容
+
+子贤
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 静态页面进度
+
+> ## 第一天
+
+```
+### 王龙： 本地播放(歌手)
+
+### 吴毅飞： 播放(播放1 播放2)
+
+### 吴子贤： 我的 
+
+## 钟起亮： 音乐(热门推荐)
+```
+
+> ## 第二天
+
+```
+### 王龙： 本地播放(歌手) 动态
+
+### 吴毅飞： 播放(播放1 播放2 播放3)
+
+### 吴子贤： 我的 电台
+
+## 钟起亮： 音乐(热门推荐 榜单 歌单)
+
+## 剩余：本地播放(歌曲 文件夹 专辑)  最近播放 设置
+```

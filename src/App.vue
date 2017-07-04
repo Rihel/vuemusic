@@ -11,7 +11,10 @@ export default {
 }
 </script>
 
-<!--<style lang="scss">
+<style lang="scss">
 @import './assets/css/font-awesome.css';
 @import './assets//css/reset.css';
-</style>-->
+@import 'assets/scss/scssBypages/userCenter/userCenter';
+@import 'assets/css/recommend.css';
+@import 'assets/css/wyf-music.css';
+</style>

@@ -97,12 +97,23 @@ body {
     justify-content: space-between;
     li {
       text-align: left;
+      &:nth-of-type(1),
+      &:nth-of-type(5) {
+        i {
+          margin-top: -7px;
+          font-size: 32px;
+        }
+      }
       i {
         font-size: 20px;
       }
       a {
         color: white;
         font-size: 20px;
+        opacity: .5;
+      }
+      .router-link-exact-active.active {
+        opacity: 1;
       }
     }
   }
@@ -110,6 +121,7 @@ body {
 
 
 /****************** header end ********************/
+
 
 /****************** footer end ********************/
 
@@ -121,6 +133,7 @@ body {
   padding-right: 22px;
   padding-bottom: 5px;
   background: rgba(255, 255, 255, .7);
+  z-index: 99;
   .footer-img {
     float: left;
     margin-right: 11px;
