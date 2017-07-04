@@ -4,7 +4,7 @@
     <tou></tou>
     <div>
       <ul class="zql-hot">
-        <li class="active">
+        <li>
           <router-link to="/music/recommendation">热门推荐</router-link>
         </li>
         <li>
@@ -35,6 +35,5 @@ components: {
 </script>
 
 <style lang="">
-
 
 </style>

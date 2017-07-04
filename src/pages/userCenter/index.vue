@@ -29,7 +29,9 @@
         <li>
           <img class="icon" src="../../assets/img/clock.png" alt="">
           <div class="music-room clearfix">
-            <h2>最近播放</h2>
+            <router-link to="/used/played">
+              <h2>最近播放</h2>
+            </router-link>
             <span>共34首，8首离线可播</span>
           </div>
           <i class="icon3 fa fa-chevron-right"></i>

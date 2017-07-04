@@ -8,14 +8,14 @@ export default {
   path: '/song',
   component: Song,
   children: [{
-      path: '/Song/songOne',
+      path: '/song/songOne',
       component: songOne
     },
     {
-      path: '/Song/songTwo',
+      path: '/song/songTwo',
       component: songTwo
     }, {
-      path: '/Song/songThree',
+      path: '/song/songThree',
       component: songThree
     }
   ]

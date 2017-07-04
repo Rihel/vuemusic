@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="alert1">此乃动态页面</span>
+    <span class="alert1">此乃搜索页面</span>
     <br>
     <span class="alert1">道友速速返回</span>
     <br>

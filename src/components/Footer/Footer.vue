@@ -1,7 +1,7 @@
 <template>
   <div class="footer clearfix">
     <div class="footer-img">
-      <router-link to="/song">
+      <router-link to="/song/songOne">
         <img src="../../assets/img/singer-face.png" alt="">
       </router-link>
     </div>

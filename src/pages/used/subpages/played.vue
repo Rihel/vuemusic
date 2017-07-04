@@ -1,21 +1,96 @@
 <template>
   <div>
-    <span class="alert1">最近播放页面</span>
-    <br>
-    <span class="alert1">页面尚未完成</span>
-    <br>
-    <span class="alert1">道友速速返回</span>
-    <br>
-    <i class="alert1 fa fa-hand-o-down"></i>
-    <br>
-    <router-link class="alert" to="/">传送门</router-link>
+    <div class="yf-choose clearfix">
+      <router-link to="/UserCenter"><i class="fa fa-angle-left"></i></router-link>
+      <span>最近播放</span>
+      <span class="yf-clear">清空</span>
+    </div>
+    <div class="yf-view">
+      <div class="container">
+        <div class="play-all">
+          <i class="fa fa-play-circle-o"></i>
+          <p>播放全部</p><span class="song-num">(共10首)</span>
+        </div>
+
+        <div class="song-list">
+          <div class="song-content active">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+          <div class="song-content">
+            <div class="content-left">
+              <h2>爱火花</h2>
+              <h3>周笔畅 - 我是歌手第二季 第六期</h3>
+            </div>
+            <div class="content-right">···</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <jiao></jiao>
   </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import jiao from '../../../components/Footer/Footer'
+export default {
+components: {
+    jiao
+  },
+}
 </script>
 
 <style lang="">

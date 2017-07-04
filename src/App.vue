@@ -15,6 +15,9 @@ export default {
 @import './assets/css/font-awesome.css';
 @import './assets//css/reset.css';
 @import 'assets/scss/scssBypages/userCenter/userCenter';
-@import 'assets/css/recommend.css';
+@import 'assets/css/zql-recommend.css';
 @import 'assets/css/wyf-music.css';
+@import 'assets/css/wyf-song.css';
+@import 'assets/css/wzx-radio.css';
+@import 'assets/css/wyf-late.css';
 </style>
