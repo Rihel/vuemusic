@@ -1,0 +1,5 @@
+
+// 1rem=10px  移动端的长度都要除以2，demo  150px(pc)===> 150/10 ===>15rem===>15/2===>7.5rem
+@function rem($num) {
+  @return $num/20+rem;
+}

@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Music from '../pages/music';
+import musicRouter from "./musicRouter";
+import dynamicRouter from './dynamicRouter';
+import SearchRouter from './searchRouter';
+
+import UserCenterRouter from './userCenterRouter';
+import Search from '../pages/search';
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
+      name: 'music',
+      component: Music
+    }, musicRouter,
+    dynamicRouter, SearchRouter, UserCenterRouter
+  ],
+  linkActiveClass: 'active'
 })
