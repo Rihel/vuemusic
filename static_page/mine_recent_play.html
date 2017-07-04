@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        header .nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 1.8vh 0;
+            background: #b30000;
+        }
+
+        header .nav li {
+            text-align: center;
+            font-size: 3vh;
+            color: #fff;
+        }
+
+        header .nav li.return {
+            flex-grow: 1;
+            transform: scale(1.5)
+        }
+
+        header .nav li.recent {
+            text-align: left;
+            flex-grow: 5;
+        }
+
+        header .nav li.clear-all {
+            font-size: 2vh;
+            flex-grow: 2;
+            transform: translate(3vw, .9vh);
+        }
+
+
+
+
+
+
+
+        .jem-recent-play-list {
+            width: 100%;
+            margin-top: 6.4vh;
+            background: url('img/my-bg.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .jem-recent-play-list ul {
+            padding: 0 2.5vw;
+            background: rgba(255, 255, 255, .6);
+        }
+
+        .jem-recent-play-list ul li {
+            display: flex;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            align-items: center;
+        }
+
+        .jem-recent-play-list ul li.play-all {
+            height: 8vh;
+            font-size: 3vh;
+            font-weight: bold;
+        }
+
+        .jem-recent-play-list ul li.play-all i {
+            margin-right: 2vw;
+            font-size: 6vh;
+            color: #b30000;
+        }
+
+        .jem-recent-play-list ul li.play-all span {
+            font-size: 1vh;
+            color: #737272;
+            transform: translate( 10%, 43%)
+        }
+
+        .jem-recent-play-list ul li.song-list {
+            height: 9vh;
+            padding-right: 5vw;
+            justify-content: space-between;
+        }
+
+        .jem-recent-play-list ul li.song-list .song p {
+            padding-bottom: 1vh;
+            font-size: 3vh;
+            font-weight: bold;
+        }
+
+        .jem-recent-play-list ul li.song-list .song span {
+            font-size: 1vh;
+        }
+
+        .jem-recent-play-list ul li.song-list .song-more {
+            width: 4vh;
+            height: 4vh;
+            border-radius: 100%;
+            border: 1px solid #84817a;
+            line-height: 2.5vh;
+            text-align: center;
+        }
+
+        .jem-recent-play-list ul li.active .song p {
+            color: #b30000;
+        }
+
+        .jem-recent-play-list ul li.active .song span {
+            color: #b30000;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        footer {
+            position: fixed;
+            top: 92vh;
+            display: flex;
+            width: 100%;
+            height: 8vh;
+            padding: 5px;
+            background: rgba(255, 255, 255, .9);
+            justify-content: space-between;
+        }
+
+        footer .jem-info {
+            display: flex;
+            width: 51vw;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        footer .jem-info .jem-cover {
+            width: 7vh;
+            height: 7vh;
+        }
+
+        footer .jem-info .jem-song-name {
+            padding: 1vh 0;
+            font-size: 2.2vh;
+            font-weight: bold;
+        }
+
+        footer .jem-play-ctrl {
+            display: flex;
+            width: 37vw;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer .jem-play-ctrl i {
+            font-size: 3vh;
+            color: #b30000;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+        <header>
+            <ul class="nav">
+                <li class="return"> <i class="fa fa-angle-left"></i></li>
+                <li class="recent">最近播放</li>
+                <li class="clear-all">清空</li>
+            </ul>
+        </header>
+
+        <section class="jem-recent-play-list">
+            <ul>
+                <li class="play-all">
+                    <i class="fa fa-play-circle-o"></i>播放全部<span>(共10首)</span>
+                </li>
+                <li class="song-list active">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                       <li class="song-list">
+                    <div class="song">
+                        <p>爱火花</p>
+                        <span> 周笔畅 - 我是歌手第二季 第六期</span>
+                    </div>
+                    <div class="song-more">
+                        ...
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+
+
+        <footer>
+            <div class="jem-info">
+                <img class="jem-cover" src="img/my-cover.png" alt="">
+                <div class="jem-song-info">
+                    <p class="jem-song-name">不该（with AMEI）</p>
+                    <p class="jem-song-singer">周杰伦</p>
+                </div>
+            </div>
+            <div class="jem-play-ctrl">
+                <i class="fa fa-play"></i>
+                <i class="fa fa-step-forward"></i>
+                <i class="fa fa-list"></i>
+            </div>
+        </footer>
+</body>
+
+
+
+
+</html>
