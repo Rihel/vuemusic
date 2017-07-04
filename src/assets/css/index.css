@@ -1,0 +1,282 @@
+.clearfix:before,
+.clearfix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+body {
+    position: relative;
+    height: 100%;
+}
+
+.main-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+}
+
+.header {
+    width: 100%;
+    background: #b30000;
+    color: white;
+}
+
+.header .navbar {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+}
+
+.header .navbar li {
+    text-align: left;
+}
+
+.header .navbar li i {
+    font-size: 20px;
+}
+
+.header .navbar li a {
+    color: white;
+    font-size: 20px;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+}
+
+.main .main-user {
+    padding-top: 16px;
+    padding-left: 18px;
+    padding-bottom: 18px;
+    padding-right: 20px;
+    border-bottom: 1px solid #bcbfb4;
+}
+
+.main .main-user img {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 22px;
+    border-radius: 100%;
+}
+
+.main .main-user .user-content {
+    color: black;
+}
+
+.main .main-user .user-content h2 {
+    margin-bottom: 16px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.main .main-user .user-content span {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.main .main-user .user-content i {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.main .main-user .walkaw {
+    float: right;
+    margin-top: -12px;
+}
+
+.main .main-top {
+    background: rgba(255, 255, 255, .3);
+}
+
+.main .main-top li {
+    height: 70px;
+    padding: 20px 20px 0 20px;
+}
+
+.main .main-top li .icon {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-top: 10px;
+    margin-right: 18px;
+}
+
+.main .main-top li .music-room {
+    float: left;
+    width: 78%;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #bebeb4;
+}
+
+.main .main-top li .music-room h2 {
+    float: left;
+    margin-right: 20px;
+    line-height: 26px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.main .main-top li .music-room span {
+    line-height: 30px;
+    color: #2f2e2e;
+    font-size: 14px;
+}
+
+.main .main-top li .icon2 {
+    float: right;
+    margin-top: 20px;
+    width: 21px;
+    height: 21px;
+}
+
+.main .main-top li .icon3 {
+    float: right;
+    margin-top: 26px;
+    color: #2f2e2e;
+    font-size: 14px;
+}
+
+.main .main-bottom {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgba(255, 255, 255, .3);
+}
+
+.main .main-bottom li {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid #bebeb4;
+}
+
+.main .main-bottom li h3 {
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .main-bottom li img {
+    float: left;
+    width: 39px;
+    height: 39px;
+    margin-right: 17px;
+}
+
+.main .main-bottom li h2 {
+    line-height: 26px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.main .main-bottom li .song-num {
+    color: #2f2e2e;
+    font-size: 14px;
+}
+
+.main .main-bottom li .song-new {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    color: #372f23;
+    font-size: 14px;
+}
+
+.main .main-bottom li .icon3 {
+    float: right;
+    color: #2f2e2e;
+    font-size: 14px;
+}
+
+.main .main-bottom li .good-h2 {
+    float: left;
+    line-height: 0px!important;
+}
+
+.main .main-bottom li .spans {
+    float: right;
+    line-height: 0!important;
+}
+
+.main .main-bottom li .spans span {
+    margin-left: 11px;
+    color: #2f2e2e;
+}
+
+.main .main-bottom li .good-tip {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.main .main-bottom li .good-tip p {
+    display: inline-block;
+    line-height: 18px;
+    color: #241e18;
+    font-size: 13px;
+}
+
+.main .main-bottom li .good-tip p img {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+
+.main .main-bottom li .icon4 {
+    margin-top: 30px;
+    color: #2f2e2e;
+    font-size: 14px;
+}
+
+.main .main-bottom .li2 {
+    padding-top: 30px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 2px;
+    padding-right: 22px;
+    padding-bottom: 5px;
+    background: rgba(255, 255, 255, .7);
+}
+
+.footer .footer-img {
+    float: left;
+    margin-right: 11px;
+}
+
+.footer .footer-img img {
+    width: 36px;
+    height: 36px;
+}
+
+.footer .song-main {
+    float: left;
+}
+
+.footer .song-main h2 {
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer .song-main span {
+    color: #2b2a29;
+    font-size: 12px;
+}
+
+.footer .icons {
+    float: right;
+    margin-top: 13px;
+}
+
+.footer .icons i {
+    margin-left: 20px;
+    color: #b30000;
+    font-size: 20px;
+}

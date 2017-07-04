@@ -1,0 +1,135 @@
+/*
+    singer style 
+    author:hubvues 王龙
+*/
+
+.wl-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.wl-header .fa {
+    color: #fff;
+    font-size: 18px;
+}
+
+.wl-header .wl-header-top {
+    padding: 10px 0;
+    background: #b30000;
+}
+
+.wl-header .wl-header-top .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wl-header .wl-header-top .wl-location {
+    margin-left: -8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.wl-header .wl-header-top .wl-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.wl-header .wl-header-top .wl-nav .wl-search {
+    margin-right: 15px;
+}
+
+.wl-header .wl-tabs {
+    background: #f7f2ec;
+}
+
+.wl-header .wl-tabs .wl-tab-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wl-header .wl-tabs .wl-tab-list li {
+    width: 25%;
+    padding: 15px 0;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    text-align: center;
+}
+
+.wl-header .wl-tabs .wl-tab-list li:hover,
+.wl-header .wl-tabs .wl-tab-list li.active {
+    border-bottom-color: #b30000;
+    color: #b30000;
+}
+
+.main {
+    position: relative;
+    margin-top: 87px;
+}
+
+.main .wl-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/wl-singer-bg.png) no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+}
+
+.wl-singer {
+    position: relative;
+    z-index: 100;
+}
+
+.wl-singer li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #b4b4ae;
+}
+
+.wl-singer li .wl-singer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wl-singer li .wl-singer-info img {
+    max-width: 66px;
+    height: 66px;
+    /* filter: blur(1px); */
+}
+
+.wl-singer li .wl-singer-content {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-left: 10px;
+}
+
+.wl-singer li .wl-singer-content p {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wl-singer li .wl-singer-content span {
+    color: #414141;
+    font-size: 14px;
+}
+
+.wl-singer li .wl-icon-message {
+    display: flex;
+    align-items: center;
+}
+
+.wl-singer li .wl-icon-message img {
+    width: 30px;
+    height: 30px;
+}
