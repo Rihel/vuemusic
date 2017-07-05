@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <style>
+        html,
+        body {
+            font-size: 62.5%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #b30000;
+            z-index: 999;
+        }
+
+        header ul {
+            display: flex;
+            height: 4rem;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header ul li {
+            font-size: 1.65rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        header ul li.active,
+        header ul li.sub-nav,
+        header ul li.search-nav {
+            color: #fff;
+        }
+
+
+        .yao-radio-main {
+            margin-top: 4rem;
+            background: url('img/my-bg.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .yao-radio-main .main-nav {
+            display: flex;
+            height: 3.55rem;
+            background: #fdfcfa;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .yao-radio-main .main-nav li {
+            width: 25%;
+            height: 100%;
+            border-bottom: 0.025rem solid #ddd9d2;
+            line-height: 3.55rem;
+            font-size: 1.55rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .yao-radio-main .main-nav li.active {
+            border-color: #b30000;
+            color: #b30000;
+        }
+
+
+        .yao-radio-main .main-content {
+            background-color: rgba(255, 255, 255, .6)
+        }
+
+        .yao-radio-main .main-content .banner {
+            width: 100%;
+        }
+
+        .yao-radio-main .main-content .classify {
+            display: flex;
+            height: 6.1rem;
+            border-bottom: 0.025rem solid #ddd9d2;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .yao-radio-main .main-content .classify .raido-recommend {
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yao-radio-main .main-content .classify .radio-classify {
+            border-right: 0.025rem solid #ddd9d2;
+        }
+
+        .yao-radio-main .main-content .classify img {
+            width: 4rem;
+            margin-right: 1rem;
+        }
+
+        .yao-radio-main .main-content .classify p {
+            font-size: 1.25rem;
+        }
+
+        .yao-radio-main .main-content .recommend-title {
+            margin: 3rem 0 1rem;
+            border-left: 0.25rem solid red;
+            text-indent: 1.25rem;
+            align-items: center;
+        }
+
+        .yao-radio-main .main-content .recommend-songlist {
+            display: flex;
+            margin-bottom: 1.5worem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .yao-radio-main .main-content .recommend-songlist .recommend-songitem {
+            width: 10rem;
+        }
+
+        .yao-radio-main .main-content .recommend-songlist .recommend-songitem .item-cover {
+            position: relative;
+        }
+
+        .yao-radio-main .main-content .recommend-songlist .recommend-songitem .item-cover .cover-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
+            line-height: 1.8rem;
+            font-size: 1rem;
+            color: #fff;
+            text-indent: 0.25rem
+        }
+
+        .yao-radio-main .main-content .recommend-songlist .recommend-songitem .item-cover img {
+            width: 100%;
+        }
+
+        .yao-radio-main .main-content .recommend-songlist .recommend-songitem p.cover-describe {
+            height: 2.45rem;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        footer {
+            position: fixed;
+            bottom:0;
+            display: flex;
+            width: 100%;
+            height: 4.35rem;
+            padding: 0.3rem;
+            background: rgba(255, 255, 255, .9);
+            justify-content: space-between;
+        }
+
+
+
+
+
+        footer img {
+            width: 3.65rem;
+        }
+
+        footer .yao-song-info,
+        footer .yao-play-ctrl {
+            flex-grow: 2;
+        }
+
+        footer .yao-song-info p {
+            text-indent: 1rem;
+        }
+
+        footer .yao-song-info p.yao-song-name {
+            padding: 0.3rem 0 0.5rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        footer .yao-play-ctrl {
+            display: flex;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer .yao-play-ctrl i {
+            font-size: 2rem;
+            color: #b30000;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <ul class="nav">
+            <li class="sub-nav"><i class="fa fa-bars"></i></li>
+            <li>我的</li>
+            <li class="active">音乐</li>
+            <li>动态</li>
+            <li class="search-nav"><i class="fa fa-search"></i></li>
+        </ul>
+    </header>
+
+
+    <section class="yao-radio-main">
+        <ul class="main-nav">
+            <li>热门推荐</li>
+            <li>榜单</li>
+            <li>歌单</li>
+            <li class="active">电台</li>
+        </ul>
+        <div class="main-content">
+            <img class="banner" src="img/radio-banner.png" alt="fff">
+            <div class="classify">
+                <div class="raido-recommend radio-classify">
+                    <img src="img/radio-radio.png" alt="fff">
+                    <p>每日歌曲推荐</p>
+                </div>
+                <div class="raido-recommend radio-ranking">
+                    <img src="img//radio-microphone.png" alt="fff">
+                    <p>歌手</p>
+                </div>
+            </div>
+            <div class="recommend-title">
+                电台个性推荐
+            </div>
+            <div class="recommend-songlist">
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+            </div>
+            <div class="recommend-songlist">
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+
+            </div>
+            <div class="recommend-songlist">
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+
+            </div>
+            <div class="recommend-songlist">
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+                <div class="recommend-songitem">
+                    <div class="item-cover">
+                        <img src="img/radio-cover1.png" alt="fff">
+                        <p class="cover-info">李卤味</p>
+                    </div>
+                    <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <img class="yao-cover" src="img/my-cover.png" alt="">
+        <div class="yao-song-info">
+            <p class="yao-song-name">不该（with AMEI）</p>
+            <p class="yao-song-singer">周杰伦</p>
+        </div>
+        <div class="yao-play-ctrl">
+            <i class="fa fa-play"></i>
+            <i class="fa fa-step-forward"></i>
+            <i class="fa fa-list"></i>
+        </div>
+    </footer>
+</body>
+
+
+
+
+</html>
