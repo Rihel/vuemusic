@@ -4,9 +4,9 @@
         <div class="container">
             <div class="hot clearfix">
                 <div class="hot-left">
-                    <img class="img1" src="simg.png" alt="">
+                    <img class="img1" src="./simg.png" alt="">
                     <h2>全部</h2>
-                    <img class="img2" src="simg1.png" alt="">
+                    <img class="img2" src="./simg1.png" alt="">
                 </div>
                 <div class="hot-right">
                     <span>最热</span>
@@ -15,37 +15,37 @@
             </div>
             <div class="play">
                 <div class="play-mo">
-                    <img class="img3" src="simg2.png" alt="">
-                    <img class="img4" src="simg4.png" alt="">
+                    <img class="img3" src="./simg2.png" alt="">
+                    <img class="img4" src="./simg4.png" alt="">
                     <h4>执子之手，鞋子之老</h4>
                     <p>by<span>莫洋洋</span></p>
                 </div>
                 <div class="play-mo">
-                    <img class="img3" src="simg3.png" alt="">
-                    <img class="img4" src="simg4.png" alt="">
+                    <img class="img3" src="./simg3.png" alt="">
+                    <img class="img4" src="./simg4.png" alt="">
                     <h4>执子之手，鞋子之老</h4>
                     <p>by<span>莫洋洋</span></p>
                 </div>
                 </div>
                 <div class="play">
                      <div class="play-mo">
-                    <img class="img3" src="simg5.png" alt="">
-                    <img class="img4" src="simg4.png" alt="">
+                    <img class="img3" src="./simg5.png" alt="">
+                    <img class="img4" src="./simg4.png" alt="">
                     <h4>执子之手，鞋子之老</h4>
                     <p>by<span>莫洋洋</span></p>
                 </div>
                 <div class="play-mo">
-                    <img class="img3" src="simg6.png" alt="">
-                    <img class="img4" src="simg4.png" alt="">
+                    <img class="img3" src="./simg6.png" alt="">
+                    <img class="img4" src="./simg4.png" alt="">
                     <h4>执子之手，鞋子之老</h4>
                     <p>by<span>莫洋洋</span></p>
                 </div>
                 </div>
                 <div class="play">
                  <div class="play-to">
-                    <img class="img5" src="simg7.png" alt="">
+                    <img class="img5" src="./simg7.png" alt="">
                     <div class="gaylon">
-                    <img class="img6" src="simg9.png" alt="">
+                    <img class="img6" src="./simg9.png" alt="">
                      <div class="gaylon-right">
                           <h3>不该（csadcsa)</h3>
                           <i>周杰伦</i>
@@ -53,16 +53,16 @@
                     </div>
                 </div>
                      <div class="play-mo">
-                    <img class="img7" src="simg8.png" alt="">
+                    <img class="img7" src="./simg8.png" alt="">
                 </div>
                 </div>
                  <!--<div class="play">
                     <div class="play-to">
-                    <img class="img3" src="simg7.png" alt="">
-                    <img src="sing9.png" alt="">
+                    <img class="img3" src="./simg7.png" alt="">
+                    <img src="./sing9.png" alt="">
                 </div>
                      <div class="play-to">
-                    <img class="img3" src="simg8.png" alt="">
+                    <img class="img3" src="./simg8.png" alt="">
                 </div>
                 </div>    
                 </div>                   
