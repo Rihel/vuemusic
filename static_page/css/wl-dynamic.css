@@ -1,3 +1,9 @@
+/*
+dynamic style
+author:hubvues
+
+*/
+
 .main {
     margin-top: 45px;
 }
@@ -18,13 +24,9 @@
     height: 150px;
 }
 
-.wl-dynamic .wl-banner ul {}
-
 .wl-dynamic .wl-banner ul li {
     position: relative;
 }
-
-.wl-dynamic .wl-banner ul li a {}
 
 .wl-dynamic .wl-banner ul li a img {
     width: 100%;
@@ -113,7 +115,7 @@
 
 .wl-dynamic .wl-hot-topic .wl-topic figure img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .wl-dynamic .wl-hot-topic .wl-topic-list .title {
