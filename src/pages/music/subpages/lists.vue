@@ -85,7 +85,7 @@
 </template>
 
 <script>
-
+import '../../../assets/scss/scssBypages/lists/lists.scss';
     export default {
         
     }
