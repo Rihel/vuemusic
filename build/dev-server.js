@@ -77,7 +77,7 @@ devMiddleware.waitUntilValid(() => {
     opn(uri)
   }
   _resolve()
-})
+});
 
 var server = app.listen(port)
 
