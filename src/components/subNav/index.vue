@@ -3,43 +3,44 @@
     作者：Lewis
 -->
 <template>
-  <ul class="zql-hot">
-    <li v-for="navs,index in subNavs">
-      <router-link :to="navs.path">{{navs.text}}</router-link>
-    </li>
-
-  </ul>
+  <div class="subnav">
+    <ul class="zql-hot">
+      <li v-for="item,index in navs" @click="moveActive(index)">
+        <router-link :to="item.path">{{item.text}}</router-link>
+      </li>
+      <div class="move" :style="{left:isActive*25+'%'}"></div>
+    </ul>
+  </div>
 </template>
 
 <script>
   export default {
     props: ['navs'],
-    data() {
-      return {
-        subNavs: [{
-            text: '热门推荐',
-            path: './recommendation'
-          },
-          {
-            text: '榜单',
-            path: './lists'
-          },
-          {
-            text: '歌单',
-            path: './songSheet'
-          },
-          {
-            text: '电台',
-            path: './radioStation'
-          }
-        ]
-      }
-    }
+    data(){
+     return {
+       isActive:0
+     }
+  },
+  methods:{
+    moveActive(index){
+      this.isActive=index;
+    } 
+   }
   }
-
 </script>
 
 <style lang="scss">
-
+  .zql-hot {
+    position: relative;
+    .move {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 25%;
+      height: 4px;
+      background-color: #b30000;
+      transition: all 0.5s;
+    }
+  }
 
 </style>

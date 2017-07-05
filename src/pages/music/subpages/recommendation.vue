@@ -2,9 +2,7 @@
   <!--推荐页面-->
   <!--作者：Lewis-->
   <div>
-    <div class="zql-banner">
-      <img src="../../../assets/img/banner.png" alt="">
-    </div>
+    <banner :banners="banners"></banner>
     <div class="zql-content">
       <div class="zql-items">
         <figure>
@@ -26,29 +24,9 @@
           <a class="zql-more" href="#">更多 ></a>
         </div>
         <div class="zql-s-items">
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
-          </figure>
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
-          </figure>
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
-          </figure>
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
-          </figure>
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
-          </figure>
-          <figure>
-            <img src="../../../assets/img/pic1.png" alt="">
-            <figcaption>苏打绿陪你一起走过在每一个难忘的瞬间</figcaption>
+          <figure v-for="item,index in personalized">
+            <img :src="item.picUrl" alt="">
+            <figcaption>{{item.name}}</figcaption>
           </figure>
         </div>
       </div>
@@ -57,8 +35,32 @@
 </template>
 
 <script>
+import banner from '../../../components/banner'
 export default {
-
+  components:{
+    banner,
+  },
+  data(){
+    return {
+      banners:[],
+      personalized: [],
+    }
+  },
+  created() {
+    this.$http.get('http://localhost:3000/banner')
+    .then(data=>{
+      if(data.data.code===200){
+        this.banners=data.data.banners
+      }
+      return this.$http.get('http://localhost:3000/personalized')
+    })
+    .then(data=>{
+       if(data.data.code===200){
+         console.log(data)
+         this.personalized=data.data.result
+      }
+    })
+  }
 }
 </script>
 

@@ -13,9 +13,9 @@
   text-align: center;
 }
 
-.router-link-exact-active.active {
+/*.router-link-exact-active.active {
   border-bottom: 4px solid #b30000;
-}
+}*/
 
 .zql-hot li a {
   color: #000;
@@ -88,7 +88,7 @@
 }
 
 .zql-content .zql-sings .zql-s-items figure {
-  text-align: center;
+  text-align: left;
   width: 30%;
   margin: 15px 0;
 }
@@ -99,5 +99,6 @@
 }
 
 .zql-content .zql-sings .zql-s-items figure figcaption {
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 18px;
 }
