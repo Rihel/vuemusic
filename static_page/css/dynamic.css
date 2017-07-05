@@ -1,0 +1,213 @@
+.main {
+    margin-top: 45px;
+}
+
+.wl-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/wl-singer-bg.png) no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -10;
+}
+
+.wl-dynamic .wl-banner {
+    height: 150px;
+}
+
+.wl-dynamic .wl-banner ul {}
+
+.wl-dynamic .wl-banner ul li {
+    position: relative;
+}
+
+.wl-dynamic .wl-banner ul li a {}
+
+.wl-dynamic .wl-banner ul li a img {
+    width: 100%;
+    height: 150px;
+}
+
+.wl-dynamic .wl-banner ul li .mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 19px 35px;
+    background: rgba(0, 0, 0, .3);
+}
+
+.wl-dynamic .wl-banner ul li .mark .info {
+    padding: 36px 24px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.wl-dynamic .wl-banner ul li .mark h3 {
+    font-size: 20px;
+    color: #fff;
+}
+
+.wl-dynamic .wl-banner ul li .mark span {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 15px;
+    text-align: right;
+}
+
+.wl-dynamic .wl-hot-topic .titles {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.wl-dynamic .wl-hot-topic .titles h2 {
+    font-size: 18px;
+}
+
+.wl-dynamic .wl-hot-topic .titles a {
+    display: flex;
+    align-items: center;
+    color: #535353;
+}
+
+.wl-dynamic .wl-hot-topic .titles a i {
+    margin-left: 10px;
+}
+
+.wl-dynamic .wl-hot-topic .titles a i.fa {
+    font-size: 14px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic figure {
+    position: relative;
+    width: 48%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic figure figcaption {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 36px;
+    line-height: 1.5em;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, .3);
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic figure img {
+    width: 100%;
+    height: auto;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 10px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title figure {
+    display: flex;
+    align-items: center;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title figure img {
+    width: 38px;
+    height: 100%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title figure .wl-content {
+    margin-left: 15px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title figure figcaption {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #595858;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title figure span {
+    color: #595858;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title .fous span {
+    padding: 2px;
+    font-size: 14px;
+    color: #b30000;
+    background: #e7a173;
+    border-radius: 2px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .title .fous span i {
+    color: #b30000;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list article p {
+    margin-bottom: 8px;
+    line-height: 1.4em;
+    font-size: 14px;
+    color: #010101;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-tag span {
+    padding: 2px;
+    font-size: 14px;
+    color: #b30000;
+    background: #e7a173;
+    border-radius: 2px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-left {
+    width: 50%
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-left img {
+    width: 100%;
+    height: 100%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-right {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    width: 45%;
+    height: 100%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-right a {
+    width: 100%;
+    height: 45%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-right a+a {
+    margin-top: 10%;
+}
+
+.wl-dynamic .wl-hot-topic .wl-topic-list .wl-share-imgs .imgs-right img {
+    width: 100%;
+    height: 100%;
+}

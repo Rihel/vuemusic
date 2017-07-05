@@ -37,6 +37,7 @@
     background: #b30000;
     width: 100%;
     padding: 10px 0;
+    z-index: 100;
 }
 
 .header ul {
