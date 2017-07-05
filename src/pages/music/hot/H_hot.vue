@@ -152,12 +152,25 @@ export default {
                 mousewheelControl: true,
                 observeParents: true,
             },
-            swiperSlides: [1, 2, 3, 4, 5]
+            swiperSlides: [1, 2, 3, 4, 5],
+            recommendList:[],
         }
+    },
+    beforeCreate() {
+
+    },
+    created() {
+        this.$http.get('http://localhost:3000/personalized')
+            .then(function (data) {
+                console.log(data)
+                this.recommendList=data.body.result
+            })
+    },
+    beforeMount() {
+
     },
     mounted() {
         setInterval(() => {
-            console.log('simulate async data')
             let swiperSlides = this.swiperSlides
             if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
         }, 3000)
