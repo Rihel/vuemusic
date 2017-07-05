@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
+<!--<<<<<<< HEAD
   <navTop></navTop>
 =======
   
->>>>>>> 86dcac3250bd2cde041b1a1d83b1e395a644f07a
+>>>>>>> 86dcac3250bd2cde041b1a1d83b1e395a644f07a-->
     <router-view></router-view>
   </div>
 </template>

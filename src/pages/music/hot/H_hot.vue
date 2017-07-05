@@ -22,19 +22,7 @@
                 <li>电台</li>
             </ul>
             <div class="main-content">
-                <swiper :options="swiperOption">
-                    <swiper-slide>
-                        <img class="banner" src="./hot-banner.png" alt="fff">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img class="banner" src="./hot-banner.png" alt="fff">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img class="banner" src="./hot-banner.png" alt="fff">
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
-    
+                <banner></banner>
                 <div class="classify">
                     <div class="song-recommend">
                         <img src="./hot-radio.png" alt="fff">
@@ -49,72 +37,10 @@
                         <p>歌曲</p>
                     </div>
                 </div>
-                <div class="recommend-title">
-                    <p class="main-title">
-                        <img src="./hot-music-icon.png" alt="fff">推荐歌单</p>
-                    <p class="sub-title">更多></p>
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                </div>
-                <div class="recommend-title">
-                    <p class="main-title">
-                        <img src="./hot-music-icon.png" alt="fff">推荐歌单</p>
-                    <p class="sub-title">更多></p>
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <img src="./hot-cover1.png" alt="fff">
-                        <p>苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                </div>
+                <recommendList></recommendList>
+                <oneOnly></oneOnly>
+                <mv></mv>
+                <DJ></DJ>
             </div>
         </section>
     
@@ -134,47 +60,20 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import banner from '../../../components/music/hot/banner/banner'
+import recommendList from '../../../components/music/hot/recommendSong/recommendSong'
+import oneOnly from '../../../components/music/hot/recommendOnly/recommendOnly'
+import mv from '../../../components/music/hot/recommendMv/recommendMv'
+import DJ from '../../../components/music/hot/recommendDJ/recommendDJ'
 
 export default {
     components: {
-        swiper,
-        swiperSlide
+        banner: banner,
+        recommendList: recommendList,
+        oneOnly: oneOnly,
+        mv: mv,
+        DJ: DJ,
     },
-    name: 'carrousel',
-    data() {
-        return {
-            swiperOption: {
-                autoplay: 1500,
-                setWrapperSize: true,
-                pagination: '.swiper-pagination',
-                paginationClickable: true,
-                mousewheelControl: true,
-                observeParents: true,
-            },
-            swiperSlides: [1, 2, 3, 4, 5],
-            recommendList:[],
-        }
-    },
-    beforeCreate() {
-
-    },
-    created() {
-        this.$http.get('http://localhost:3000/personalized')
-            .then(function (data) {
-                console.log(data)
-                this.recommendList=data.body.result
-            })
-    },
-    beforeMount() {
-
-    },
-    mounted() {
-        setInterval(() => {
-            let swiperSlides = this.swiperSlides
-            if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
-        }, 3000)
-    }
 }
 
 </script>

@@ -4,6 +4,7 @@ header {
   left: 0;
   width: 100%;
   background-color: #b30000;
+  z-index: 999;
   ul {
     display: flex;
     height: 4rem;
@@ -42,7 +43,8 @@ header {
     }
   }
   .main-content {
-    background-color: rgba(255, 255, 255, .6);
+    padding-bottom: 4.5rem;
+    background-color: rgba(255, 255, 255, .7);
     .banner {
       width: 100%;
     }
@@ -85,16 +87,105 @@ header {
     .recommend-songlist {
       display: flex;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
       .recommend-songitem {
         width: 30%;
+        margin-bottom: 1rem;
+        img {
+          width: 100%;
+        }
+        figcaption {
+          height: 2.55rem;
+          margin-top: 0.5rem;
+          line-height: 1.4rem;
+          font-size: 1.1rem;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+    .normal-title {
+      height: 2rem;
+      margin: 3rem 0 1rem;
+      border-left: 0.25rem solid red;
+      font-size: 1.25rem;
+      text-indent: 1.25rem;
+      align-items: center;
+    }
+    .recommend-oneOnly {
+      display: flex;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      .recommend-songitem {
+        width: 48%;
+        margin-bottom: 2rem;
         img {
           width: 100%;
         }
         p {
-          height: 2.45rem;
+          height: 2.55rem;
           margin-top: 0.5rem;
+          line-height: 1.4rem;
+          font-size: 1.1rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+      .huge-screen {
+        width: 100%;
+      }
+    }
+
+    .recommend-mv {
+      display: flex;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      figure {
+        width: 48%;
+        margin-bottom: 2rem;
+        img {
+          width: 100%;
+        }
+        figcaption {
+          margin: 0.5rem 0 1rem;
+          p {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-indent: 0.25rem;
+            overflow: hidden;
+          }
+          .singer-name {
+            color: #777;
+          }
+        }
+      }
+    }
+  
+    .recommend-djprogram {
+      display: flex;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      figure {
+        width: 30%;
+        margin-bottom: 2rem;
+        img {
+          width: 100%;
+        }
+        figcaption {
+          height: 2.55rem;
+          margin-top: 0.5rem;
+          line-height: 1.4rem;
           font-size: 1.1rem;
           text-align: center;
           text-overflow: ellipsis;
