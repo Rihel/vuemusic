@@ -80,21 +80,23 @@ mark,
 audio,
 video,
 main {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	font-size: 12px;
-	vertical-align: baseline;
-	font-weight: normal;
-	font-family: "微软雅黑";
-	font-style: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal;
+  font-family: "微软雅黑";
+  font-style: normal;
 }
 
 img {
-	display: block;
+  display: block;
 }
+
+
 /*HTML5的新标签都是具有语义化，用途和div类似*/
+
 article,
 aside,
 details,
@@ -107,45 +109,48 @@ menu,
 nav,
 main,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-
-*{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+html,
+body {
+  font-size: 62.5%;
 }

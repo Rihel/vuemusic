@@ -17,7 +17,7 @@ header {
   }
 }
 
-.jem-hot-main {
+.yao-radio-main {
   margin-top: 4rem;
   background: url('./my-bg.png') no-repeat center;
   background-size: cover;
@@ -48,57 +48,63 @@ header {
     }
     .classify {
       display: flex;
-      height: 12.1rem;
+      height: 6.1rem;
       border-bottom: 0.025rem solid #ddd9d2;
       justify-content: space-around;
       align-items: center;
+      .raido-recommend {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+      .radio-classify {
+        border-right: 0.025rem solid #ddd9d2;
+      }
       img {
-        width: 6.45rem;
+        width: 4rem;
+        margin-right: 1rem;
       }
       p {
-        margin-top: 1rem;
         font-size: 1.25rem;
-        text-align: center;
       }
     }
     .recommend-title {
-      display: flex;
-      height: 3.05rem;
-      padding: 0 1.25rem;
-      margin-top: 1rem;
-      justify-content: space-between;
+      margin: 3rem 0 1rem;
+      border-left: 0.25rem solid red;
+      text-indent: 1.25rem;
       align-items: center;
-      img {
-        display: inline-block;
-        width: 0.9rem;
-        margin-right: 1rem;
-        vertical-align: middle;
-        transform: translateY(-20%)
-      }
-      .main-title {
-        font-size: 1.5rem;
-      }
-      .sub-title {
-        font-size: 1rem;
-      }
     }
     .recommend-songlist {
       display: flex;
       margin-bottom: 1.5rem;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       .recommend-songitem {
-        width: 30%;
-        img {
-          width: 100%;
-        }
-        p {
-          height: 2.45rem;
-          margin-top: 0.5rem;
-          font-size: 1.1rem;
-          text-align: center;
-          text-overflow: ellipsis;
-          overflow: hidden;
+        width: 10rem;
+        .item-cover {
+          position: relative;
+          .cover-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
+            line-height: 1.8rem;
+            font-size: 1rem;
+            color: #fff;
+            text-indent: 0.25rem
+          }
+          img {
+            width: 100%;
+          }
+          p.cover-describe {
+            height: 2.45rem;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
         }
       }
     }
@@ -143,3 +149,4 @@ footer {
     }
   }
 }
+
