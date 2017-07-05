@@ -1,0 +1,3 @@
+@function rem($num) {
+  @return $num/20+rem;
+}

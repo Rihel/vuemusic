@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-<!--<<<<<<< HEAD
-  <navTop></navTop>
-=======
-  
->>>>>>> 86dcac3250bd2cde041b1a1d83b1e395a644f07a-->
-    <router-view></router-view>
+
+  <router-view></router-view>
+  <myfooter></myfooter>
   </div>
 </template>
 
 <script>
-import navTop from './components/navTop/navTop'
+import navTop from './components/J_navTop/navTop'
+import footer from './components/J_footer/footer'
 export default {
   name: 'app',
   components:{
     navTop:navTop,
+    myfooter:footer,
 
   }
 }
