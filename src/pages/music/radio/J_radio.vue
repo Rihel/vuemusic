@@ -22,7 +22,18 @@
                 <li class="active">电台</li>
             </ul>
             <div class="main-content">
-                <img class="banner" src="./radio-banner.png" alt="fff">
+                <swiper :options="swiperOption">
+                    <swiper-slide>
+                        <img class="banner" src="./radio-banner.png" alt="fff">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img class="banner" src="./radio-banner.png" alt="fff">
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img class="banner" src="./radio-banner.png" alt="fff">
+                    </swiper-slide>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                </swiper>
                 <div class="classify">
                     <div class="raido-recommend radio-classify">
                         <img src="./radio-radio.png" alt="fff">
@@ -150,9 +161,36 @@
 </template>
 
 <script>
-export default {
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
+export default {
+    components: {
+        swiper,
+        swiperSlide
+    },
+    name: 'carrousel',
+    data() {
+        return {
+            swiperOption: {
+                autoplay: 1500,
+                setWrapperSize: true,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                mousewheelControl: true,
+                observeParents: true,
+            },
+            swiperSlides: [1, 2, 3, 4, 5]
+        }
+    },
+    mounted() {
+        setInterval(() => {
+            console.log('simulate async data')
+            let swiperSlides = this.swiperSlides
+            if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
+        }, 3000)
+    }
 }
+
 
 </script>
 
