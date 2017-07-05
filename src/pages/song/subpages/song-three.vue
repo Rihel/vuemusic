@@ -1,0 +1,62 @@
+<template>
+  <div>
+    <div class="yf-view">
+      <div class="container">
+
+
+        <div class="yf-main">
+          <div class="yf-singer">
+            <img src="../../../assets/img/pt.png" alt="">
+
+            <div class="yf-music">
+              <div class="music-top">
+                歌手：苏打绿
+              </div>
+              <div class="music-bottom">
+                专辑：春·日光
+              </div>
+            </div>
+          </div>
+
+          <p>暂无歌曲推荐信息</p>
+        </div>
+
+        <div class="yf-opation">
+          <a class="fa fa-heart-o" href="#"></a>
+          <a class="fa fa-arrow-down" href="#"></a>
+          <a class="fa fa-chain-broken" href="#"></a>
+          <a class="fa fa-commenting-o" href="#"></a>
+          <a href="#">···</a>
+        </div>
+      </div>
+    </div>
+    <div class="yf-footer">
+      <div class="container">
+        <div class="yf-rate">
+          <div class="now-rate">00:00</div>
+          <div class="view-rate">
+            <div class="zero">
+
+            </div>
+          </div>
+          <div class="all-rate">00:00</div>
+        </div>
+
+        <div class="yf-control">
+          <a class="fa fa-random" href="#"></a>
+          <a class="fa fa-step-backward" href="#"></a>
+          <a class="fa fa-play-circle-o" href="#"></a>
+          <a class="fa fa-step-forward" href="#"></a>
+          <a class="fa fa-list-ul controls" href="#"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
