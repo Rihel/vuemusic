@@ -1,110 +1,163 @@
 <template>
   <div>
-    <banner :banners="banners"></banner>
-    <div class="classify">
-      <div class="classify-item">
-        <lazy-image :src="require('./icon1.png')"></lazy-image>
-        <span>每日歌曲推荐</span>
-      </div>
-      <div class="classify-item">
-        <lazy-image :src="require('./icon2.png')"></lazy-image>
-        <span>每日歌曲推荐</span>
-      </div>
-      <div class="classify-item">
-        <lazy-image :src="require('./icon3.png')"></lazy-image>
-        <span>每日歌曲推荐</span>
-      </div>
-    </div>
-    <div class="recommend-item">
-      <div class="title">
-        <div class="title-left">
-          <i class="fa fa-music"></i>
-          <span>推荐歌单</span>
+  
+    <template v-if="isDone">
+      <banner :banners="banners"></banner>
+      <div class="classify">
+        <div class="classify-item">
+          <lazy-image :src="require('./icon1.png')"></lazy-image>
+          <span>每日歌曲推荐</span>
         </div>
-        <div class="title-right">
-          更多
-          <i class="fa fa-angle-right"></i>
+        <div class="classify-item">
+          <lazy-image :src="require('./icon2.png')"></lazy-image>
+          <span>每日歌曲推荐</span>
+        </div>
+        <div class="classify-item">
+          <lazy-image :src="require('./icon3.png')"></lazy-image>
+          <span>每日歌曲推荐</span>
         </div>
       </div>
-      <div class="list">
-        <figure class="item" v-for="item,index in personalized ">
-          <lazy-image :src="item.picUrl"></lazy-image>
-          <figcaption>
-            {{item.name}}
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="recommend-item">
-      <div class="title">
-        <div class="title-left">
-          <i class="fa fa-music"></i>
-          <span>推荐音乐</span>
+      <div class="recommend-item">
+        <div class="title">
+          <div class="title-left">
+            <i class="fa fa-music"></i>
+            <span>推荐歌单</span>
+            <i class="fa fa-angle-right"></i>
+          </div>
         </div>
-        <div class="title-right">
-          更多
-          <i class="fa fa-angle-right"></i>
+        <div class="list">
+          <figure class="item" v-for="item,index in personalized ">
+            <lazy-image :src="item.picUrl"></lazy-image>
+            <figcaption>
+              {{item.name}}
+            </figcaption>
+          </figure>
         </div>
       </div>
-      <div class="list">
-        <figure class="item" v-for="item,index in newsong ">
-          <img :src="item.picUrl" />
-          <figcaption>
-            {{item.name}}
-          </figcaption>
-        </figure>
+      <div class="recommend-item privatecontent">
+        <div class="title">
+          <div class="title-left">
+            <i class="fa fa-music"></i>
+            <span>独家放送</span>
+            <i class="fa fa-angle-right"></i>
+          </div>
+  
+        </div>
+        <div class="list">
+          <figure class="item" v-for="item,index in privatecontent ">
+            <lazy-image :src="item.picUrl"></lazy-image>
+            <figcaption>
+              {{item.name}}
+            </figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
+      <div class="recommend-item mvs">
+        <div class="title">
+          <div class="title-left">
+            <i class="fa fa-music"></i>
+            <span>推荐MV</span>
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="list">
+          <figure class="item" v-for="item,index in mvs ">
+            <lazy-image :src="item.picUrl"></lazy-image>
+            <figcaption>
+              <small> {{item.name}}</small>
+              <span>{{item.artistName}}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="recommend-item mvs">
+        <div class="title">
+          <div class="title-left">
+            <i class="fa fa-music"></i>
+            <span>推荐电台</span>
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="list">
+          <figure class="item" v-for="item,index in djprogram ">
+            <lazy-image :src="item.picUrl"></lazy-image>
+            <figcaption>
+              <small> {{item.name}}</small>
+              <span>{{item.artistName}}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="recommend-item mvs">
+        <div class="title">
+          <div class="title-left">
+            <i class="fa fa-music"></i>
+            <span>推荐节目</span>
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="list">
+          <figure class="item" v-for="item,index in recommend ">
+            <lazy-image :src="item.coverUrl"></lazy-image>
+            <figcaption>
+              <small> {{item.name}}</small>
+              <span>{{item.artistName}}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </template>
+    <loading v-if="!isDone"></loading>
   </div>
 </template>
 
 <script>
 import banner from "../../../components/banner";
 import lazyImage from "../../../components/lazyImage";
+import loading from "../../../components/loading";
 export default {
   name: 'app',
   components: {
     banner,
-    'lazy-image': lazyImage
+    'lazy-image': lazyImage,
+    loading
   },
   data() {
     return {
       banners: [],
       personalized: [],
-      newsong: []
+      newsong: [],
+      privatecontent: [],
+      mvs: [],
+      djprogram: [],
+      recommend: [],
+      isDone: false
     }
   },
+
   created() {
 
-    this.$http.get('http://localhost:3000/banner').
-      then(data => {
-        if (data.data.code === 200) {
-          console.log(data.data.banners)
-          this.banners = data.data.banners
-        }
-      });
-    this.$http.get('http://localhost:3000/personalized')
-      .then(data => {
-        if (data.data.code === 200) {
-          console.log(data.data.result)
-          this.personalized = data.data.result
-        }
-      })
-    this.$http.get('http://localhost:3000/personalized/newsong')
-      .then(data => {
-        if (data.data.code === 200) {
-          console.log(data.data.result)
-          this.newsong = data.data.result
-        }
-      })
+    if (!this.isDone) {
+      Promise.all([this.$http.get('http://localhost:3000/banner'),
+      this.$http.get('http://localhost:3000/personalized'),
 
-    // Promise.all(self.$http.get('http://localhost:3000/banner'),self.$http.get('http://localhost:3000/personalized'), self.$http.get('http://localhost:3000/personalized/newsong'))
-    // .then(function(banners,personalized,newsong){
-    //   console.log(banners,performance,newsong)
-    // })
+      this.$http.get('http://localhost:3000/personalized/privatecontent'),
+      this.$http.get('http://localhost:3000/personalized/mv'),
+      this.$http.get('http://localhost:3000/personalized/djprogram'),
+      this.$http.get('http://localhost:3000/program/recommend')
+      ])
+        .then((datas) => {
+          // console.log(datas);
+          this.banners = datas[0].data.banners;
+          this.personalized = datas[1].data.result;
+          this.privatecontent = datas[2].data.result;
+          this.mvs = datas[3].data.result;
+          this.djprogram = datas[4].data.result;
+          this.recommend = datas[5].data.programs;
+          this.isDone = true;
 
-
-
+        })
+    }
     //    跨域  主机名或者端口号或者域名不一致的时候，通过ajax请求数据，则会被限制
     /*
         本地防护策略
@@ -138,7 +191,7 @@ export default {
 }
 
 .recommend-item {
-  padding: 10px;
+  padding: 10px 0;
   .title {
     display: flex;
     justify-content: space-between;
@@ -176,6 +229,45 @@ export default {
         height: 2.3em;
         line-height: 1.2;
         overflow: hidden;
+      }
+    }
+  }
+}
+
+.privatecontent {
+  .list {
+    .item {
+      width: 50%;
+      padding: 10px 0;
+      &:nth-of-type(3) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.mvs {
+  .list {
+
+    .item {
+      width: 50%;
+      &:nth-of-type(2n) {
+        padding-left: 2px;
+      }
+      &:nth-of-type(2n-1) {
+        padding-right: 2px;
+      }
+      figcaption {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+        small {
+          margin: 5px 0;
+        }
+        span {
+          font-size: 12px;
+        }
       }
     }
   }

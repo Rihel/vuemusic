@@ -1,16 +1,18 @@
 <template>
-    <img ref="lazyImage" :src="finishSrc" />
+    <img ref="lazyImage" :style="{height:height}" class="lazyImage" :src="finishSrc" />
 </template>
 <script>
 export default {
     props: ['src'],
     data() {
         return {
-            finishSrc: ''
+            finishSrc: require('./default-image.png'),
+            isShow: false,
+            height: '100%'
         }
     },
     created() {
-        console.log(this.src);
+
 
         //  怎么判断到达可视区域，如何替换图片路径
     },
@@ -20,8 +22,9 @@ export default {
         this.show(trueDom);
         let timerId;
         const callback = () => {
-            console.log(1);
-            this.show(trueDom);
+            if (!this.isShow) {
+                this.show(trueDom);
+            }
         }
 
         window.addEventListener('scroll', () => {
@@ -34,13 +37,20 @@ export default {
     },
     methods: {
         show(trueDom) {
+
+            console.log(1);
             if (trueDom.getBoundingClientRect().top < window.screen.height) {
                 this.finishSrc = this.src;
+                this.isShow = true;
+                this.height='auto'
             }
+
         }
     }
 }
 </script>
 <style lang="scss">
-
+.lazyImage {
+    width: 100%;
+}
 </style>

@@ -14,7 +14,8 @@ export default new Router({
   routes: [{
       path: '/',
       name: 'music',
-      component: Music
+      component: Music,
+      redirect:'/music/recommendation'
     }, musicRouter,
     dynamicRouter, SearchRouter, UserCenterRouter
   ],
