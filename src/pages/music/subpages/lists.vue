@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <!--<div>
       <span class="alert1">此乃榜单页面</span>
       <br>
@@ -12,9 +11,6 @@
       <router-link class="alert" to="/">传送门</router-link>
     </div>-->
   
-=======
-
->>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155
   <!--榜单页面-->
   <!--作者：Lewis-->
   
@@ -55,7 +51,7 @@
 </template>
 
 <script>
-import '../../../assets/scss/scssBypages/lists/lists.scss';
+// import '../../../assets/scss/scssBypages/lists/lists.scss';
 export default {
   components: {
 
@@ -76,7 +72,6 @@ export default {
           this.list.push(data.data.result);
          
         }
-
         })
     }
      console.log(this.list);
@@ -85,19 +80,6 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
-<style lang="">
-/*.alert1 {
-    margin: 50px;
-    color: firebrick;
-    font-size: 30px;
-  }
-
-  .alert {
-    margin: 50px;
-    color: dodgerblue;
-    font-size: 50px;
-  }*/
+<style lang="scss">
+          
 </style>
-=======
->>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155
