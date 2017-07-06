@@ -1,18 +1,4 @@
 <template>
-    <div>
-        <!--<header>
-                <ul class="nav">
-                    <li class="sub-nav">
-                        <i class="fa fa-bars"></i>
-                    </li>
-                    <li>我的</li>
-                    <li class="active">音乐</li>
-                    <li>动态</li>
-                    <li class="search-nav">
-                        <i class="fa fa-search"></i>
-                    </li>
-                </ul>
-            </header>-->
         <section class="yao-radio-main">
             <div class="main-content">
                 <banner> </banner>
@@ -42,20 +28,6 @@
                 </div>
             </div>
         </section>
-    
-        <footer>
-            <img class="yao-cover" src="./my-cover.png" alt="">
-            <div class="yao-song-info">
-                <p class="yao-song-name">不该（with AMEI）</p>
-                <p class="yao-song-singer">周杰伦</p>
-            </div>
-            <div class="yao-play-ctrl">
-                <i class="fa fa-play"></i>
-                <i class="fa fa-step-forward"></i>
-                <i class="fa fa-list"></i>
-            </div>
-        </footer>
-    </div>
 </template>
 
 <script>

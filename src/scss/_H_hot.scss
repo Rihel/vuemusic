@@ -1,25 +1,7 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #b30000;
-  z-index: 999;
-  ul {
-    display: flex;
-    height: 4rem;
-    justify-content: space-around;
-    align-items: center;
-    li {
-      font-size: 1.65rem;
-      font-weight: bold;
-      color: rgba(255, 255, 255, .5);
-    }
-  }
-}
+
 
 .jem-hot-main {
-  margin-top: 7.5rem;
+  margin-top: 3.5rem;
   background: url('./my-bg.png') no-repeat center;
   background-size: cover;
   .main-content {
@@ -176,41 +158,4 @@ header {
   }
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  height: 4.35rem;
-  padding: 0.3rem;
-  background: rgba(255, 255, 255, .9);
-  justify-content: space-between;
-  img {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-  .jem-song-info,
-  .jem-play-ctrl {
-    flex-grow: 2;
-  }
-  .jem-song-info {
-    p {
-      text-indent: 1rem;
-    }
-    p.jem-song-name {
-      padding: 1rem 0 0.5rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-  }
-  .jem-play-ctrl {
-    display: flex;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    i {
-      font-size: 2rem;
-      color: #b30000;
-    }
-  }
-}
+

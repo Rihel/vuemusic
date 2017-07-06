@@ -1,6 +1,5 @@
 <template>
     <div>
-    
         <section class="jem-hot-main">
             <div class="main-content">
                 <banner></banner>
@@ -24,19 +23,6 @@
                 <DJ></DJ>
             </div>
         </section>
-    
-        <footer>
-            <img class="jem-cover" src="./my-cover.png" alt="">
-            <div class="jem-song-info">
-                <p class="jem-song-name">不该（with AMEI）</p>
-                <p class="jem-song-singer">周杰伦</p>
-            </div>
-            <div class="jem-play-ctrl">
-                <i class="fa fa-play"></i>
-                <i class="fa fa-step-forward"></i>
-                <i class="fa fa-list"></i>
-            </div>
-        </footer>
     </div>
 </template>
 

@@ -8,6 +8,7 @@ import Hot from '../pages/music/hot/H_hot';
 export default {
   path: '/music',
   component: Music,
+  redirect: '/music/hot',
   children: [{
       path: '/music/hot',
       component: Hot
