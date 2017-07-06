@@ -24,13 +24,8 @@
           <a class="zql-more" href="#">更多 ></a>
         </div>
         <div class="zql-s-items">
-<<<<<<< HEAD
           <figure v-for="item,index in personalized">
             <lazy-image :src="item.picUrl"></lazy-image>
-=======
-          <figure v-for="item,index in personalized" :key=index>
-            <img :src="item.picUrl" alt="">
->>>>>>> 63f85ca2f79cb731696e1b164f4fae02f01e0776
             <figcaption>{{item.name}}</figcaption>
           </figure>
         </div>
