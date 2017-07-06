@@ -24,63 +24,9 @@
                     <i class="fa fa-chevron-right c-more"></i>
                 </li>
               
-                 <!--<li class="c-item" v-for="item,index in hotList " >
-                    <div class="c-billboard">
-                        <div class="c-img">
-                            <img :src="item.coverImgUrl" alt="">
-                            <i class="fa fa-play-circle-o"></i>
-                        </div>
-                        <dl>
-                            <dt>{{item.name}}</dt>
-                            <dd>
-                                <span class="NO-1">1</span>告白气球-　周杰伦</dd>
-                            <dd>
-                                <span class="NO-2">2</span>天若有情 - Lin</dd>
-                            <dd>
-                                <span class="NO-3">3</span>July - 吴亦凡</dd>
-                        </dl>
-                    </div>
-                    <i class="fa fa-chevron-right c-more"></i>
-                </li>
                 
-                  <li class="c-item" v-for="item,index in originList " >
-                    <div class="c-billboard">
-                        <div class="c-img">
-                            <img :src="item.coverImgUrl" alt="">
-                            <i class="fa fa-play-circle-o"></i>
-                        </div>
-                        <dl>
-                            <dt>{{item.name}}</dt>
-                            <dd>
-                                <span class="NO-1">1</span>告白气球-　周杰伦</dd>
-                            <dd>
-                                <span class="NO-2">2</span>天若有情 - Lin</dd>
-                            <dd>
-                                <span class="NO-3">3</span>July - 吴亦凡</dd>
-                        </dl>
-                    </div>
-<<<<<<< HEAD
-                    <i class="fa fa-chevron-right c-more"></i>
-                </li>-->
             </ul>
         </div>
-=======
-                </div>
-                     <div class="play-mo">
-                    <img class="img7" src="./simg8.png" alt="">
-                </div>
-                </div>
-                 <div class="play">
-                    <div class="play-to">
-                    <img class="img3" src="./simg7.png" alt="">
-                    <img src="./simg9.png" alt="">
-                </div>
-                     <div class="play-to">
-                    <img class="img3" src="./simg8.png" alt="">
-                </div>
-                </div>    
-                </div>                   
->>>>>>> 91c8edd5d5faf8f3561341003c7f4cae2ec05d07
     </main>
 </template>
 <script>
