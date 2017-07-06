@@ -1,5 +1,3 @@
-
-
 .jem-hot-main {
   margin-top: 7.5rem;
   background: url('./my-bg.png') no-repeat center;
@@ -53,6 +51,7 @@
       justify-content: space-around;
       align-items: center;
       .recommend-songitem {
+        position: relative;
         width: 30%;
         margin-bottom: 1rem;
         img {
@@ -66,6 +65,17 @@
           text-align: center;
           text-overflow: ellipsis;
           overflow: hidden;
+          .play-count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+            text-align: right;
+            color: #fff;
+            font-size: 1.25rem;
+          }
         }
       }
     }
@@ -102,7 +112,6 @@
         width: 100%;
       }
     }
-
     .recommend-mv {
       display: flex;
       margin-bottom: 1.5rem;
@@ -110,6 +119,7 @@
       justify-content: space-around;
       align-items: center;
       figure {
+        position: relative;
         width: 48%;
         margin-bottom: 2rem;
         img {
@@ -128,10 +138,20 @@
           .singer-name {
             color: #777;
           }
+          .play-count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+            text-align: right;
+            color: #fff;
+            font-size: 1.25rem;
+          }
         }
       }
     }
-  
     .recommend-djprogram {
       display: flex;
       margin-bottom: 1.5rem;
@@ -157,5 +177,3 @@
     }
   }
 }
-
-

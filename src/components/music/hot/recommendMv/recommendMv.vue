@@ -10,6 +10,8 @@
                 <figcaption>
                     <p class="song-name"> {{item.name}}</p>
                     <p class="singer-name"> {{item.artistName}}</p>
+                    <p class="play-count">
+                        <i class="fa fa-video-camera"></i>&nbsp{{Math.floor(item.playCount)}}</p>
                 </figcaption>
             </figure>
         </div>
@@ -27,6 +29,7 @@ export default {
         this.$http.get('http://localhost:3000/personalized/mv')
             .then(function (data) {
                 this.newMv = data.body.result;
+                console.log(this.newMv)
             });
     },
 }

@@ -10,6 +10,7 @@
                 <img :src="item.picUrl" alt="fff">
                 <figcaption>
                     {{item.name}}
+                    <p class="play-count"><i class="fa fa-headphones"></i>&nbsp{{Math.floor(item.playCount)}}</p>
                 </figcaption>
             </figure>
         </div>

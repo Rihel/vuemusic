@@ -1,12 +1,12 @@
 <template>
     <!--音乐>歌单 的页面组件
-    作者：陈嘉验-->
+        作者：陈嘉验-->
     <main>
         <div class="container">
             <ul class="c-top">
     
                 <li class="c-item" v-for="item,index in newList">
-                    <div class="c-billboard" >
+                    <div class="c-billboard">
                         <div class="c-img">
                             <img :src="item.body.result.coverImgUrl" alt="">
                             <i class="fa fa-play-circle-o"></i>
@@ -56,55 +56,59 @@ export default {
         this.$http.get('http://localhost:3000/top/list?idx=16'),
         this.$http.get('http://localhost:3000/top/list?idx=17'),
         this.$http.get('http://localhost:3000/top/list?idx=18'),
-        this.$http.get('http://localhost:3000/top/list?idx=19'),  
-        this.$http.get('http://localhost:3000/top/list?idx=20'), 
-        this.$http.get('http://localhost:3000/top/list?idx=21'),                       
+        this.$http.get('http://localhost:3000/top/list?idx=19'),
+        this.$http.get('http://localhost:3000/top/list?idx=20'),
+        this.$http.get('http://localhost:3000/top/list?idx=21'),
         ])
-            .then((datas) => {                
-                this.newList=datas;
+            .then((datas) => {
+                this.newList = datas;
             })
     },
 
 }
 </script>
 <style lang="scss">
+@import "../../../scss/_function.scss";
+
 .c-top {
-    margin-top: 100px;
+    width: 100%;
+    margin: rem(150) 0 6rem;
     .c-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 10px 20px 10px;
+        padding: rem(10) 0 rem(10) ;
         border-bottom: 1px solid #c4c3b6;
         .c-billboard {
             display: flex;
+            max-width:95%;
             justify-content: space-between;
             align-items: center;
             .c-img {
                 position: relative;
-                margin-right: 20px;
+                margin-right: rem(30);
                 img {
-                    width: 116px;
-                    height: 116px;
+                    width: rem(216);
+                    height: rem(216);
                 }
                 .fa {
                     position: absolute;
-                    right: 10px;
-                    bottom: 10px;
-                    font-size: 30px;
+                    right: rem(10);
+                    bottom: rem(10);
+                    font-size: rem(80);
                     color: #fff;
                 }
             }
         }
         dl {
             dt {
-                margin-bottom: 20px;
-                font-size: 18px;
+                margin-bottom: rem(30);
+                font-size: rem(38);
                 font-weight: bold;
             }
             dd {
-                margin: 5px 0;
-                font-size: 14px;
+                margin: rem(15) 0;
+                font-size: rem(28);
                 span {
                     margin-right: 10px;
                     font-size: 14px;
