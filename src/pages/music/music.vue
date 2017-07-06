@@ -8,7 +8,7 @@
 
 <script>
 import navTop from '../../components/J_navTop/navTop'
-import musicnav from '../../components/music/musicNav/musicNav'
+import musicnav from '../../components/mainNav/mainNav'
 export default {
   components: {
     navTop, musicnav,

@@ -19,7 +19,47 @@
 
 
 export default {
+    data() {
+        return {
+            music: [
+                {
+                    path: '/music/hot',
+                    title: '热门推荐'
+                },
+                {
+                    path: '/music/top',
+                    title: "榜单"
+                },
+                {
+                    path: '/music/list',
+                    title: "歌单",
+                },
+                {
+                    path: '/music/radio',
+                    title: '电台'
+                }
+            ],
+            local: [
+                {
+                    path: '/local/song',
+                    title: '热门推荐'
+                },
+                {
+                    path: '/music/top',
+                    title: "榜单"
+                },
+                {
+                    path: '/music/list',
+                    title: "歌单",
+                },
+                {
+                    path: '/music/radio',
+                    title: '电台'
+                }
+            ]
 
+        }
+    }
 }
 </script>
 
@@ -44,7 +84,6 @@ export default {
             font-size: 1.55rem;
             font-weight: bold;
         }
-     
     }
     li.active {
         border-color: #b30000;
