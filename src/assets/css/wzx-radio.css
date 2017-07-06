@@ -4,47 +4,47 @@
 
 .clearfix:before,
 .clearfix:after {
-    display: block;
-    content: '';
-    clear: both;
+  display: block;
+  content: '';
+  clear: both;
 }
 
 body {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 .main-bg {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -99;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
 }
 
 .header {
-    width: 100%;
-    background: #b30000;
-    color: white;
+  width: 100%;
+  background: #b30000;
+  color: white;
 }
 
 .header .navbar {
-    display: flex;
-    padding-top: 32px;
-    padding-bottom: 15px;
-    justify-content: space-between;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 15px;
+  justify-content: space-between;
 }
 
 .header .navbar li {
-    text-align: left;
+  text-align: left;
 }
 
 .header .navbar li i {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .header .navbar li a {
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 
@@ -54,28 +54,28 @@ body {
 /*********** zql-hot end ****************/
 
 .zql-hot {
-    display: flex;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, .7);
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, .7);
 }
 
 .zql-hot li {
-    width: 25%;
-    padding: 15px 0;
-    text-align: center;
+  width: 25%;
+  padding: 15px 0;
+  text-align: center;
 }
 
 .zql-hot li.active {
-    border-bottom: 4px solid #b30000;
+  border-bottom: 4px solid #b30000;
 }
 
 .zql-hot li a {
-    color: #000;
-    font-size: 20px;
+  color: #000;
+  font-size: 20px;
 }
 
 .zql-hot li.active a {
-    color: #b30000;
+  color: #b30000;
 }
 
 
@@ -85,112 +85,88 @@ body {
 /*********** wzx-radio start ****************/
 
 .wzx-radio {
-    width: 100%;
-    padding: 10px;
-    background: rgba(255, 255, 255, .4);
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, .4);
 }
 
 .wzx-radio .radio-choose {
-    width: 100%;
-    padding: 17px;
-    border: 1px solid #d58c88;
-    background: white;
+  width: 100%;
+  padding: 17px;
+  border: 1px solid #d58c88;
+  background: white;
 }
 
 .wzx-radio .radio-choose .choose-left {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .wzx-radio .radio-choose .choose-left i {
-    display: block;
-    float: left;
+  display: block;
+  float: left;
 }
 
 .wzx-radio .radio-choose .choose-left i img {
-    width: 40px;
-    height: 40px;
-    margin-left: 2px;
-    margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 15px;
 }
 
 .wzx-radio .radio-choose .choose-left h3 {
-    float: left;
-    margin-top: 6px;
-    margin-bottom: 5px;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
+  float: left;
+  line-height: 40px;
+  color: black;
+  font-size: 16px;
 }
 
 .wzx-radio .radio-choose .choose-left h6 {
-    float: left;
-    color: #747474;
-    font-size: 14px;
+  float: left;
+  color: #747474;
+  font-size: 14px;
 }
 
-.wzx-radio .radio-groom {
-}
+.wzx-radio .radio-groom {}
 
 .wzx-radio .radio-groom .groom-nav {
-    padding: 10px;
-    padding-top: 20px;
-    border-bottom: 1px solid #cbc9bf;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cbc9bf;
 }
 
-.wzx-radio .radio-groom .groom-nav img {
-    float: left;
-    width: 9px;
-    height: 16px;
-    margin-right: 9px;
+.wzx-radio .radio-groom .groom-nav .nav-red {
+  float: left;
+  width: 5px;
+  height: 17px;
+  margin-left: -20px;
+  background: red;
 }
 
 .wzx-radio .radio-groom .groom-nav span {
-    margin-right: 10px;
-    line-height: 16px;
-    color: black;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.wzx-radio .radio-groom .groom-nav i {
-    line-height: 16px;
-    font-size: 15px;
-    color: #939490;
+  margin-right: 10px;
+  line-height: 16px;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .wzx-radio .radio-groom .groom-ul {
-    padding-left: 10px!important;
+  display: flex;
+  padding: 15px 0;
+  justify-content: space-around;
+  border-bottom: 1px solid #d1bb8d;
 }
 
-.wzx-radio .radio-groom .groom-ul li {
-    float: left;
-    width: 100%;
-    padding: 15px;
-    border-bottom: 1px solid #cbc9bf;
+.wzx-radio .radio-groom .groom-ul figure {
+   text-align: center;
+  width: 25%;
 }
 
-.wzx-radio .radio-groom .groom-ul li img {
-    float: left;
-    width: 75px;
-    height: 75px;
-    margin-right: 15px;
-}
-
-.wzx-radio .radio-groom .groom-ul li h2 {
-    float: left;
-    width: 70%;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    color: black;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.wzx-radio .radio-groom .groom-ul li h4 {
-    float: left;
-    color: #747474;
-    font-size: 14px;
+.wzx-radio .radio-groom .groom-ul figure img {
+   width: 100%;
+  margin-bottom: 10px;
 }
 
 
@@ -200,47 +176,47 @@ body {
 /*********** footer start ****************/
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding-left: 2px;
-    padding-right: 22px;
-    padding-bottom: 5px;
-    background: rgba(255, 255, 255, .7);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-left: 2px;
+  padding-right: 22px;
+  padding-bottom: 5px;
+  background: rgba(255, 255, 255, .7);
 }
 
 .footer .footer-img {
-    float: left;
-    margin-right: 11px;
+  float: left;
+  margin-right: 11px;
 }
 
 .footer .footer-img img {
-    width: 36px;
-    height: 36px;
+  width: 36px;
+  height: 36px;
 }
 
 .footer .song-main {
-    float: left;
+  float: left;
 }
 
 .footer .song-main h2 {
-    line-height: 26px;
-    font-size: 16px;
-    font-weight: bold;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .footer .song-main span {
-    color: #2b2a29;
-    font-size: 12px;
+  color: #2b2a29;
+  font-size: 12px;
 }
 
 .footer .icons {
-    float: right;
-    margin-top: 13px;
+  float: right;
+  margin-top: 13px;
 }
 
 .footer .icons i {
-    margin-left: 20px;
-    color: #b30000;
-    font-size: 20px;
+  margin-left: 20px;
+  color: #b30000;
+  font-size: 20px;
 }
