@@ -37,7 +37,4 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 }
 </script>
 
-<style>
 
-
-</style>

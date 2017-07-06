@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <!--<div>
       <span class="alert1">此乃榜单页面</span>
       <br>
@@ -11,6 +12,9 @@
       <router-link class="alert" to="/">传送门</router-link>
     </div>-->
   
+=======
+
+>>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155
   <!--榜单页面-->
   <!--作者：Lewis-->
   
@@ -81,6 +85,7 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="">
 /*.alert1 {
     margin: 50px;
@@ -94,3 +99,5 @@ export default {
     font-size: 50px;
   }*/
 </style>
+=======
+>>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155

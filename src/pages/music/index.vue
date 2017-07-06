@@ -101,8 +101,8 @@ export default {
                 }
                 span {
                     position: absolute;
-                    bottom: 6px;
-                    left: 6px;
+                    bottom: 15px;
+                    left: 15px;
                     color: #fff;
                 }
             }
