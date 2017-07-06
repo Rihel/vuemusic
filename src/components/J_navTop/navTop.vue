@@ -6,7 +6,7 @@
                 <a href="#" class="fa fa-list-ul"></a>
             </li>
             <li>
-                <router-link to="/userCenter">我的</router-link>
+                <router-link to="/user">我的</router-link>
             </li>
             <li>
                 <router-link to="/music">音乐</router-link>
@@ -24,7 +24,7 @@
 <script>
 
 import '../../../node_modules/font-awesome/scss/font-awesome.scss'
-// import '../../scss/_common.scss'
+import '../../scss/_common.scss'
 export default {
 
 }
@@ -38,9 +38,8 @@ export default {
     justify-content: space-around;
     width: 100%;
     padding: rem(25);
-    // background: $primary-color;
+    background: #b30000;
     li {
-
         a {
             font-size: rem(36);
             color: #fff;
