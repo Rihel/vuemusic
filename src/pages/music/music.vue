@@ -7,9 +7,12 @@
 
 <script>
 import navTop from '../../components/J_navTop/navTop'
+
 export default {
   components:{
     navTop,
+       
+
   }
 }
 </script>

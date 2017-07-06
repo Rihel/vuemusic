@@ -1,196 +1,166 @@
 <template>
-  <div id="app">
+<!--音乐>歌单 的页面组件
+作者：陈嘉验-->
     <main>
         <div class="container">
-            <div class="hot clearfix">
-                <div class="hot-left">
-                    <img class="img1" src="./simg.png" alt="">
-                    <h2>全部</h2>
-                    <img class="img2" src="./simg1.png" alt="">
-                </div>
-                <div class="hot-right">
-                    <span>最热</span>
-                    <span>最新</span>
-                </div>
-            </div>
-            <div class="play">
-                <div class="play-mo">
-                    <img class="img3" src="./simg2.png" alt="">
-                    <img class="img4" src="./simg4.png" alt="">
-                    <h4>执子之手，鞋子之老</h4>
-                    <p>by<span>莫洋洋</span></p>
-                </div>
-                <div class="play-mo">
-                    <img class="img3" src="./simg3.png" alt="">
-                    <img class="img4" src="./simg4.png" alt="">
-                    <h4>执子之手，鞋子之老</h4>
-                    <p>by<span>莫洋洋</span></p>
-                </div>
-                </div>
-                <div class="play">
-                     <div class="play-mo">
-                    <img class="img3" src="./simg5.png" alt="">
-                    <img class="img4" src="./simg4.png" alt="">
-                    <h4>执子之手，鞋子之老</h4>
-                    <p>by<span>莫洋洋</span></p>
-                </div>
-                <div class="play-mo">
-                    <img class="img3" src="./simg6.png" alt="">
-                    <img class="img4" src="./simg4.png" alt="">
-                    <h4>执子之手，鞋子之老</h4>
-                    <p>by<span>莫洋洋</span></p>
-                </div>
-                </div>
-                <div class="play">
-                 <div class="play-to">
-                    <img class="img5" src="./simg7.png" alt="">
-                    <div class="gaylon">
-                    <img class="img6" src="./simg9.png" alt="">
-                     <div class="gaylon-right">
-                          <h3>不该（csadcsa)</h3>
-                          <i>周杰伦</i>
-                     </div>
-                    </div>
-                </div>
-                     <div class="play-mo">
-                    <img class="img7" src="./simg8.png" alt="">
-                </div>
-                </div>
-                 <!--<div class="play">
-                    <div class="play-to">
-                    <img class="img3" src="./simg7.png" alt="">
-                    <img src="./sing9.png" alt="">
-                </div>
-                     <div class="play-to">
-                    <img class="img3" src="./simg8.png" alt="">
-                </div>
-                </div>    
-                </div>                   
-    </main>
-  </div>
-</template>
+            <ul class="c-top" >
 
+                <li class="c-item" v-for="item,index in newList " >
+                    <div class="c-billboard">
+                        <div class="c-img">
+                            <img :src="item.coverImgUrl" alt="">
+                            <i class="fa fa-play-circle-o"></i>
+                        </div>
+                        <dl>
+                            <dt>{{item.name}}</dt>
+                            <dd>
+                                <span class="NO-1">1</span>告白气球-　周杰伦</dd>
+                            <dd>
+                                <span class="NO-2">2</span>天若有情 - Lin</dd>
+                            <dd>
+                                <span class="NO-3">3</span>July - 吴亦凡</dd>
+                        </dl>
+                    </div>
+                    <i class="fa fa-chevron-right c-more"></i>
+                </li>
+              
+                 <!--<li class="c-item" v-for="item,index in hotList " >
+                    <div class="c-billboard">
+                        <div class="c-img">
+                            <img :src="item.coverImgUrl" alt="">
+                            <i class="fa fa-play-circle-o"></i>
+                        </div>
+                        <dl>
+                            <dt>{{item.name}}</dt>
+                            <dd>
+                                <span class="NO-1">1</span>告白气球-　周杰伦</dd>
+                            <dd>
+                                <span class="NO-2">2</span>天若有情 - Lin</dd>
+                            <dd>
+                                <span class="NO-3">3</span>July - 吴亦凡</dd>
+                        </dl>
+                    </div>
+                    <i class="fa fa-chevron-right c-more"></i>
+                </li>
+                
+                  <li class="c-item" v-for="item,index in originList " >
+                    <div class="c-billboard">
+                        <div class="c-img">
+                            <img :src="item.coverImgUrl" alt="">
+                            <i class="fa fa-play-circle-o"></i>
+                        </div>
+                        <dl>
+                            <dt>{{item.name}}</dt>
+                            <dd>
+                                <span class="NO-1">1</span>告白气球-　周杰伦</dd>
+                            <dd>
+                                <span class="NO-2">2</span>天若有情 - Lin</dd>
+                            <dd>
+                                <span class="NO-3">3</span>July - 吴亦凡</dd>
+                        </dl>
+                    </div>
+                    <i class="fa fa-chevron-right c-more"></i>
+                </li>-->
+            </ul>
+        </div>
+    </main>
+</template>
 <script>
 export default {
-  name: 'app'
+    data(){
+        return{
+            newList:[],
+            hotList:[],
+            originList:[],
+        }
+    },
+     created() {
+        this.$http.get('http://localhost:3000/top/list?idx=0')
+            .then(function (data) {
+                console.log(data)
+                var result=data.body;
+                this.newList=result;
+                console.log(this.newList,result,1
+                )
+            });
+             this.$http.get('http://localhost:3000/top/list?idx=1')
+            .then(function (data) {
+                console.log(data)
+                var result=data.body;
+                this.hotList=result;
+            });
+             this.$http.get('http://localhost:3000/top/list?idx=2')
+            .then(function (data) {
+                console.log(data)
+                var result=data.body;
+                this.originList=result;
+            });
+            
+    },
+    
 }
 </script>
+<style lang="scss">
+// main {
+//     background: url(./C_list-bg.png) no-repeat;
+// }
 
-<style>
-main{
-    background:#efba8b;
-}
-    main .hot .hot-left {
-        float: left;
-        height: 77px;
-    }
-    
-    main .hot .hot-left .img1 {
-        float: left;
-        height: 34px;
-        width: 18px;
-        margin-top: 20px;
-    }
-    
-    main .hot .hot-left h2 {
-        font-size: 33px;
-        float: left;
-        line-height: 77px;
-        margin-left: 10px;
-    }
-    
-    main .hot .hot-left .img2 {
-        float: left;
-        margin-top: 20px;
-        margin-left: 16px;
-    }
-    
-    main .hot .hot-right {
-        float: right;
-        /*border:1px solid red;*/
-        width: 200px;
-        height: 30px;
-        margin-top: 26px;
-    }
-    
-    main .hot .hot-right span {
-        font-size: 27px;
-        display: inline-block;
-        width: 96px;
-        height: 30px;
-        text-align: center;
-    }
-    
-    main .hot .hot-right span:nth-of-type(1) {
-        border-right: 1px solid #98968b;
-        color: red;
-    }
-    
-    .play {
-        margin-top:30px;
+.c-top {
+    .c-item {
         display: flex;
         justify-content: space-between;
-    }
-    
-    main .play .play-mo {
-        width: 400px;
-        height: 406px;
-        /*background: red;*/
-        position: relative;
-    }
-    
-    main .play .play-mo .img3 {
-        width: 400px;
-        height: 320px;
-    }
-    
-    main .play .play-mo .img4 {
-        position: absolute;
-        top: 200px;
-        right: 50px;
-    }
-    
-    main .play .play-mo h4 {
-        font-size: 25px;
-        margin-top: 20px;
-    }
-    
-    main .play .play-mo span {
-        font-size: 25px;
-        margin-left: 10px;
-    }
-    
-    main .play .play-mo p {
-        font-size: 25px;
-        margin-top: 12px;
-        color: #615846;
-    }
-    main .play .play-to{
-        position:relative;
-    }
-       main .play .play-to .gaylon .img6{
-           float:left;
-       }
-       main .play .play-to .gaylon .gaylon-right{
-           float:left;
-       }
-        main .play .play-to .gaylon .gaylon-right h3{
-            font-size:25px;
-            margin-top:19px;
+        align-items: center;
+        padding: 10px 10px 20px 10px;
+        border-bottom: 1px solid #c4c3b6;
+        .c-billboard {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .c-img {
+                position: relative;
+                margin-right: 20px;
+                img {
+                    width: 116px;
+                    height: 116px;
+                }
+                .fa {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    font-size: 30px;
+                    color: #fff;
+                }
+            }
         }
-         main .play .play-to .gaylon .gaylon-right i{
-             font-size:16px;
-             display:inline-block;
-             margin-top:14px;
-         }
-     main .play .play-to .gaylon{
-         background:rgba(255, 255 ,255,.3);
-         height: 90px;
-         width: 410px;
-         /*background:#e7e3e4;*/
-       position:absolute;
-       left:0;
-
-       top:180px;
-     }
+        dl {
+            dt {
+                margin-bottom: 20px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            dd {
+                margin: 5px 0;
+                font-size: 14px;
+                span {
+                    margin-right: 10px;
+                    font-size: 14px;
+                }
+                .NO-1 {
+                    color: red;
+                }
+                .NO-2 {
+                    color: orangered;
+                }
+                .NO-3 {
+                    color: orange;
+                }
+            }
+        }
+        .c-more {
+            font-size: 24px;
+            color: rgba(0, 0, 0, .4);
+        }
+    }
+}
 </style>
+

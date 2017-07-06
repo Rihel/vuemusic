@@ -14,7 +14,6 @@ export default {
   components:{
     navTop:navTop,
     myfooter:footer,
-
   }
 }
 </script>
