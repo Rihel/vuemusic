@@ -24,20 +24,11 @@
           <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
         </div>
         <div class="zql-s-items">
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3a855b9c2fc0bed8b2d070d1a5e97afa8f0565af
           <figure v-for="item,index in personalized">
             <div class="zql-count">
               <i class="fa fa-headphones"></i><span>{{Math.floor(item.playCount/10000)+'万'}}</span>
             </div>
             <lazy-image :src="item.picUrl"></lazy-image>
-<<<<<<< HEAD
-
-            <figcaption>{{item.name}}</figcaption>
-=======
             <figcaption class="textEllipsis">{{item.name}}</figcaption>
           </figure>
         </div>
@@ -100,7 +91,6 @@
               <p>{{item.program.dj.nickname}}</p>
             </div>
             <figcaption class="textEllipsis">{{item.name}}</figcaption>
->>>>>>> 3a855b9c2fc0bed8b2d070d1a5e97afa8f0565af
           </figure>
         </div>
       </div>

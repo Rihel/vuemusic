@@ -1,66 +1,69 @@
- /*lists榜单页面样式P*/
- 
- //hubvues
- .zql-songs-items {
-     width: 100%;
-     .wl-list {
-         display: flex;
-         flex-direction: column;
-         justify-content: space-around;
-         flex-wrap: wrap;
-         figure {
-             display: flex;
-             justify-content: space-between;
-             margin-bottom: 15px;
-             .zql-lists-pic {
-                 position: relative;
-                 img {
-                     width: 100%;
-                 }
-                 i {
-                     position: absolute;
-                     bottom: 20px;
-                     right: 20px;
-                     color: #fff;
-                 }
-             }
-             figcaption {
-                 p {
-                     margin: 5px 0;
-                     font-size: 16px;
-                 }
-                 span {
-                     font-size: 13px;
-                 }
-             }
-         }
-     }
-     .title {
-         margin-top: 10px;
-         font-size: 18px;
-     }
-     .wl-global {
-         padding-top: 10px;
-         .global-list {
-             display: flex;
-             width: 33%;
-             flex-wrap: wrap;
-             justify-content: space-between;
-             margin-top: 15px;
-             a {
-                 display: block;
-                 position: relative;
-                 width: 100%;
-                 img {
-                     width: 100%;
-                 }
-                 span {
-                     position: absolute;
-                     bottom: 6px;
-                     left: 6px;
-                     color: #fff;
-                 }
-             }
-         }
-     }
- }
+/*lists榜单页面样式P*/
+
+//hubvues
+.classify {
+    .wl-list {
+        figure {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .wl-songs {
+                position: relative;
+                width: 33%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                i {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 20px;
+                }
+            }
+            ul {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                //  align-items: center;
+                align-content: space-between;
+                li {
+                    margin: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .title {
+        margin: 20px 0;
+        font-size: 18px;
+    }
+    .wl-global {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 10px;
+        .global-list {
+            width: 33%;
+            flex-basis: 33%;
+            margin-top: 15px;
+            a {
+                display: block;
+                position: relative;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+                span {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 6px;
+                    color: #fff;
+                }
+                p {
+                    margin-top: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

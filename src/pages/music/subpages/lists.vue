@@ -1,39 +1,27 @@
 <template>
-  <!--<div>
-      <span class="alert1">此乃榜单页面</span>
-      <br>
-      <span class="alert1">页面尚未完成</span>
-      <br>
-      <span class="alert1">道友速速返回</span>
-      <br>
-      <i class="alert1 fa fa-hand-o-down"></i>
-      <br>
-      <router-link class="alert" to="/">传送门</router-link>
-    </div>-->
-  
   <!--榜单页面-->
   <!--作者：Lewis-->
   
-<div class="zql-songs-items"> 
+<div class="classify"> 
     <div class="title">官方榜</div>
 <div class=wl-list>
     <figure v-for="item,index in list">
-      <div class="zql-songs-pic">
+      <div class="wl-songs">
         <img :src="item.coverImgUrl" alt="">
-        <i class="fa fa-play-circle-o fa-3x"></i>
+       
       </div>
-      <figcaption>
-        <dl>
-          <dt>{{item.name}}</dt>
-          <dd>
-            <span>1</span>{{item.tracks[0].name}}-{{item.tracks[0].artists[0].name}}</dd>
-          <dd>
-            <span>2</span>{{item.tracks[1].name}}-{{item.tracks[1].artists[0].name}}</dd>
-          <dd>
-            <span>3</span>{{item.tracks[2].name}}-{{item.tracks[2].artists[0].name}}</dd>
-        </dl>
-        <i class="fa fa-chevron-right fa-2x"></i>
-      </figcaption>
+     
+        <ul>
+         
+          <li class="textLine">
+            <span>1</span>{{item.tracks[0].name}}-{{item.tracks[0].artists[0].name}}</li>
+          <li class="textLine">
+            <span>2</span>{{item.tracks[1].name}}-{{item.tracks[1].artists[0].name}}</li>
+          <li class="textLine">
+            <span>3</span>{{item.tracks[2].name}}-{{item.tracks[2].artists[0].name}}</li>
+        </ul>
+       
+      
     </figure>
     </div>
     <div class="title">全球榜</div>
@@ -51,7 +39,7 @@
 </template>
 
 <script>
-// import '../../../assets/scss/scssBypages/lists/lists.scss';
+import '../../../assets/scss/scssBypages/lists/lists.scss';
 export default {
   components: {
 
@@ -81,5 +69,5 @@ export default {
 </script>
 
 <style lang="scss">
-          
+   @import "../../../assets/scss/_common.scss";     
 </style>
