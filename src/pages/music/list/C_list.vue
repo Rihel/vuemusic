@@ -14,14 +14,16 @@
         <div class="c-list">
             <div class="c-list-item" v-for="item,index in lists">
                 <div class="c-list-cover">
-                    <img src="./C_list-1.png" alt="">
+                    <img :src="item.coverImgUrl" alt="">
                     <i class="fa fa-play-circle-o"></i>
+                     <p><i class="fa fa-headphones"></i>{{item.playCount}}</P>
+                     <span><i class="fa fa-user"></i>{{item.creator.nickname}}</span>
                 </div>
-                <h2>执子之手，与子相守</h2>
-                <p>by 陌咩咩</p>
+                
+                <h2>{{item.name}}</h2>
             </div>
            
-        </div>
+        </div>   
     </div>
 </template>
 <script>
@@ -34,9 +36,9 @@ export default {
     created() {
         this.$http.get('http://localhost:3000/top/playlist')
             .then(function (data) {
-                console.log(data)
+                // console.log(data)
                 var result = data.body;
-                this.lists = result;
+                this.lists = result.playlists;
             });
     },
 }
@@ -45,6 +47,7 @@ export default {
 <style lang="scss">
 
 .c-list-top {
+    margin-top:100px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -76,19 +79,30 @@ export default {
     flex-wrap: wrap; 
          
     .c-list-item {
-        padding: 10px 0;
+        padding: 10px ;
+        width:48%; 
         .c-list-cover {
             position: relative;
             img {
-                width: 200px;
+                width: 180px;
                 height: 200px;
             }
-            .fa {
+            .fa-play-circle-o {
                 position: absolute;
                 bottom: 10px;
                 right: 10px;
                 font-size: 35px;
                 color: #fff;
+            }
+            p{
+                position:absolute;
+                right:5px;
+                top:10px;
+            }
+            span{
+                position:absolute;
+                left:5px;
+                bottom:10px;
             }
         }
         h2 {
