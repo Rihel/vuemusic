@@ -4,7 +4,7 @@ import List from '../pages/music/subpages/lists';
 import RadioStation from '../pages/music/subpages/radioStation';
 import SongSheet from '../pages/music/subpages/songSheet';
 import Recommendation from '../pages/music/subpages/recommendation';
-
+import Boutique from '../pages/music/subpages/boutique.vue';
 export default {
   path: '/music',
   component: Music,
@@ -22,6 +22,10 @@ export default {
     {
       path: '/music/radioStation',
       component: RadioStation
+    },
+    {
+      path:'/music/songSheet/Boutique',
+      component:Boutique
     }
   ]
 }

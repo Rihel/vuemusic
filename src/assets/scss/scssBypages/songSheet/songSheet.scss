@@ -1,49 +1,158 @@
 /*songsSheet页面样式
-*  作者：Lewis
+*  作者：fff
 */
-.zql-songs-items {
-  padding: 15px;
-  figure {
+// .zql-songs-items {
+//   padding: 15px;
+//   figure {
+//     display: flex;
+//     padding: 15px 0;
+//     border-bottom: 1px solid #a79f8d;
+//     .zql-songs-pic {
+//       position: relative;
+//       width: 33%;
+//       img {
+//         width: 100%;
+//         height: auto;
+//       }
+//       i {
+//         position: absolute;
+//         bottom: 20px;
+//         right: 20px;
+//         color: #fff;
+//       }
+//     }
+//     figcaption {
+//       display: flex;
+//       width: 60%;
+//       margin-left: 15px;
+//       justify-content: space-between;
+//       align-items: center;
+//       dt {
+//         margin-bottom: 20px;
+//         font-size: 22px;
+//         font-weight: bold;
+//       }
+//       dd {
+//         line-height: 24px;
+//         font-size: 17px;
+//         cursor:pointer;
+//         span {
+//           margin-right: 5px;
+//           font-size: 17px;
+//         }
+//       }
+//       i {
+//         color: #a79f8d;
+//       }
+//     }
+//   }
+// }
+
+.wyf{
+  .boutique{
     display: flex;
-    padding: 15px 0;
-    border-bottom: 1px solid #a79f8d;
-    .zql-songs-pic {
-      position: relative;
-      width: 33%;
-      img {
-        width: 100%;
-        height: auto;
-      }
-      i {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        color: #fff;
-      }
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, .5);
+    img{
+      width: 100px;
+      height: 100px;
     }
-    figcaption {
-      display: flex;
-      width: 60%;
-      margin-left: 15px;
-      justify-content: space-between;
-      align-items: center;
-      dt {
-        margin-bottom: 20px;
-        font-size: 22px;
-        font-weight: bold;
-      }
-      dd {
-        line-height: 24px;
-        font-size: 17px;
-        cursor:pointer;
-        span {
+    .boutique-right{
+      margin-left: 20px;
+      h2{
+        margin: 10px 0;
+        font-size: 16px;
+        color: white;
+        .fa-heart-o{
           margin-right: 5px;
-          font-size: 17px;
+          color:orange;
+        }
+        .fa-angle-right{
+          margin-left: 5px;
+          color:rgba(255, 255, 255, .5);
         }
       }
-      i {
-        color: #a79f8d;
+      h3{
+        margin: 10px 0;
+        font-size: 14px;
+        color: white;
       }
+      p{
+        color:rgba(255, 255, 255, .5);
+      }
+    }
+  }
+
+
+  .choose-list{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+
+    .all-song{
+      height: 50%;
+      padding: 5px 10px;
+      margin-top: 5px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      span{
+        margin-left: 10px;
+      }
+    }
+    ul{
+      display: flex;
+      height: 50%;
+      margin-top: 10px;
+      li{
+        padding: 0 5px;
+      }
+      li+li{
+        
+        border-left: 1px solid #eee;
+      }
+    }
+  }
+
+
+  .song-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: white;
+    .songs{
+      
+        width: 49.5%;
+      .img-wrap{
+        position: relative;
+        img{
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      h4{
+        position: absolute;
+        bottom: 10px;
+        left: 5px;
+        color: white;
+        span{
+          margin-right: 5px;
+        }
+      }
+      h5{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: white;
+      }
+      }
+      h2{
+        height: 40px;
+        padding-left: 5px;
+      }
+
+      
+      
     }
   }
 }
