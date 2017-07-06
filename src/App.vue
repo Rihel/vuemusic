@@ -2,7 +2,7 @@
   <div id="app">
 
   <router-view></router-view>
-  <!--<myfooter></myfooter>-->
+  <myfooter></myfooter>
   <hot></hot>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   components:{
     navTop:navTop,
     hot:hot,
-    // myfooter:footer,
+    myfooter:footer,
 
   }
 }
