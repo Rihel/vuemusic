@@ -30,16 +30,20 @@
 </script>
 
 <style lang="scss">
-  .zql-hot {
-    position: relative;
-    .move {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 25%;
-      height: 4px;
-      background-color: #b30000;
-      transition: all 0.5s;
+  .subnav {
+    /*position:fixed;*/
+    width: 100%;
+    .zql-hot {
+      position: relative;
+      .move {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        height: 4px;
+        background-color: #b30000;
+        transition: all 0.5s;
+      }
     }
   }
 

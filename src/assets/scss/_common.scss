@@ -50,7 +50,12 @@
 .clearfix {
   @include clearfix;
 }
-
+.textEllipsis {
+  @include textEllipsis;
+}
+.textLine {
+  @include textLine;
+}
 .pull-left {
   float: left;
 }
@@ -82,6 +87,8 @@ body {
   height: 100%;
   z-index: -99;
 }
+
+
 
 
 /****************** header start ********************/

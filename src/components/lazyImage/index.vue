@@ -25,7 +25,7 @@ export default {
             this.show(trueDom);
         }
 
-      // 加载显示图片
+      // 懒加载显示图片
         this.show(trueDom);
      //监听滚动事件，通过setTimeout延迟懒加载图片
         window.addEventListener('scroll', () => {

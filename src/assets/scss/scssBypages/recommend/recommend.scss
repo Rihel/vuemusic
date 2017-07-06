@@ -1,0 +1,151 @@
+/*recommend页面样式
+*  作者：Lewis
+*/
+
+.zql-hot {
+  display: flex;
+  justify-content: space-between;
+  li {
+    width: 25%;
+    padding: 15px 0;
+    text-align: center;
+    a {
+      color: #000;
+      font-size: 20px;
+    }
+  }
+  li.active {
+    a {
+      color: #b30000;
+    }
+  }
+}
+
+.zql-banner img {
+  width: 100%;
+}
+
+.zql-content {
+  padding: 15px;
+  .zql-items {
+    display: flex;
+    padding: 15px 0;
+    justify-content: space-around;
+    border-bottom: 1px solid #d1bb8d;
+    figure {
+      text-align: center;
+      width: 25%;
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      figcaption {
+        font-size: 16px;
+      }
+    }
+  }
+  .zql-sings {
+    padding-top: 15px;
+    .zql-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        img {
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+      }
+      .zql-more {
+        font-size: 16px;
+      }
+    }
+    .zql-s-items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      figure {
+        position: relative;
+        width: 30%;
+        margin: 15px 0;
+        .zql-count {
+          width: 100%;
+          padding: 5px;
+          text-align: right;
+          background: rgba(0, 0, 0, .3);
+          position: absolute;
+          color: #fff;
+          i {
+            margin-right: 5px;
+          }
+        }
+        img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        figcaption {
+          font-size: 14px;
+          line-height: 18px;
+          p {
+            font-size: 13px;
+            color: gray;
+          }
+        }
+      }
+    }
+    .zql-s-items.dj {
+      figure {
+        .zql-name {
+          position: relative;
+          p {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 5px;
+            background: rgba(0, 0, 0, .3);
+            color: #fff;
+          }
+          img {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .zql-s-items.private {
+      figure {
+        width: 49%;
+        &:nth-of-type(3) {
+          width: 100%;
+        }
+      }
+    }
+    .zql-s-items.mv {
+      figure {
+        width: 49%;
+      }
+    }
+    .zql-s-items.program {
+      figure {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        figcaption {
+          width: 73%;
+          font-size: 20px;
+          line-height: 24px;
+          p {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+        }
+        .sub-pic {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

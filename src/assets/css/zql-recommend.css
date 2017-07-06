@@ -13,6 +13,7 @@
   text-align: center;
 }
 
+
 /*.router-link-exact-active.active {
   border-bottom: 4px solid #b30000;
 }*/
@@ -65,14 +66,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 10px 0;
 }
 
 .zql-content .zql-sings .zql-title h3 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 }
 
-.zql-content .zql-sings .zql-title h3  img {
+.zql-content .zql-sings .zql-title h3 img {
   margin-right: 5px;
   vertical-align: middle;
 }
@@ -99,6 +101,11 @@
 }
 
 .zql-content .zql-sings .zql-s-items figure figcaption {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
+}
+
+.zql-content .zql-sings .zql-s-items figure figcaption p {
+  font-size: 13px;
+  color: gray;
 }
