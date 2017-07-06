@@ -1,48 +1,65 @@
-/*songsSheet页面样式
+/*songSheet歌单页面样式
 *  作者：Lewis
 */
-.zql-songs-items {
-  padding: 15px;
-  figure {
+
+.zql-lists {
+  .zql-title {
     display: flex;
-    padding: 15px 0;
-    border-bottom: 1px solid #a79f8d;
-    .zql-songs-pic {
-      position: relative;
-      width: 33%;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
       img {
-        width: 100%;
-        height: auto;
+        margin-right: 5px;
+        vertical-align: middle;
       }
       i {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        color: #fff;
+        color: #9c9d9a;
+        margin-left: 5px;
       }
     }
-    figcaption {
-      display: flex;
-      width: 60%;
-      margin-left: 15px;
-      justify-content: space-between;
-      align-items: center;
-      dt {
-        margin-bottom: 20px;
-        font-size: 22px;
-        font-weight: bold;
+    p {
+      color: #9c9d9a;
+      font-size: 18px;
+      a {
+        margin: 0 5px;
+        font-size: 18px;
+        color: #9c9d9a;
       }
-      dd {
-        line-height: 24px;
-        font-size: 17px;
-        cursor:pointer;
-        span {
-          margin-right: 5px;
-          font-size: 17px;
+      a.active {
+        color: #b30000;
+      }
+    }
+  }
+  .zql-lists-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    figure {
+      width: 48%;
+      margin-bottom: 15px;
+      .zql-lists-pic {
+        position: relative;
+        img {
+          width: 100%;
+        }
+        i {
+          position: absolute;
+          bottom:20px;
+          right: 20px;
+          color: #fff;
         }
       }
-      i {
-        color: #a79f8d;
+      figcaption {
+        p {
+          margin: 5px 0;
+          font-size: 16px;
+        }
+        span {
+          font-size: 13px;
+        }
       }
     }
   }
