@@ -1,20 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <!--<div>
-      <span class="alert1">此乃榜单页面</span>
-      <br>
-      <span class="alert1">页面尚未完成</span>
-      <br>
-      <span class="alert1">道友速速返回</span>
-      <br>
-      <i class="alert1 fa fa-hand-o-down"></i>
-      <br>
-      <router-link class="alert" to="/">传送门</router-link>
-    </div>-->
-  
-=======
 
->>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155
   <!--榜单页面-->
   <!--作者：Lewis-->
   
@@ -85,19 +70,4 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
-<style lang="">
-/*.alert1 {
-    margin: 50px;
-    color: firebrick;
-    font-size: 30px;
-  }
 
-  .alert {
-    margin: 50px;
-    color: dodgerblue;
-    font-size: 50px;
-  }*/
-</style>
-=======
->>>>>>> 71e9ce05d2be54efff88a53b57cc7194b2e8c155

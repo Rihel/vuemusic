@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-/*songsSheet页面样式
+  /*songsSheet页面样式
 *  作者：fff
 */
+
 // .zql-songs-items {
 //   padding: 15px;
 //   figure {
@@ -48,176 +48,101 @@
 //     }
 //   }
 // }
-
-.wyf{
-  .boutique{
+.wyf {
+  .boutique {
     display: flex;
     padding: 20px 10px;
     background-color: rgba(0, 0, 0, .5);
-    img{
+    img {
       width: 100px;
       height: 100px;
     }
-    .boutique-right{
+    .boutique-right {
       margin-left: 20px;
-      h2{
+      h2 {
         margin: 10px 0;
         font-size: 16px;
         color: white;
-        .fa-heart-o{
+        .fa-heart-o {
           margin-right: 5px;
-          color:orange;
+          color: orange;
         }
-        .fa-angle-right{
+        .fa-angle-right {
           margin-left: 5px;
-          color:rgba(255, 255, 255, .5);
+          color: rgba(255, 255, 255, .5);
         }
       }
-      h3{
+      h3 {
         margin: 10px 0;
         font-size: 14px;
         color: white;
       }
-      p{
-        color:rgba(255, 255, 255, .5);
+      p {
+        color: rgba(255, 255, 255, .5);
       }
     }
   }
-
-
-  .choose-list{
+  .choose-list {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     background-color: white;
-
-    .all-song{
+    .all-song {
       height: 50%;
       padding: 5px 10px;
       margin-top: 5px;
       border: 1px solid #eee;
       border-radius: 10px;
-      span{
+      span {
         margin-left: 10px;
       }
     }
-    ul{
+    ul {
       display: flex;
       height: 50%;
       margin-top: 10px;
-      li{
+      li {
         padding: 0 5px;
       }
-      li+li{
-        
+      li+li {
         border-left: 1px solid #eee;
       }
     }
   }
-
-
-  .song-list{
+  .song-list {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     background-color: white;
-    .songs{
-      
-        width: 49.5%;
-      .img-wrap{
-        position: relative;
-        img{
-        width: 100%;
-        margin-bottom: 5px;
-      }
-      h4{
-        position: absolute;
-        bottom: 10px;
-        left: 5px;
-        color: white;
-        span{
-          margin-right: 5px;
-        }
-      }
-      h5{
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        color: white;
-      }
-      }
-      h2{
-        height: 40px;
-        padding-left: 5px;
-=======
-/*songSheet歌单页面样式
-*  作者：Lewis
-*/
-
-.zql-lists {
-  .zql-title {
-    display: flex;
-    padding: 15px;
-    align-items: center;
-    justify-content: space-between;
-    h3 {
-      font-size: 20px;
-      font-weight: bold;
-      img {
-        margin-right: 5px;
-        vertical-align: middle;
-      }
-      i {
-        color: #9c9d9a;
-        margin-left: 5px;
-      }
-    }
-    p {
-      color: #9c9d9a;
-      font-size: 18px;
-      a {
-        margin: 0 5px;
-        font-size: 18px;
-        color: #9c9d9a;
-      }
-      a.active {
-        color: #b30000;
-      }
-    }
-  }
-  .zql-lists-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    figure {
-      width: 48%;
-      margin-bottom: 15px;
-      .zql-lists-pic {
+    .songs {
+      width: 49.5%;
+      .img-wrap {
         position: relative;
         img {
           width: 100%;
+          margin-bottom: 5px;
         }
-        i {
+        h4 {
           position: absolute;
-          bottom:20px;
-          right: 20px;
-          color: #fff;
+          bottom: 10px;
+          left: 5px;
+          color: white;
+          span {
+            margin-right: 5px;
+          }
+        }
+        h5 {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          color: white;
+        }
+        h2 {
+          height: 40px;
+          padding-left: 5px;
         }
       }
-      figcaption {
-        p {
-          margin: 5px 0;
-          font-size: 16px;
-        }
-        span {
-          font-size: 13px;
-        }
->>>>>>> 3a855b9c2fc0bed8b2d070d1a5e97afa8f0565af
-      }
-
-      
-      
     }
   }
 }
