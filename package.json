@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-helpers": "^6.24.1",
     "font-awesome": "^4.7.0",
+    "invariant": "^2.2.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue": "^2.3.3",

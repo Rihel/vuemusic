@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <!--<myfooter></myfooter>-->
-  
+
+
+  <router-view></router-view>
+  <myfooter></myfooter>
+  <hot></hot>
+
+ 
+
   </div>
 </template>
 
