@@ -31,6 +31,7 @@ export default {
 </script>
     
 <style lang="scss">
+@import "../../scss/_common.scss";
 @import "../../scss/_function.scss";
 .nav-top {
     display: flex;
