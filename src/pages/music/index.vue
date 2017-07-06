@@ -46,6 +46,67 @@ export default {
 }
 </script>
 
-<style lang="">
-
+<style lang="scss">
+  // hubvus
+.zql-songs-items {
+    width: 100%;
+    .wl-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        figure {
+            display: flex;
+            justify-content: space-between;
+            .zql-lists-pic {
+                position: relative;
+                img {
+                    width: 100%;
+                }
+                i {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20px;
+                    color: #fff;
+                }
+            }
+            figcaption {
+                p {
+                    margin: 5px 0;
+                    font-size: 16px;
+                }
+                span {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .title {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .wl-global {
+        padding-top: 10px;
+         display: flex;
+          justify-content: space-between;
+           flex-wrap: wrap;
+        .global-list {
+            width: 33%;
+            margin-top: 15px;
+            a {
+                display: block;
+                position: relative;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+                span {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 6px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
 </style>
