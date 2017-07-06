@@ -1,13 +1,19 @@
 <template>
-  <div></div>
+  <navTop>
+  </navTop>
 </template>
 
 <script>
-export default {
+import navTop from '../../components/J_navTop/navTop'
 
+export default {
+  components: {
+    navTop: navTop,
+
+  },
 }
 </script>
 
 <style>
-  
+
 </style>

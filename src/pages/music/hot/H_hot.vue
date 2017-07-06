@@ -1,26 +1,7 @@
 <template>
     <div>
-        <header>
-            <ul class="nav">
-                <li class="sub-nav">
-                    <i class="fa fa-bars"></i>
-                </li>
-                <li>我的</li>
-                <li class="active">音乐</li>
-                <li>动态</li>
-                <li class="search-nav">
-                    <i class="fa fa-search"></i>
-                </li>
-            </ul>
-        </header>
     
         <section class="jem-hot-main">
-            <ul class="main-nav">
-                <li class="active">热门推荐</li>
-                <li>榜单</li>
-                <li>歌单</li>
-                <li>电台</li>
-            </ul>
             <div class="main-content">
                 <banner></banner>
                 <div class="classify">
