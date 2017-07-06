@@ -4,6 +4,7 @@ header {
   left: 0;
   width: 100%;
   background-color: #b30000;
+  z-index: 999;
   ul {
     display: flex;
     height: 4rem;
@@ -42,6 +43,7 @@ header {
     }
   }
   .main-content {
+    padding-bottom: 5rem;
     background-color: rgba(255, 255, 255, .6);
     .banner {
       width: 100%;
@@ -69,37 +71,32 @@ header {
         font-size: 1.25rem;
       }
     }
-    .recommend-title {
-      margin: 3rem 0 1rem;
-      border-left: 0.25rem solid red;
-      text-indent: 1.25rem;
-      align-items: center;
-    }
-    .recommend-songlist {
-      display: flex;
-      margin-bottom: 1.5rem;
-      justify-content: space-between;
-      align-items: center;
-      .recommend-songitem {
-        width: 10rem;
-        .item-cover {
-          position: relative;
-          .cover-info {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-image: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
-            line-height: 1.8rem;
-            font-size: 1rem;
-            color: #fff;
-            text-indent: 0.25rem
-          }
+    .radio-type {
+      margin-bottom: 2rem;
+      .radio-title {
+        height: 2rem;
+        margin: 3rem 0 1rem;
+        border-left: 0.25rem solid red;
+        line-height: 2rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-indent: 1.25rem;
+        align-items: center;
+      }
+      .recommend-radioItem {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        figure {
+          width: 30%;
           img {
             width: 100%;
           }
-          p.cover-describe {
-            height: 2.45rem;
+          figcaption {
+            height: 2.55rem;
             margin-top: 0.5rem;
+            line-height: 1.4rem;
             font-size: 1.1rem;
             text-align: center;
             text-overflow: ellipsis;
@@ -124,21 +121,21 @@ footer {
     width: 4.5rem;
     height: 4.5rem;
   }
-  .jem-song-info,
-  .jem-play-ctrl {
+  .yao-song-info,
+  .yao-play-ctrl {
     flex-grow: 2;
   }
-  .jem-song-info {
+  .yao-song-info {
     p {
       text-indent: 1rem;
     }
-    p.jem-song-name {
+    p.yao-song-name {
       padding: 1rem 0 0.5rem;
       font-size: 1.5rem;
       font-weight: bold;
     }
   }
-  .jem-play-ctrl {
+  .yao-play-ctrl {
     display: flex;
     height: 100%;
     justify-content: space-around;
@@ -149,4 +146,3 @@ footer {
     }
   }
 }
-

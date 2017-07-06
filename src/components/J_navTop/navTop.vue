@@ -24,6 +24,7 @@
 <script>
 
 import '../../../node_modules/font-awesome/scss/font-awesome.scss'
+// import '../../scss/_common.scss'
 export default {
 
 }
@@ -36,7 +37,7 @@ export default {
     justify-content: space-around;
     width: 100%;
     padding: rem(25);
-    background: $primary-color;
+    // background: $primary-color;
     li {
 
         a {

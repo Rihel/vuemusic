@@ -56,10 +56,10 @@
                     <img class="img7" src="./simg8.png" alt="">
                 </div>
                 </div>
-                 <!--<div class="play">
+                 <div class="play">
                     <div class="play-to">
                     <img class="img3" src="./simg7.png" alt="">
-                    <img src="./sing9.png" alt="">
+                    <img src="./simg9.png" alt="">
                 </div>
                      <div class="play-to">
                     <img class="img3" src="./simg8.png" alt="">

@@ -22,18 +22,7 @@
                 <li class="active">电台</li>
             </ul>
             <div class="main-content">
-                <swiper :options="swiperOption">
-                    <swiper-slide>
-                        <img class="banner" src="./radio-banner.png" alt="fff">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img class="banner" src="./radio-banner.png" alt="fff">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img class="banner" src="./radio-banner.png" alt="fff">
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
+                <banner> </banner>
                 <div class="classify">
                     <div class="raido-recommend radio-classify">
                         <img src="./radio-radio.png" alt="fff">
@@ -44,103 +33,19 @@
                         <p>歌手</p>
                     </div>
                 </div>
-                <div class="recommend-title">
-                    电台个性推荐
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                <div class="radio-type" v-for="item,index in radioType">
+                    <div class=" radio-title">
+                        {{item[0].category}}
+                        <i class="fa fa-angle-right"></i>
                     </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
+                    <div class="recommend-radioItem">
+                        <figure class="recommend-item" v-for="items,indexs in item" v-if="indexs<3">
+                            <img :src="items.picUrl">
+                            <figcaption>
+                                {{items.name}}
+                            </figcaption>
+                        </figure>
                     </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-    
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-    
-                </div>
-                <div class="recommend-songlist">
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-                    <div class="recommend-songitem">
-                        <div class="item-cover">
-                            <img src="./radio-cover1.png" alt="fff">
-                            <p class="cover-info">李卤味</p>
-                        </div>
-                        <p class="cover-describe">苏打绿陪你一起走过 在每一个难忘的瞬间</p>
-                    </div>
-    
                 </div>
             </div>
         </section>
@@ -161,34 +66,43 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import banner from '../../../components/music/radio/banner/banner'
+
 
 export default {
     components: {
-        swiper,
-        swiperSlide
+        banner: banner,
     },
-    name: 'carrousel',
+
     data() {
         return {
-            swiperOption: {
-                autoplay: 1500,
-                setWrapperSize: true,
-                pagination: '.swiper-pagination',
-                paginationClickable: true,
-                mousewheelControl: true,
-                observeParents: true,
-            },
-            swiperSlides: [1, 2, 3, 4, 5]
+            total: '',
+            radioType: [],
         }
     },
-    mounted() {
-        setInterval(() => {
-            console.log('simulate async data')
-            let swiperSlides = this.swiperSlides
-            if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
-        }, 3000)
-    }
+    created() {
+        this.$http.get('http://localhost:3000/dj/catelist')
+            .then(function (data) {
+                this.total = data.body.categories.length;
+            })
+            .then(function () {
+                for (var i = 0; i < this.total + 1; i++) {
+                    this.$http.get('http://localhost:3000/dj/recommend/type?type=' + i)
+                        .then(function (data) {
+                            if (data.body.djRadios.length > 0) {
+                                this.radioType.push(data.body.djRadios)
+                            }
+                        });
+                }
+                console.log(this.radioType)
+
+            })
+
+
+
+
+    },
+
 }
 
 
