@@ -4,7 +4,6 @@
 
   <router-view></router-view>
   <myfooter></myfooter>
-  <hot></hot>
 
  
 
