@@ -1,6 +1,6 @@
 <template>
   <div>
-      本地文件夹
+      专辑
   </div>
 </template>
 

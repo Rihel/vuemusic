@@ -2,6 +2,7 @@
   <div>
     <navTop>
     </navTop>
+    <router-view></router-view>
     <section class="jem-main">
       <ul class="jem-my-content">
         <li class="jem-user-info">
@@ -18,18 +19,29 @@
             </ul>
           </div>
         </li>
+  
         <li class="jem-music-state jem-my">
-          <img class="local-music-icon" src="./my-local-music-icon.png" alt="fff">
-          <p class="clearfix">本地音乐
-            <span>207首</span>
-            <i class="fa fa-play-circle-o pull-right"></i>
-          </p>
+            <img class="local-music-icon" src="./my-local-music-icon.png" alt="fff">
+            
+            <p class="clearfix">
+          <router-link to="/user/local">
+              本地音乐
+              <span>207首</span>
+              <i class="fa fa-play-circle-o pull-right"></i>
+          </router-link>
+              
+            </p>
         </li>
+  
         <li class="jem-recent-play jem-my">
           <img class="local-music-icon" src="./my-recent-play-icon.png" alt="fff">
-          <p class="clearfix">最近播放
+          <p class="clearfix">
+            <router-link to="/user/latest">
+            
+            最近播放
             <span>共34首，8首离线可播</span>
             <i class="fa fa-angle-right pull-right"></i>
+            </router-link>
           </p>
         </li>
         <li class="jem-mydownload jem-my">
@@ -84,9 +96,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../scss/_function.scss';
-
 @import '../../scss/_H_user.scss';
-
-
 </style>

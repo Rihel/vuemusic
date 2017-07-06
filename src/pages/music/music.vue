@@ -1,7 +1,7 @@
 <template>
   <div>
     <navTop></navTop>
-    <musicnav></musicnav>
+    <musicnav :music="music"></musicnav>
     <router-view></router-view>
   </div>
 </template>
@@ -12,7 +12,31 @@ import musicnav from '../../components/mainNav/mainNav'
 export default {
   components: {
     navTop, musicnav,
-  }
+  },
+   data() {
+        return {
+            music: [
+                {
+                    path: '/music/hot',
+                    title: '热门推荐'
+                },
+                {
+                    path: '/music/top',
+                    title: "榜单"
+                },
+                {
+                    path: '/music/list',
+                    title: "歌单",
+                },
+                {
+                    path: '/music/radio',
+                    title: '电台'
+                }
+            ],
+            
+
+        }
+    }
 
 }
 </script>

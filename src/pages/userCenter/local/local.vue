@@ -1,10 +1,10 @@
 <template>
   <div>
       <header>
-          本地歌曲
+         <router-link to="/user"> <本地歌曲</router-link>
       </header>
-    <mainNav></mainNav>
-      <router-view></router-view>
+    <mainNav :music="music"></mainNav>
+      <router-view class="local"></router-view>
   </div>
 
 </template>
@@ -14,6 +14,28 @@ import mainNav from '../../../components/mainNav/mainNav'
 export default {
     components:{
         mainNav,
+    },
+    data(){
+        return{
+            music: [
+                {
+                    path: '/user/local/song',
+                    title: '歌曲'
+                },
+                {
+                    path: '/user/local/ablum',
+                    title: "文件夹"
+                },
+                {
+                    path: '/user/local/singer',
+                    title: "歌手",
+                },
+                {
+                    path: '/user/local/ablum',
+                    title: '专辑'
+                }
+            ]
+        }
     }
 }
 </script>
@@ -30,6 +52,15 @@ header{
     height: rem(85);   
     line-height: rem(85);
     background: $primary-color;
+    
+    text-indent: rem(30);
+    a{
+        font-size: 16px;
+    color: #fff;
+    }
 }
+  .local{
+      margin-top: 200px;
+  }
   
 </style>

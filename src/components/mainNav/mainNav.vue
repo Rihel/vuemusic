@@ -1,17 +1,9 @@
 <template>
     <ul class="main-nav">
-        <li class="active">
-            <router-link to="/music/hot">热门推荐</router-link>
+        <li v-for="item,index in music" :key="index" @click="isActive(index)">
+            <router-link :to="item.path">{{item.title}}</router-link>
         </li>
-        <li>
-            <router-link to="/music/top">榜单</router-link>
-        </li>
-        <li>
-            <router-link to="/music/list">歌单</router-link>
-        </li>
-        <li>
-            <router-link to="/music/radio">电台</router-link>
-        </li>
+        <div class="line" :style="{left:rank*25+'%'}"></div>
     </ul>
 </template>
 
@@ -19,54 +11,28 @@
 
 
 export default {
-    data() {
-        return {
-            music: [
-                {
-                    path: '/music/hot',
-                    title: '热门推荐'
-                },
-                {
-                    path: '/music/top',
-                    title: "榜单"
-                },
-                {
-                    path: '/music/list',
-                    title: "歌单",
-                },
-                {
-                    path: '/music/radio',
-                    title: '电台'
-                }
-            ],
-            local: [
-                {
-                    path: '/local/song',
-                    title: '热门推荐'
-                },
-                {
-                    path: '/music/top',
-                    title: "榜单"
-                },
-                {
-                    path: '/music/list',
-                    title: "歌单",
-                },
-                {
-                    path: '/music/radio',
-                    title: '电台'
-                }
-            ]
-
-        }
-    }
+    props:['music'],
+   data(){
+       return {
+           rank:0
+       }
+   },
+   methods:{
+       isActive(index){
+           this.rank=index;
+       }
+   }
+    
+   
 }
 </script>
 
 <style lang="scss">
+@import '../../scss/_function.scss';
+@import '../../scss/_common.scss';
 .main-nav {
     position: fixed;
-    top: 4rem;
+    top: rem(85);
     display: flex;
     width: 100%;
     height: 3.55rem;
@@ -77,19 +43,25 @@ export default {
     li {
         width: 25%;
         height: 100%;
-        border-bottom: 0.025rem solid #ddd9d2;
         line-height: 3.55rem;
         text-align: center;
         a {
             font-size: 1.55rem;
             font-weight: bold;
+            &.active{
+                color:$primary-color;
+            }
         }
     }
-    li.active {
-        border-color: #b30000;
-        a {
-            color: #b30000;
-        }
+    .line{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        height: rem(4);
+        background-color:$primary-color;
+        transition: all .5s;
+
     }
 }
 </style>
