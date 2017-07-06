@@ -6,15 +6,15 @@
     <div class="zql-content">
       <div class="zql-items">
         <figure>
-          <img src="../../../assets/img/radio.png" alt="">
+          <lazy-image :src="require('../../../assets/img/radio.png')" alt=""></lazy-image>
           <figcaption>每日歌曲推荐</figcaption>
         </figure>
         <figure>
-          <img src="../../../assets/img/MICROPHONE.png" alt="">
+          <lazy-image :src="require('../../../assets/img/MICROPHONE.png')" alt=""></lazy-image>
           <figcaption>歌手</figcaption>
         </figure>
         <figure>
-          <img src="../../../assets/img/book.png" alt="">
+          <lazy-image :src="require('../../../assets/img/book.png')" alt=""></lazy-image>          
           <figcaption>歌曲分类</figcaption>
         </figure>
       </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="zql-s-items">
           <figure v-for="item,index in personalized">
-            <img :src="item.picUrl" alt="">
+            <lazy-image :src="item.picUrl"></lazy-image>
             <figcaption>{{item.name}}</figcaption>
           </figure>
         </div>
@@ -36,9 +36,11 @@
 
 <script>
 import banner from '../../../components/banner'
+import lazyImage from '../../../components/lazyImage'
 export default {
   components:{
     banner,
+    'lazy-image':lazyImage
   },
   data(){
     return {
@@ -56,7 +58,7 @@ export default {
     })
     .then(data=>{
        if(data.data.code===200){
-         console.log(data)
+        //  console.log(data)
          this.personalized=data.data.result
       }
     })
@@ -65,6 +67,5 @@ export default {
 </script>
 
 <style lang="scss">
-
 
 </style>
