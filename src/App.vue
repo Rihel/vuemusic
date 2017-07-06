@@ -15,13 +15,9 @@ export default {
   name: 'app',
   components:{
     navTop:navTop,
-<<<<<<< HEAD
-    myfooter:footer,
-=======
-    hot:hot,
-    // myfooter:footer,
 
->>>>>>> 91c8edd5d5faf8f3561341003c7f4cae2ec05d07
+    hot:hot,
+ 
   }
 }
 </script>
