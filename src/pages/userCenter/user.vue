@@ -1,17 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <navTop></navTop>
-    <ul>
-      <li>
-        <router-link to="/user/local">本地歌曲</router-link>
-      </li>
-      <li>
-        <router-link to="/user/latest">最近播放</router-link>
-      </li>
-  
-      </ul>
-=======
     <navTop>
     </navTop>
     <section class="jem-main">
@@ -97,22 +85,7 @@ export default {
 </script>
 
 <style lang="scss">
-<<<<<<< HEAD
-@import '../../scss/_function.scss';
 
-ul {
-  padding-top: rem(200);
-  li{
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #000;
-    a{
-      color: #000;
-    }
-  }
-}
-=======
 @import '../../scss/_H_user.scss';
->>>>>>> a305b92e5f6e1eb1570634779212450d729964f3
 
 </style>
