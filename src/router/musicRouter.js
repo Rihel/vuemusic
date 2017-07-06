@@ -8,6 +8,8 @@ import Recommendation from '../pages/music/subpages/recommendation';
 export default {
   path: '/music',
   component: Music,
+  // 默认路由
+  redirect:'/music/recommendation',
   children: [{
       path: '/music/recommendation',
       component: Recommendation
