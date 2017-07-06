@@ -1,7 +1,7 @@
 <template>
     <footer class="play">
         <div class="play-info pull-left">
-            <img src="img/local_songs-face.png" alt="">
+            <img src="../../../static_page/img/local_songs-face.png" alt="fff">
             <h6 class="play-name">不该(with AMEI)</h6>
             <p class="play-songer">周杰伦</p>
         </div>

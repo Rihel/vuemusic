@@ -35,10 +35,14 @@ export default {
 @import "../../scss/_function.scss";
 .nav-top {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
     justify-content: space-around;
     width: 100%;
     padding: rem(25);
     background: #b30000;
+    z-index: 999;
     li {
         a {
             font-size: rem(36);
