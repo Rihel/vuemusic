@@ -111,7 +111,7 @@ return {
       justify-content: space-between;
       width: 100%;
       padding: 10px;
-      background: blue;
+      background: skyblue;
       .go-back {
         i {
           color: #fff;
@@ -144,7 +144,7 @@ return {
       display: flex;
       flex-direction: column;
       img{
-          position: fixed;
+          position: absolute;
           top: 40px;
           width: 150px;
           height: 150px;
