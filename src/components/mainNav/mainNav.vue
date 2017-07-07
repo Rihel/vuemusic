@@ -46,6 +46,9 @@ export default {
         line-height: 3.55rem;
         text-align: center;
         a {
+            display: block;
+            width: 100%;
+            height: 100%;
             font-size: 1.55rem;
             font-weight: bold;
             &.active{

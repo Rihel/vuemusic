@@ -38,9 +38,10 @@ export default {
         img {
             float: left;
             margin-right: 10px;
+            width: 50px;
         }
         .play-name {
-            margin-top: 20px;
+            margin-top: 8px;
             font-size: 16px;
         }
         .play-songer {

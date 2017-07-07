@@ -40,8 +40,9 @@ export default {
     left: 0;
     justify-content: space-around;
     width: 100%;
-    padding: rem(25);
+    height: rem(85);
     background: #b30000;
+    line-height: rem(85);
     z-index: 999;
     li {
         a {
