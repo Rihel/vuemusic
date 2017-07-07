@@ -2,28 +2,62 @@
   <div class="footer clearfix">
     <div class="footer-img">
       <router-link to="/song/songOne">
-        <img src="../../assets/img/singer-face.png" alt="">
+        <img :src="detail.picUrl" alt="">
       </router-link>
     </div>
     <div class="song-main clearfix">
-      <h2>不该 ( with AMEI ) </h2>
-      <span>周杰伦</span>
+      <h2>{{detail.name}}</h2>
+      <span>{{detail.singer}}</span>
     </div>
     <div class="icons clearfix">
-      <i class="fa fa-play"></i>
+      <i class="fa fa-play" @click="play()" v-if="!isPlay"></i>
+      <i class="fa fa-pause" @click="play()" v-if="isPlay"></i>
       <i class="fa fa-step-forward"></i>
       <i class="fa fa-list-ul"></i>
     </div>
+    <audio ref="audio"></audio>
   </div>
 </template>
 
 <script>
     export default {
-        
+    
+        data(){
+          return {
+              isPlay:false,
+              url:'',
+              detail:{
+                name:'',
+                singer:'',
+                picUrl:''
+              }
+          }
+        },
+        methods:{
+          play(){
+           let myaudio=this.$refs.audio;
+           myaudio.src=this.url;
+           if(!this.isPlay){
+               myaudio.play();
+           }
+           this.isPlay=!this.isPlay;
+          }
+        },
+        created(){
+              Promise.all([
+                  this.$http.get('http://localhost:3000/music/url?id=31814005'),
+                  this.$http.get('http://localhost:3000/song/detail?ids=31814005')
+              ]).then(data=>{
+                console.log(data);
+                 this.url=data[0].data.data[0].url;
+                 this.detail.name=data[1].data.songs[0].name;
+                 this.detail.picUrl=data[1].data.songs[0].al.picUrl;
+                 this.detail.singer=data[1].data.songs[0].ar[0].name;
+              })
+        }
     }
 </script>
 
 <style lang="">
-
 
 </style>

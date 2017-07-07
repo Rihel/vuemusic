@@ -3,7 +3,7 @@
     作者：Lewis
 -->
 <template>
-    <img ref="lazyImage" :src="finishSrc" />
+    <img ref="lazyImage" :src="finishSrc" :style="{width:width}"/>
 </template>
 
 <script>
@@ -11,8 +11,9 @@ export default {
     props: ['src'],
     data() {
         return {
-            finishSrc: '',
+            finishSrc: require('./placeImage.gif'),
             isShow: false,
+            width:'100%'
         }
     },
     created() {
