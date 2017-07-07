@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <audio autoplay="autoplay" id="audio" src="http://m10.music.126.net/20170707120740/52ebb134f454a42192dc7d9e5249f8d3/ymusic/d94e/39da/9510/14a786c57ddb1cfaf6f2360a1f29454d.mp3"></audio>
+  <script>
+    var audio = document.getElementById('audio');
+    // console.dir(audio)
+    audio.addEventListener('pause', function () {
+      console.log(audio.currentTime);
+    });
+    setTimeout(function(){
+        audio.pause();
+    },5000)
+  </script>
+</body>
+
+</html>
