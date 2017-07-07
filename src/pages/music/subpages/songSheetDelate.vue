@@ -85,7 +85,7 @@ import loading from '../../../components/loading'
         created() {
             this.$http.get('http://localhost:3000/playlist/detail?id='+this.id)
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     this.detail=data.data.playlist;
                     this.tracks=this.detail.tracks;
                     this.isShow=true;

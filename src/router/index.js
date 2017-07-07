@@ -44,6 +44,7 @@ import listsDelate from '../pages/music/subpages/listsDelate';
 import listsDelateRouter from './listsDelateRouter';
 
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -60,6 +61,7 @@ export default new Router({
         UsedRouter,
         listsDelateRouter, 
         SongSheetDelateRouter 
+
     ],
     linkActiveClass: 'active'
 })
