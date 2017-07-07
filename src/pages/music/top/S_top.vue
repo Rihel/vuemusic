@@ -6,7 +6,8 @@
             <ul class="c-top">
     
                 <li class="c-item" v-for="item,index in newList">
-                    <div class="c-billboard">
+                   <router-link :to="'/SubTop/'+item.body.result.id">
+                        <div class="c-billboard">
                         <div class="c-img">
                             <img :src="item.body.result.coverImgUrl" alt="">
                             <i class="fa fa-play-circle-o"></i>
@@ -21,7 +22,8 @@
                                 <span class="NO-3">3</span>{{item.body.result.tracks[2].name}} - {{item.body.result.tracks[2].artists[0].name}}</dd>
                         </dl>
                     </div>
-                    <i class="fa fa-chevron-right c-more"></i>
+                    <!--<i class="fa fa-chevron-right c-more"></i>-->
+                   </router-link>
                 </li>
     
             </ul>
@@ -33,7 +35,7 @@ export default {
     data() {
         return {
             newList: [],
-
+            
         }
     },
     created() {

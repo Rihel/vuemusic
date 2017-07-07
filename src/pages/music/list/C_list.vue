@@ -15,7 +15,7 @@
           </ul>
         </div>
         <div class="c-list">
-          <div class="c-list-item" v-for="item,index in lists">
+          <router-link class="c-list-item" v-for="item,index in lists" :to="'/subList/'+item.id" >
             <div class="c-list-cover">
               <lazyImg :src="item.coverImgUrl"></lazyImg>
               <i class="fa fa-play-circle-o"></i>
@@ -26,7 +26,7 @@
             </div>
 
             <h2>{{item.name}}</h2>
-          </div>
+          </router-link>
 
         </div>
       </div>
@@ -43,7 +43,8 @@ export default {
     data() {
         return {
             lists: [],
-            isDone:false
+            isDone:false,
+            listId:''
         }
     },
     components:{
@@ -56,13 +57,14 @@ export default {
                 // console.log(data)
                 var result = data.body;
                 this.lists = result.playlists;
-             
+            //  console.log(result.playlists[0].id)
                         this.isDone=true;
         
             
             });
         }
     },
+   
 }
 
 </script>
