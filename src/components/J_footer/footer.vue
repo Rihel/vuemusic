@@ -8,8 +8,8 @@
         <ul class="play-control pull-right">
           
             <li>
-                <i class="fa fa-play fa-2x" v-if="isPlay" @click="play()"></i>
-                 <i class="fa fa-pause fa-2x" v-if="!isPlay" @click="play()"></i>
+                <i class="fa fa-play fa-2x" v-if="!isPlay" @click="play()"></i>
+                 <i class="fa fa-pause fa-2x" v-if="isPlay" @click="play()"></i>
             </li>
             
             <li>
@@ -19,7 +19,7 @@
                 <i class="fa fa-list fa-2x"></i>
             </li>
         </ul>
-        <audio :src="url" ></audio>
+        <audio :src="url" ref="audio"></audio>
     </footer>
 </template>
     
@@ -28,30 +28,40 @@ export default {
 
     data(){
         return{
-            isPlay:true,
+            isPlay:false,
             url:'',
             singer:'',
             songname:'',
             pic:'',
+            cuttentTime:0
         }
     },
     created(){
-        Promise.all([this.$http.get('http://localhost:3000/music/url?id=347231'),
-        this.$http.get('http://localhost:3000/song/detail?ids=347231')]).
+        Promise.all([this.$http.get('http://localhost:3000/music/url?id=165340'),
+        this.$http.get('http://localhost:3000/song/detail?ids=165340')]).
         then(data=>{
-            console.log(data)
+            console.log(data);
            this.url=data[0].body.data[0].url;
            this.singdata=data[1].data.songs[0];
-           console.log(this.singdata)
            this.songname=this.singdata.name;
            this.singer=this.singdata.ar[0].name;
            this.pic=this.singdata.al.picUrl;
-
+         
+          console.log(this.url);
         })
     },
     methods:{
         play(){
-            this.isPlay=!this.isPlay
+            this.isPlay=!this.isPlay;
+            let audio = this.$refs.audio;
+
+            if(this.isPlay){
+              
+                audio.play();
+            }else{
+                audio.pause();
+            }
+           
         }
     }
 

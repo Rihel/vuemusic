@@ -33,6 +33,7 @@ import oneOnly from '../../../components/music/hot/recommendOnly/recommendOnly'
 import mv from '../../../components/music/hot/recommendMv/recommendMv'
 import DJ from '../../../components/music/hot/recommendDJ/recommendDJ'
 
+
 export default {
     components: {
         banner: banner,
@@ -40,6 +41,7 @@ export default {
         oneOnly: oneOnly,
         mv: mv,
         DJ: DJ,
+     
     },
 }
 

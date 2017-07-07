@@ -49,7 +49,8 @@ export default {
         loading
     },
     created() {
-        this.$http.get('http://localhost:3000/top/playlist')
+        if(!this.isDone){
+            this.$http.get('http://localhost:3000/top/playlist')
             .then(function (data) {
                 // console.log(data)
                 var result = data.body;
@@ -59,6 +60,7 @@ export default {
         
             
             });
+        }
     },
 }
 

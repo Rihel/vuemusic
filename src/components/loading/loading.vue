@@ -13,7 +13,8 @@
 </script>
 <style lang="scss">
     .loading{
-        display:flxe;
+        margin-top: 100px;
+        display:flex;
         flex-direction:column;
         text-align:center;
         div{
