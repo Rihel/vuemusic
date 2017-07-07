@@ -29,7 +29,6 @@ export default {
         this.$http.get('http://localhost:3000/personalized/mv')
             .then(function (data) {
                 this.newMv = data.body.result;
-                console.log(this.newMv)
             });
     },
 }

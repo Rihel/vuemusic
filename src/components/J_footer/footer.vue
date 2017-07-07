@@ -1,13 +1,14 @@
 <template>
     <footer class="play">
         <div class="play-info pull-left">
-            <img src="../../../static_page/img/local_songs-face.png" alt="fff">
-            <h6 class="play-name">不该(with AMEI)</h6>
-            <p class="play-songer">周杰伦</p>
+            <img :src="pic" alt="fff">
+            <h6 class="play-name">{{songname}}</h6>
+            <p class="play-songer">{{singer}}</p>
         </div>
         <ul class="play-control pull-right">
             <li>
-                <i class="fa fa-play fa-2x"></i>
+                <i class="fa fa-play fa-2x" v-if="isPlay" @click="play()"></i>
+                 <i class="fa fa-pause fa-2x" v-if="!isPlay" @click="play()"></i>
             </li>
             <li>
                 <i class="fa fa-step-forward fa-2x"></i>
@@ -16,12 +17,40 @@
                 <i class="fa fa-list fa-2x"></i>
             </li>
         </ul>
+        <audio :src="url" ></audio>
     </footer>
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+            isPlay:true,
+            url:'',
+            singer:'',
+            songname:'',
+            pic:'',
+        }
+    },
+    created(){
+        Promise.all([this.$http.get('http://localhost:3000/music/url?id=347231'),
+        this.$http.get('http://localhost:3000/song/detail?ids=347231')]).
+        then(data=>{
+            console.log(data)
+           this.url=data[0].body.data[0].url;
+           this.singdata=data[1].data.songs[0];
+           console.log(this.singdata)
+           this.songname=this.singdata.name;
+           this.singer=this.singdata.ar[0].name;
+           this.pic=this.singdata.al.picUrl;
 
+        })
+    },
+    methods:{
+        play(){
+            this.isPlay=!this.isPlay
+        }
+    }
 }
 </script>
 
