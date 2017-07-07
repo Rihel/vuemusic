@@ -1,4 +1,6 @@
 <template>
+    <div>
+        <template v-if="isDone">
     <div class="container">
         <div class="c-list-top">
             <div class="c-list-left">
@@ -29,13 +31,22 @@
     
         </div>
     </div>
+    </template>
+    
+    <loading v-if="!isDone"></loading>
+    </div>
 </template>
 <script>
+import loading from "../../../components/loading/loading.vue"
 export default {
     data() {
         return {
-            lists: []
+            lists: [],
+            isDone:false
         }
+    },
+    components:{
+        loading
     },
     created() {
         this.$http.get('http://localhost:3000/top/playlist')
@@ -43,6 +54,10 @@ export default {
                 // console.log(data)
                 var result = data.body;
                 this.lists = result.playlists;
+             
+                        this.isDone=true;
+        
+            
             });
     },
 }

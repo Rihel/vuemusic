@@ -6,9 +6,11 @@
             <p class="play-songer">周杰伦</p>
         </div>
         <ul class="play-control pull-right">
+          
             <li>
                 <i class="fa fa-play fa-2x"></i>
             </li>
+            
             <li>
                 <i class="fa fa-step-forward fa-2x"></i>
             </li>
@@ -18,10 +20,10 @@
         </ul>
     </footer>
 </template>
-
+    
 <script>
 export default {
-
+    
 }
 </script>
 
