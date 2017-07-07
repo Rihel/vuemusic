@@ -31,15 +31,18 @@
 
     <div class="song-list">
       <div v-for="item,index in personalized" class="songs">
+        <router-link to="/songSheetDelate">
+
+        
         <div class="img-wrap">
-          <img :src="item.coverImgUrl" alt="">
+          <lazy-image :src="item.coverImgUrl" alt=""></lazy-image>
           <h4 class="user-name"><span class="fa fa-user"></span>{{item.creator.nickname}}</h4>
           <h5><i class="fa fa-headphones"></i> {{Math.floor(item.playCount/10000)}}万</h5>
         </div>
         
         <h2>{{item.name}}</h2>
         
-        
+        </router-link>
       </div>
     </div>
     </template>

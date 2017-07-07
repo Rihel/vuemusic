@@ -1,117 +1,123 @@
 <template>
   <div>
-    <banner :banners="banners"></banner>
-    <div class="wzx-radio clearfix">
-      <div class="radio-choose clearfix">
-        <div class="choose-left">
-          <i class="choose-headphone">
+    <template v-if="isShow">
+      <banner :banners="banners"></banner>
+      <div class="wzx-radio clearfix">
+        <div class="radio-choose clearfix">
+          <div class="choose-left">
+            <i class="choose-headphone">
                     <img src="../../../assets/img/wzx-headphone.png" alt="">
                 </i>
-          <h3>电台分类</h3>
-        </div>
-        <div class="choose-right choose-left">
-          <i class="choose-headphone">
+            <h3>电台分类</h3>
+          </div>
+          <div class="choose-right choose-left">
+            <i class="choose-headphone">
                     <img src="../../../assets/img/wzx-people.png" alt="">
                 </i>
-          <h3>电台排行</h3>
+            <h3>电台排行</h3>
+          </div>
         </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>电台个性推荐</span>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>电台个性推荐</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in recommend">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in recommend">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>商业财经</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in type1">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>商业财经</span>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>明星做主播</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in type2">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in type1">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>音乐故事</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in type3">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>明星做主播</span>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>情感调频</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in type4">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in type2">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>有声书</span>
+          </div>
+          <div class="groom-list">
+            <figure class="groom-item" v-for="item,index in type5">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>{{item.name}}</figcaption>
+            </figure>
+          </div>
         </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>音乐故事</span>
+        <div class="radio-groom">
+          <div class="groom-nav">
+            <div class="nav-red"></div>
+            <span>电台分类</span>
+          </div>
         </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in type3">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
+        <div class="radio-top " v-for="item,index in catelist">
+          <div class="radio-top-name">{{item.name}}</div>
         </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>情感调频</span>
-        </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in type4">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>有声书</span>
-        </div>
-        <div class="groom-list">
-          <figure class="groom-item" v-for="item,index in type5">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>{{item.name}}</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="radio-groom">
-        <div class="groom-nav">
-          <div class="nav-red"></div>
-          <span>电台分类</span>
-        </div>
-      </div>
-      <div class="radio-top " v-for="item,index in catelist">
-        <div class="radio-top-name">{{item.name}}</div>
-      </div>
 
-    </div>
+      </div>
+    </template>
+     <loading v-if="!isShow"></loading>
   </div>
 </template>
 
 <script>
 import banner from '../../../components/banner'
 import lazyImage from '../../../components/lazyImage'
+import loading from '../../../components/loading'
 export default {
   components:{
     banner,
-    'lazy-image':lazyImage
+    'lazy-image':lazyImage,
+    loading,
   },
   data(){
     return {
+      isShow:false,
       isDone: false,
       banners:[],
       recommend: [],
@@ -146,6 +152,7 @@ export default {
           this.type5 = datas[6].body.djRadios.slice(0,3);
           this.catelist = datas[7].body.categories
           this.isDone=true;
+          this.isShow=true;
         })
     }
     // this.$http.get('http://localhost:3000/banner')
