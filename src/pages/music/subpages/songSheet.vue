@@ -31,6 +31,9 @@
 
     <div class="song-list">
       <div v-for="item,index in personalized" class="songs">
+        <router-link to="/songSheetDelate">
+
+        
         <div class="img-wrap">
           <img :src="item.coverImgUrl" alt="">
           <h4 class="user-name"><span class="fa fa-user"></span>{{item.creator.nickname}}</h4>
@@ -39,7 +42,7 @@
         
         <h2>{{item.name}}</h2>
         
-        
+        </router-link>
       </div>
     </div>
     </template>
