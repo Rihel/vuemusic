@@ -15,7 +15,7 @@
       <i class="fa fa-step-forward"></i>
       <i class="fa fa-list-ul"></i>
     </div>
-    <audio ref="audio"></audio>
+    <audio ref="audio" :src="url"></audio>
   </div>
 </template>
 
@@ -35,12 +35,14 @@
         },
         methods:{
           play(){
-           let myaudio=this.$refs.audio;
-           myaudio.src=this.url;
-           if(!this.isPlay){
-               myaudio.play();
-           }
            this.isPlay=!this.isPlay;
+           let myaudio=this.$refs.audio;
+           if(this.isPlay){
+              myaudio.play();
+           }
+             else {
+               myaudio.pause();
+             } 
           }
         },
         created(){
