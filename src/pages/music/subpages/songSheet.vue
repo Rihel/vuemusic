@@ -31,7 +31,7 @@
 
     <div class="song-list">
       <div v-for="item,index in personalized" class="songs">
-        <router-link to="/songSheetDelate">
+        <router-link :to="'/songSheetDelate/'+item.id">
 
         
         <div class="img-wrap">
@@ -69,10 +69,10 @@ import lazyImage from '../../../components/lazyImage'
         created(){
           this.$http.get('http://localhost:3000/top/playlist/highquality')
           .then(data=>{
-            
+            // console.log(data);
             if(data.data.code===200){
               this.personalized=data.data.playlists;
-              console.log(data.data.playlists)
+              // console.log(data.data.playlists)
               this.isShow=true;
             }
           })

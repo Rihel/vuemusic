@@ -25,13 +25,17 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items">
+
             <figure v-for="item,index in personalized">
-              <div class="zql-count">
-                <i class="fa fa-headphones"></i><span>{{Math.floor(item.playCount/10000)+'万'}}</span>
-              </div>
-              <lazy-image :src="item.picUrl"></lazy-image>
-              <figcaption class="textEllipsis">{{item.name}}</figcaption>
+              <router-link :to="'/songSheetDelate/'+item.id">
+                <div class="zql-count">
+                  <i class="fa fa-headphones"></i><span>{{Math.floor(item.playCount/10000)+'万'}}</span>
+                </div>
+                <lazy-image :src="item.picUrl"></lazy-image>
+                <figcaption class="textEllipsis">{{item.name}}</figcaption>
+              </router-link>
             </figure>
+
           </div>
           <div class="zql-title">
             <h3> <img src="../../../assets/img/music.png" alt="">独家放送</h3>
@@ -135,7 +139,7 @@ export default {
 
     ])
     .then((datas)=>{
-      console.log(datas)
+      // console.log(datas)
       var self=this;
       datas.forEach(function(item,index,arr){
        if(item.ok){
@@ -157,4 +161,5 @@ export default {
 
 <style lang="scss">
   @import "../../../assets/scss/_common.scss";
+
 </style>

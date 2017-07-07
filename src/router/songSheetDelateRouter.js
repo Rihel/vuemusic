@@ -1,6 +1,6 @@
 import SongSheetDelate from '../pages/music/subpages/songSheetDelate';
 
 export default {
-    path: '/songSheetDelate',
+    path: '/songSheetDelate/:id',
     component: SongSheetDelate
 }
