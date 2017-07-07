@@ -38,20 +38,26 @@ import UsedRouter from './usedRouter';
 /*********** Used end ************* */
 
 
+/*********** Used start ************* */
+import listsDelate from '../pages/music/subpages/listsDelate';
+import listsDelateRouter from './listsDelateRouter';
+/*********** Used end ************* */
+
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-      path: '/',
-      name: 'userCenter',
-      component: userCenter
-    },
-    musicRouter,
-    dynamicRouter,
-    SearchRouter,
-    UserCenterRouter,
-    SongRouter,
-    UsedRouter
-  ],
-  linkActiveClass: 'active'
+    routes: [{
+            path: '/',
+            name: 'userCenter',
+            component: userCenter
+        },
+        musicRouter,
+        dynamicRouter,
+        SearchRouter,
+        UserCenterRouter,
+        SongRouter,
+        UsedRouter,
+        listsDelateRouter
+    ],
+    linkActiveClass: 'active'
 })
