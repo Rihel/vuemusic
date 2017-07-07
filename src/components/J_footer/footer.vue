@@ -6,10 +6,12 @@
             <p class="play-songer">{{singer}}</p>
         </div>
         <ul class="play-control pull-right">
+          
             <li>
                 <i class="fa fa-play fa-2x" v-if="isPlay" @click="play()"></i>
                  <i class="fa fa-pause fa-2x" v-if="!isPlay" @click="play()"></i>
             </li>
+            
             <li>
                 <i class="fa fa-step-forward fa-2x"></i>
             </li>
@@ -20,9 +22,10 @@
         <audio :src="url" ></audio>
     </footer>
 </template>
-
+    
 <script>
 export default {
+
     data(){
         return{
             isPlay:true,
@@ -51,6 +54,7 @@ export default {
             this.isPlay=!this.isPlay
         }
     }
+
 }
 </script>
 
