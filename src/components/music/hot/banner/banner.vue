@@ -27,6 +27,7 @@ export default {
                 paginationClickable: true,
                 mousewheelControl: true,
                 observeParents: true,
+                loop:true,
             },
             swiperSlides: [1, 2, 3, 4, 5],
             banners: [],

@@ -1,10 +1,11 @@
 <template>
   <div>
-      <header>
-         <router-link to="/user"> <本地歌曲</router-link>
-      </header>
+    <header>
+      <router-link to="/user">
+        <i class="fa fa-angle-left"></i>&nbsp本地歌曲</router-link>
+    </header>
     <mainNav :music="music"></mainNav>
-      <router-view class="local"></router-view>
+    <router-view class="local"></router-view>
   </div>
 
 </template>
@@ -23,7 +24,7 @@ export default {
                     title: '歌曲'
                 },
                 {
-                    path: '/user/local/ablum',
+                    path: '/user/local/file',
                     title: "文件夹"
                 },
                 {
@@ -41,26 +42,28 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../scss/_function.scss';
-@import '../../../scss/_common.scss';
+  @import '../../../scss/_function.scss';
+  @import '../../../scss/_common.scss';
 
-header{
+  header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: rem(85);   
+    height: rem(85);
     line-height: rem(85);
     background: $primary-color;
-    
-    text-indent: rem(30);
-    a{
-        font-size: 16px;
-    color: #fff;
+    text-indent: rem(15);
+    z-index:999;
+    a {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
     }
-}
-  .local{
-      margin-top: 200px;
   }
-  
+
+  .local {
+    margin-top: 200px;
+  }
+
 </style>

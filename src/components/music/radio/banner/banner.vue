@@ -1,10 +1,10 @@
 <template>
-    <swiper :options="swiperOption">
-        <swiper-slide v-for="item,index in banners" :key="index">
-            <img class="banner" :src="item.pic" alt="fff">
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+  <swiper :options="swiperOption">
+    <swiper-slide v-for="item,index in banners" :key="index">
+      <img class="banner" :src="item.pic" alt="fff">
+    </swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
+  </swiper>
 </template>
 
 <script>
@@ -27,6 +27,7 @@ export default {
                 paginationClickable: true,
                 mousewheelControl: true,
                 observeParents: true,
+                loop:true,
             },
             swiperSlides: [1, 2, 3, 4, 5],
             banners: [],
@@ -49,5 +50,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
