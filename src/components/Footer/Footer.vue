@@ -47,8 +47,8 @@
         },
         created(){
               Promise.all([
-                  this.$http.get('http://localhost:3000/music/url?id=31814005'),
-                  this.$http.get('http://localhost:3000/song/detail?ids=31814005')
+                  this.$http.get('http://localhost:3000/music/url?id=432506345'),
+                  this.$http.get('http://localhost:3000/song/detail?ids=432506345')
               ]).then(data=>{
                 // console.log(data);
                  this.url=data[0].data.data[0].url;

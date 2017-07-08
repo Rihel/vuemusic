@@ -95,12 +95,18 @@ import loading from '../../../components/loading'
 </script>
 <style lang="scss">
   body {
+    position: relative;
     background-image: none;
     .wyf-header {
+      position: fixed;
+      top:0;
+      left:0;
       display: flex;
       justify-content: space-between;
+      width: 100%;
       padding: 10px;
       background: rgba(0, 0, 0, .7);
+      z-index:5;
       .wyf-header-left {
         .fonts {
           font-size: 14px;
@@ -119,6 +125,7 @@ import loading from '../../../components/loading'
       }
     }
     .song-detail {
+      margin-top: 36px;
       padding: 10px;
       background: rgba(0, 0, 0, .7);
       .song-detail-top {
