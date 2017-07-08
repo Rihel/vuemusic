@@ -2,7 +2,7 @@
   <div>
   
     <template v-if="isDone">
-      <banner :banners="banners"></banner>
+      <banner :banners="$store.state.banners"></banner>
       <div class="classify">
         <div class="classify-item">
           <lazy-image :src="require('./icon1.png')"></lazy-image>
@@ -27,10 +27,12 @@
         </div>
         <div class="list">
           <figure class="item" v-for="item,index in personalized ">
-            <lazy-image :src="item.picUrl"></lazy-image>
-            <figcaption>
-              {{item.name}}
-            </figcaption>
+            <router-link :to="'/personalized/'+item.id">
+              <lazy-image :src="item.picUrl"></lazy-image>
+              <figcaption>
+                {{item.name}}
+              </figcaption>
+            </router-link>
           </figure>
         </div>
       </div>

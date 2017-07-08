@@ -7,6 +7,7 @@ import SearchRouter from './searchRouter';
 
 import UserCenterRouter from './userCenterRouter';
 import Search from '../pages/search';
+import SongSheetList from '../pages/songSheetList';
 
 Vue.use(Router)
 
@@ -16,7 +17,10 @@ export default new Router({
       name: 'music',
       component: Music,
       redirect:'/music/recommendation'
-    }, musicRouter,
+    },{
+      path:'/personalized/:id',
+      component:SongSheetList
+    } ,musicRouter,
     dynamicRouter, SearchRouter, UserCenterRouter
   ],
   linkActiveClass: 'active'

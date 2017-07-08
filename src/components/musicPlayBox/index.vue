@@ -5,7 +5,7 @@
                 <img :src="detail.picUrl" />
                 <div class="text">
                     <h5 class="song-name">{{detail.songName}}</h5>
-                    <small class="song-author">{{detail.singer}}</small>
+                    <small class="song-author">{{detail.singer}}</small> {{musicId}}
                 </div>
             </div>
             <div class="song-control">
@@ -20,6 +20,7 @@
     </div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 export default {
     data() {
         return {
@@ -34,19 +35,11 @@ export default {
             }
         }
     },
+    computed: mapState({
+        musicId: state => state.musicId
+    }),
     created() {
-        Promise.all([
-            this.$http.get('http://localhost:3000/music/url?id=31814005'),
-            this.$http.get('http://localhost:3000/song/detail?ids=31814005')
-        ]).then(data => {
-
-            this.url = data[0].data.data[0].url;
-            this.detail.id = data[1].data.songs[0].al.id;
-            this.detail.songName = data[1].data.songs[0].name;
-            this.detail.picUrl = data[1].data.songs[0].al.picUrl;
-            this.detail.singer = data[1].data.songs[0].ar[0].name;
-            this.play();
-        })
+        this.getMusic(this.musicId);
     },
     watch: {
         currentTime(newValue, oldValue) {
@@ -54,16 +47,20 @@ export default {
                 return;
             }
         },
-        url(newValue,oldValue){
-            
+        musicId(newValue, oldValue) {
+            if (newValue !== oldValue) {
+                this.getMusic(newValue);
+                let audio = this.$refs.audio;
+                audio.autoPlay = true;
+            }
         }
+
     },
     methods: {
         play() {
             this.isPlay = !this.isPlay;
             let audio = this.$refs.audio;
-            audio.src = this.url;
-
+            audio.src = this.url;   
             console.log(audio.src)
 
             if (this.isPlay) {
@@ -77,6 +74,20 @@ export default {
             }
 
 
+        },
+        getMusic(id) {
+            Promise.all([
+                this.$http.get('http://localhost:3000/music/url?id=' + id),
+                this.$http.get('http://localhost:3000/song/detail?ids=' + id)
+            ]).then(data => {
+
+                this.url = data[0].data.data[0].url;
+                this.detail.id = data[1].data.songs[0].al.id;
+                this.detail.songName = data[1].data.songs[0].name;
+                this.detail.picUrl = data[1].data.songs[0].al.picUrl;
+                this.detail.singer = data[1].data.songs[0].ar[0].name;
+                this.play();
+            })
         }
     },
     mounted() {

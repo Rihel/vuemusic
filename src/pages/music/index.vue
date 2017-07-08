@@ -3,7 +3,7 @@
     <mainnav></mainnav>
     <subnav :navs="navs"></subnav>
     <router-view></router-view>
-    <music-play-box></music-play-box>
+
   </div>
 </template>
 
@@ -15,8 +15,7 @@
     name: 'app',
     components: {
       mainnav,
-      subnav,
-      'music-play-box':musicPlayBox
+      subnav
     },
     data(){
       return{
