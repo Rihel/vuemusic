@@ -12,6 +12,7 @@
 </script>
 <style lang="scss">
     .loading{
+        margin-top:36px;
         display: flex;
         flex-direction: column;
         
