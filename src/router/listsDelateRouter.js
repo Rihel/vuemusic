@@ -1,6 +1,6 @@
 import listsDelate from '../pages/music/subpages/listsDelate';
 
 export default {
-    path: '/listsDelate',
+    path: '/listsDelate/:id',
     component: listsDelate
 }

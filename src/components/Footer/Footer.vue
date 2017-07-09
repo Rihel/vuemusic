@@ -1,5 +1,5 @@
 <template>
-  <div class="footer clearfix">
+  <div class="footer ">
     <div class="footer-img">
       <router-link to="/song/songOne">
         <img :src="detail.picUrl" alt="">
@@ -9,7 +9,7 @@
       <h2>{{detail.name}}</h2>
       <span>{{detail.singer}}</span>
     </div>
-    <div class="icons clearfix">
+    <div class="icons">
       <i class="fa fa-play" @click="play()" v-if="!isPlay"></i>
       <i class="fa fa-pause" @click="play()" v-if="isPlay"></i>
       <i class="fa fa-step-forward"></i>
