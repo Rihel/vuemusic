@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="rank-right">
-            <div  class="songs-name">
+            <div class="songs-name">
               <p>{{item.name}}<span>{{item.alias[0]}}</span></p>
               <div class="singer-info">
                 <span class="hot">SQ</span>
@@ -69,8 +69,10 @@
 <script>
 // import listDelate from '../subpages/listsDelate'
     export default {
+        props:['number'],
  data() {
 return {
+         id: this.$route.params.id,
          idx:[],
          idxUser:{
              picUrl:'',
@@ -78,10 +80,10 @@ return {
              subscribedCount: '',
              commentCount:''
          }
+         
 }
  },
    created() {
-
       Promise.all([this.$http.get('http://localhost:3000/top/list?idx=0')
       ])
         .then((datas) => {
@@ -143,19 +145,19 @@ return {
     .banner-info {
       display: flex;
       flex-direction: column;
-      img{
-          position: absolute;
-          top: 40px;
-          width: 150px;
-          height: 150px;
-          z-index: 1;
+      img {
+        position: absolute;
+        top: 40px;
+        width: 150px;
+        height: 150px;
+        z-index: 1;
       }
       .tags {
-          margin-top: -40px;
-          margin-bottom: 100px;
+        margin-top: -40px;
+        margin-bottom: 100px;
         color: #fff;
         font-size: 14px;
-         z-index: 2;
+        z-index: 2;
       }
       .up-time {
         color: #fff;
