@@ -3,7 +3,7 @@
 //hubvues
 .classify {
     .wl-list {
-        figure {
+        .list-item {
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -49,7 +49,7 @@
         .global-list {
             flex-basis: 33%;
             margin-bottom: 15px;
-            a {
+            .golbal-info {
                 display: block;
                 position: relative;
                 width: 100%;
