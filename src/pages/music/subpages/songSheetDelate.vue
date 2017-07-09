@@ -51,7 +51,7 @@
           <li class="more-choose"><i class="fa fa-list-ul"></i>多选</li>
         </ul>
 
-        <div v-for="item,index in tracks">
+        <div v-for="item,index in tracks" @click="changeMusicId(item.id)">
           <div class="songs-name">
             <div class="num">{{index+1}}</div>
             <div class="songs-detail">
@@ -66,13 +66,17 @@
       </div>
     </template>
     <loading v-if="!isShow"></loading>
+    <my-footer></my-footer>
   </div>
 </template>
 <script>
 import loading from '../../../components/loading'
+import footer from '../../../components/Footer/Footer'
+import { mapMutations } from 'vuex'
     export default {
         components: {
            loading,
+           'my-footer':footer
         },
         data() {
             return {
@@ -90,6 +94,11 @@ import loading from '../../../components/loading'
                     this.tracks=this.detail.tracks;
                     this.isShow=true;
                 })
+        },
+        methods:{
+            ...mapMutations([
+            'changeMusicId'
+          ])
         }
     }
 </script>
@@ -99,14 +108,14 @@ import loading from '../../../components/loading'
     background-image: none;
     .wyf-header {
       position: fixed;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       display: flex;
       justify-content: space-between;
       width: 100%;
       padding: 10px;
       background: rgba(0, 0, 0, .7);
-      z-index:5;
+      z-index: 5;
       .wyf-header-left {
         .fonts {
           font-size: 14px;

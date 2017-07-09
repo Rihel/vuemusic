@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import {mapMutations,mapState} from 'vuex';
     export default {
     
         data(){
@@ -33,6 +34,9 @@
               }
           }
         },
+        computed:mapState({
+          musicId:state=>state.musicId
+        }),
         methods:{
           play(){
            this.isPlay=!this.isPlay;
@@ -43,12 +47,11 @@
              else {
                myaudio.pause();
              } 
-          }
-        },
-        created(){
-              Promise.all([
-                  this.$http.get('http://localhost:3000/music/url?id=432506345'),
-                  this.$http.get('http://localhost:3000/song/detail?ids=432506345')
+          },
+          getMusic(id) {
+                 Promise.all([
+                  this.$http.get('http://localhost:3000/music/url?id='+id),
+                  this.$http.get('http://localhost:3000/song/detail?ids='+id)
               ]).then(data=>{
                 // console.log(data);
                  this.url=data[0].data.data[0].url;
@@ -56,10 +59,25 @@
                  this.detail.picUrl=data[1].data.songs[0].al.picUrl;
                  this.detail.singer=data[1].data.songs[0].ar[0].name;
               })
+          }
+        },
+        watch:{
+          musicId(newValue, oldValue) {
+            if (newValue !== oldValue) {
+                this.getMusic(newValue);
+                let audio = this.$refs.audio;
+                audio.autoplay='autoplay';
+                this.isPlay=true;
+            }
+          }
+        },
+        created(){
+           this.getMusic(this.musicId);
         }
     }
 </script>
 
 <style lang="">
+
 
 </style>

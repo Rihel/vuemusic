@@ -5,9 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    musicId:432506345,
     lists: []
   },
   mutations: {
+    changeMusicId(state,id) {
+      state.musicId=id;
+    },
     getlists(state, lists) {
       state.lists = lists;
     }
