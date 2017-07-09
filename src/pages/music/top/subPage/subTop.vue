@@ -1,28 +1,28 @@
 <template>
     <div>
-         <template v-if="isDone">
-        <listtop></listtop>
+        <template v-if="isDone">
+            <listtop></listtop>
     
-        <div class="c-list-info">
-            <div class="c-image-info">
-                <img :src="coverImg" alt="">
-                <span class="c-play-count">
-                    <i class="fa fa-headphones fa-fw"></i>{{playCount}}</span>
-                <span class="c-info-icon">
-                    <i class="fa fa-info-circle fa-3x"></i>
-                </span>
-            </div>
-            <div class="c-text-info">
-                <h3>{{listName}}</h3>
-                <div class="c-author">
-                    <img :src="avatarUrl" alt="">
-                    <span class="c-name">{{listCreator}}
-                        <i class="fa fa-angle-right fa-fw"></i>
+            <div class="c-list-info">
+                <div class="c-image-info">
+                    <img :src="coverImg" alt="">
+                    <span class="c-play-count">
+                        <i class="fa fa-headphones fa-fw"></i>{{playCount}}</span>
+                    <span class="c-info-icon">
+                        <i class="fa fa-info-circle fa-3x"></i>
                     </span>
                 </div>
+                <div class="c-text-info">
+                    <h3>{{listName}}</h3>
+                    <div class="c-author">
+                        <img :src="avatarUrl" alt="">
+                        <span class="c-name">{{listCreator}}
+                            <i class="fa fa-angle-right fa-fw"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <listmenu :listData="listData" :tracks="tracks"></listmenu>
+            <listmenu :listData="listData" :tracks="tracks"></listmenu>
         </template>
         <loading v-if="!isDone"></loading>
     </div>
@@ -50,11 +50,11 @@ export default {
             tracks: [],
 
             listId: this.$route.params.id,
-             isDone:false,
+            isDone: false,
         }
     },
     created() {
-        this.$http.get('http://localhost:3000/playlist/detail?id='+this.listId)
+        this.$http.get('http://localhost:3000/playlist/detail?id=' + this.listId)
             .then(data => {
                 console.log(data)
                 var result = data.body;
@@ -67,7 +67,7 @@ export default {
                 this.avatarUrl = result.playlist.creator.avatarUrl;
                 this.tracks = result.playlist.tracks;
                 // console.log(this.tracks)
-                 this.isDone=true;
+                this.isDone = true;
             });
     },
 
@@ -80,7 +80,7 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: rem(85);    
+    margin-top: rem(85);
     height: rem(300);
     padding: 20px;
     overflow: hidden;
@@ -144,7 +144,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: rem(28); 
+        font-size: rem(28);
         .fa {
             font-size: rem(36)
         }
