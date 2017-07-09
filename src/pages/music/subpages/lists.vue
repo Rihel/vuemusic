@@ -2,6 +2,7 @@
 <!--榜单页面-->
 <!--作者：hubvues-->
 
+
 <div class="classify">
   <loading v-if="!isShow"></loading>
   <div class="title">官方榜</div>
@@ -21,6 +22,7 @@
         </ul>
 
       </router-link>
+
     </figure>
 
   </div>
@@ -29,6 +31,8 @@
     <div class="global-list" v-for="item,index in list1">
       <router-link :to="'/listsDelate/'+item.id">
         <div class="golbal-info">
+
+   
           <lazy-image :src="item.coverImgUrl" alt=""></lazy-image>
           <span>每周更新</span>
         </div>
@@ -41,6 +45,7 @@
 </template>
 
 <script>
+
 import lazyImage from '../../../components/lazyImage';
 import loading from '../../../components/loading';
 import '../../../assets/scss/scssBypages/lists/lists.scss';
@@ -55,7 +60,6 @@ export default {
     return {
       list: [],
       list1: [],
-
       isShow: false
 
     }

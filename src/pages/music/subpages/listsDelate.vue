@@ -72,6 +72,7 @@
             <!-- <p>
                <i class="fa fa-arrow-up"></i>{{item.score}}%</p>  -->
           </div>
+
         </div>
         <div class="rank-right">
           <div class="songs-name">
@@ -80,6 +81,8 @@
             </p>
             <div class="singer-info textLine">
               <span class="hot">SQ</span> {{item.ar[0].name}} - {{item.al.name}}
+
+          
             </div>
           </div>
           <i class="fa fa-ellipsis-v"></i>
@@ -97,7 +100,6 @@ import playbox from '../../../components/Footer/Footer';
 export default {
   components: {
     loading,
-    
     playbox,
 
   },
@@ -116,10 +118,10 @@ export default {
         subscribedCount: '',
         commentCount: ''
       }
+
     }
   },
   created() {
-
     this.$http.get('http://localhost:3000/playlist/detail?id=' + this.id)
       .then(datas => {
 
@@ -255,9 +257,10 @@ body{
     }
   }
 }
+  
+
 
 .wl-play-list {
-  
   .title {
     display: flex;
     justify-content: space-between;
@@ -355,4 +358,4 @@ body{
     }
   }
 }
-</style>
+ </style>
