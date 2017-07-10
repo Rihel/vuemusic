@@ -15,11 +15,15 @@
         <div class="sing">
             <div class="banner-left">
                 <img src="./img1.png" alt="">
+                <div class="pp">
                 <p>#你最想听的歌是哪一首单曲循环？</p>
+                </div>
             </div>
              <div class="banner-right">
                  <img src="./img2.png" alt="">
+                 <div class="pp1">
                  <p>你期待的一首歌</p>
+                 </div>
              </div>
         </div>
         <div class="joy">
@@ -85,6 +89,7 @@ export default {
    
         
 <style lang="scss">
+
    .song-logo{
        margin-top:10px;
        img{
@@ -93,7 +98,7 @@ export default {
        }
        .song-case{
         border:4px solid #fff;;
-        width: 300px;
+        // width: 300px;
         height:150px;
         border-radius:4px;
         position:absolute;
@@ -110,13 +115,13 @@ export default {
             color:#fff;
             position:absolute;
             top:80px;
-            left:120px;
+            left:80px;
         }
        }
        .topic{
            height:72px;
            display:flex;
-         justify-content: space-around;
+         justify-content: space-between;
          h3{
               font-size:2rem;
               line-height:72px;
@@ -135,10 +140,19 @@ export default {
              width: 200px;
              height: 190px;
              }
+        
              .banner-left{
-                  float:left;
+            float:left;
              margin-left:0;
              position:relative;
+             .pp{
+              width:100%;
+              height:100%;
+              position:absolute;
+              background:rgba(0,0,0,.3);
+              top:0;
+              left:0;
+        }
              p{
               position:absolute;
              font-size:1.5rem;
@@ -147,17 +161,26 @@ export default {
              left:30px;
              top:80px;
              }
+
              }
              .banner-right{
-                   float:right;
+             float:right;
               margin-left:0;
              position:relative;
+               .pp1{
+              width:100%;
+              height:100%;
+              position:absolute;
+              background:rgba(0,0,0,.3);
+              top:0;
+              left:0;
+             }
              p{
-                     position:absolute;
+            position:absolute;
              font-size:2rem;
              color:#fff;
-             width: 204px;
-             left:100px;
+            //  width: 204px;
+             left:40px;
              top:80px;
              }
              }
@@ -218,15 +241,19 @@ export default {
         }
     }
     .base{
+        display:flex;
          margin-top:20px;
+          justify-content:space-between;
+
          img{
-              width: 250px;
+              width: 50%;
              height: 180px;
-            float:left;
+         }
+         .base-right{
+              width:48%;
          }
          .base-right img{
-             float:right;
-              width:150px;
+              width:100%;
              height: 90px;
          }
     }
