@@ -22,7 +22,6 @@
 <script>
 import {mapMutations,mapState} from 'vuex';
     export default {
-    
         data(){
           return {
               isPlay:false,
@@ -35,7 +34,7 @@ import {mapMutations,mapState} from 'vuex';
           }
         },
         computed:mapState({
-          musicId:state=>state.musicId
+          musicId:state=>state.music.musicId
         }),
         methods:{
           play(){
@@ -53,7 +52,6 @@ import {mapMutations,mapState} from 'vuex';
                   this.$http.get('http://localhost:3000/music/url?id='+id),
                   this.$http.get('http://localhost:3000/song/detail?ids='+id)
               ]).then(data=>{
-                // console.log(data);
                  this.url=data[0].data.data[0].url;
                  this.detail.name=data[1].data.songs[0].name;
                  this.detail.picUrl=data[1].data.songs[0].al.picUrl;
