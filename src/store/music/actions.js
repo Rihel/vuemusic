@@ -1,5 +1,5 @@
 import Vue from 'vue';
-const api1 = 'http://localhost:3000/'
+const api1 = 'http://localhost:3000'
 export default {
 
   getRadioApi: store => {
@@ -34,5 +34,35 @@ export default {
         console.log(111)
       })
   },
+  //获取推荐页面信息
+  getMusicData: store => {
+    Promise.all([
+        Vue.http.get(`${api1}/banner`),
+        Vue.http.get(`${api1}/personalized`),
+        Vue.http.get(`${api1}/personalized/privatecontent`),
+        Vue.http.get(`${api1}/personalized/newsong`),
+        Vue.http.get(`${api1}/personalized/mv`),
+        Vue.http.get(`${api1}/program/recommend`),
+        Vue.http.get(`${api1}/personalized/djprogram`)
+      ])
+      .then((datas) => {
+        // console.log(datas);
+        let musicInfo = {};
+        datas.forEach((item, index, arr) => {
+          if (item.ok) {
+            musicInfo.banners = datas[0].data.banners;
+            musicInfo.personalized = arr[1].data.result;
+            musicInfo.private = arr[2].data.result;
+            musicInfo.newsongs = arr[3].data.result.slice(0, 6);
+            musicInfo.mv = arr[4].data.result;
+            musicInfo.programs = arr[5].data.programs;
+            musicInfo.djs = arr[6].data.result;
+          }
+          store.commit('initMusicData', musicInfo);
+          store.commit('show');
+        })
+
+      })
+  }
 
 }

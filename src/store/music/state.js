@@ -3,5 +3,7 @@ export default {
   lists: [],
   radio: {
       isshow:false
-  }
+  },
+  isShow:false,
+  musicData:{},
 }

@@ -3,7 +3,7 @@
   <!--作者：Lewis-->
   <div>
     <template v-if="isShow">
-      <banner :banners="banners"></banner>
+      <banner :banners="musicData.banners"></banner>
       <div class="zql-content">
         <div class="zql-items">
           <figure>
@@ -26,7 +26,7 @@
           </div>
           <div class="zql-s-items">
 
-            <figure v-for="item,index in personalized">
+            <figure v-for="item,index in musicData.personalized">
               <router-link :to="'/songSheetDelate/'+item.id">
                 <div class="zql-count">
                   <i class="fa fa-headphones"></i><span>{{Math.floor(item.playCount/10000)+'万'}}</span>
@@ -42,7 +42,7 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items private">
-            <figure v-for="item,index in private">
+            <figure v-for="item,index in musicData.private">
               <lazy-image :src="item.sPicUrl"></lazy-image>
               <figcaption class="textEllipsis">{{item.name}}</figcaption>
             </figure>
@@ -52,7 +52,7 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items new">
-            <figure v-for="item,index in newsongs">
+            <figure v-for="item,index in musicData.newsongs">
               <lazy-image :src="item.song.album.picUrl"></lazy-image>
               <figcaption class="textLine">{{item.name}}
                 <p class="sub-title">{{item.song.artists[0].name}}</p>
@@ -64,7 +64,7 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items mv">
-            <figure v-for="item,index in mv">
+            <figure v-for="item,index in musicData.mv">
               <lazy-image :src="item.picUrl"></lazy-image>
               <figcaption class="textLine">{{item.name}}
                 <p class="sub-title">{{item.artistName}}</p>
@@ -76,7 +76,7 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items program">
-            <figure v-for="item,index in programs">
+            <figure v-for="item,index in musicData.programs">
               <figcaption>{{item.name}}
                 <p class="sub-title">阅读 {{item.listenerCount}}</p>
               </figcaption>
@@ -90,7 +90,7 @@
             <a class="zql-more" href="#">更多 <i class="fa fa-angle-right"></i></a>
           </div>
           <div class="zql-s-items dj">
-            <figure v-for="item,index in djs">
+            <figure v-for="item,index in musicData.djs">
               <div class="zql-name">
                 <lazy-image :src="item.picUrl"></lazy-image>
                 <p>{{item.program.dj.nickname}}</p>
@@ -109,53 +109,27 @@
 import banner from '../../../components/banner'
 import lazyImage from '../../../components/lazyImage'
 import loading from '../../../components/loading'
+import { mapActions, mapState } from 'vuex'
 export default {
   components:{
     banner,
     'lazy-image':lazyImage,
     loading,
   },
-  data(){
-    return {
-      isShow:false,
-      banners:[],
-      personalized: [],
-      private:[],
-      newsongs:[],
-      mv:[],
-      programs:[],
-      djs:[]
-    }
-  },
-  created() {
-
-    Promise.all([this.$http.get('http://localhost:3000/banner'),
-        this.$http.get('http://localhost:3000/personalized'),
-        this.$http.get('http://localhost:3000/personalized/privatecontent'),
-        this.$http.get('http://localhost:3000/personalized/newsong'),
-        this.$http.get('http://localhost:3000/personalized/mv'),
-        this.$http.get('http://localhost:3000/program/recommend'),
-        this.$http.get('http://localhost:3000/personalized/djprogram')
-
-    ])
-    .then((datas)=>{
-      // console.log(datas)
-      var self=this;
-      datas.forEach(function(item,index,arr){
-       if(item.ok){
-         self.banners=arr[0].data.banners;
-         self.personalized=arr[1].data.result;
-         self.private=arr[2].data.result;
-         self.newsongs=arr[3].data.result.slice(0,6);
-         self.mv=arr[4].data.result;
-         self.programs=arr[5].data.programs;
-         self.djs=arr[6].data.result;
-         self.isShow=true;
-       }
-      })
-    })
-
-  }
+ computed:{
+   ...mapState({
+     musicData:state=>state.music.musicData,
+     isShow:state=>state.music.isShow
+   })
+ },
+  methods: {
+        ...mapActions([
+            'getMusicData'
+        ])
+    },
+   created() {
+     this.getMusicData();
+    },
 }
 </script>
 

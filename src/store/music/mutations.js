@@ -8,5 +8,10 @@ export default {
   getlists(state, lists) {
     state.lists = lists;
   },
-
+  initMusicData:(state,data)=>{
+    state.musicData=data;
+  },
+  show:state=>{
+    state.isShow=true;
+  }
 }
