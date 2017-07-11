@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    
     <router-view></router-view>
     <musicbox></musicbox>
   </div>
@@ -16,11 +15,11 @@ export default {
     'musicbox':musicPlayBox
   },
   created(){
-    this.getBanners();
+    this.getMusicData();
   },
   methods: {
     ...mapActions([
-      'getBanners'
+      'getMusicData'
     ])
   }
 }

@@ -2,7 +2,7 @@
   <div>
   
     <template v-if="isDone">
-      <banner :banners="$store.state.banners"></banner>
+      <banner :banners="musicData.banners"></banner>
       <div class="classify">
         <div class="classify-item">
           <lazy-image :src="require('./icon1.png')"></lazy-image>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="list">
-          <figure class="item" v-for="item,index in personalized ">
+          <figure class="item" v-for="item,index in musicData.personalized ">
             <router-link :to="'/personalized/'+item.id">
               <lazy-image :src="item.picUrl"></lazy-image>
               <figcaption>
@@ -46,7 +46,7 @@
   
         </div>
         <div class="list">
-          <figure class="item" v-for="item,index in privatecontent ">
+          <figure class="item" v-for="item,index in musicData.privatecontent ">
             <lazy-image :src="item.picUrl"></lazy-image>
             <figcaption>
               {{item.name}}
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="list">
-          <figure class="item" v-for="item,index in mvs ">
+          <figure class="item" v-for="item,index in musicData.mvs ">
             <lazy-image :src="item.picUrl"></lazy-image>
             <figcaption>
               <small> {{item.name}}</small>
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="list">
-          <figure class="item" v-for="item,index in djprogram ">
+          <figure class="item" v-for="item,index in musicData.djprogram ">
             <lazy-image :src="item.picUrl"></lazy-image>
             <figcaption>
               <small> {{item.name}}</small>
@@ -99,7 +99,7 @@
           </div>
         </div>
         <div class="list">
-          <figure class="item" v-for="item,index in recommend ">
+          <figure class="item" v-for="item,index in musicData.recommend ">
             <lazy-image :src="item.coverUrl"></lazy-image>
             <figcaption>
               <small> {{item.name}}</small>
@@ -117,6 +117,7 @@
 import banner from "../../../components/banner";
 import lazyImage from "../../../components/lazyImage";
 import loading from "../../../components/loading";
+import { mapActions, mapState } from 'vuex';
 export default {
   name: 'app',
   components: {
@@ -124,47 +125,12 @@ export default {
     'lazy-image': lazyImage,
     loading
   },
-  data() {
-    return {
-      banners: [],
-      personalized: [],
-      newsong: [],
-      privatecontent: [],
-      mvs: [],
-      djprogram: [],
-      recommend: [],
-      isDone: false
-    }
+  computed: {
+    ...mapState({
+      musicData: state => state.music.musicData,
+      isDone: state => state.music.isDone
+    })
   },
-
-  created() {
-
-    if (!this.isDone) {
-      Promise.all([this.$http.get('http://localhost:3000/banner'),
-      this.$http.get('http://localhost:3000/personalized'),
-
-      this.$http.get('http://localhost:3000/personalized/privatecontent'),
-      this.$http.get('http://localhost:3000/personalized/mv'),
-      this.$http.get('http://localhost:3000/personalized/djprogram'),
-      this.$http.get('http://localhost:3000/program/recommend')
-      ])
-        .then((datas) => {
-          // console.log(datas);
-          this.banners = datas[0].data.banners;
-          this.personalized = datas[1].data.result;
-          this.privatecontent = datas[2].data.result;
-          this.mvs = datas[3].data.result;
-          this.djprogram = datas[4].data.result;
-          this.recommend = datas[5].data.programs;
-          this.isDone = true;
-
-        })
-    }
-    //    跨域  主机名或者端口号或者域名不一致的时候，通过ajax请求数据，则会被限制
-    /*
-        本地防护策略
-    */
-  }
 }
 </script>
 

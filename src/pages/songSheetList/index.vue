@@ -6,27 +6,24 @@
     </ul>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapActions, mapState } from 'vuex';
 export default {
-    data() {
-        return {
-            playList: {},
-            privileges: []
-        }
+    computed: {
+        ...mapState({
+            privileges: state => state.music.privileges,
+        })
     },
     created() {
-        let id = this.$route.params.id;
-        Promise.all([
-            this.$http.get('http://localhost:3000/playlist/detail?id=' + id)
-        ])
-            .then(data => {
-                this.privileges = data[0].data.privileges;
-                console.log(this.privileges);
-            })
+        const id = this.$route.params.id;
+        console.log(this.$store.state.music)
+        this.getPlayListDetail(id);
     },
     methods: {
         ...mapMutations([
             'chageMusicId'
+        ]),
+        ...mapActions([
+            'getPlayListDetail'
         ])
     }
 }
