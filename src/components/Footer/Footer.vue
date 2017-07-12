@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="mark"></div>
     <img class="main-bg" :src="detail.picUrl" alt="">
     <div class="footer">
       <div class="footer-img">
