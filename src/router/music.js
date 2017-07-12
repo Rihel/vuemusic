@@ -4,6 +4,7 @@ import List from '../pages/music/list/C_list';
 import Radio from '../pages/music/radio/J_radio';
 import Top from '../pages/music/top/S_top';
 import Hot from '../pages/music/hot/H_hot';
+import swiper from '../pages/music/swiper/swiper.vue';
 import SubList from "../pages/music/list/subPage/subList.vue"
 import SubTop from "../pages/music/top/subPage/SubTop.vue"
 
@@ -11,8 +12,11 @@ import SubTop from "../pages/music/top/subPage/SubTop.vue"
 export default {
   path: '/music',
   component: Music,
-  redirect: '/music/hot',
+  redirect: '/music/swiper',
   children: [{
+      path: '/music/swiper',
+      component: swiper
+    }, {
       path: '/music/hot',
       component: Hot
     },
@@ -28,12 +32,12 @@ export default {
       component: Radio
     },
     {
-      path:'/subList/:id',
-      component:SubList
+      path: '/subList/:id',
+      component: SubList
     },
-     {
-      path:'/subTop/:id',
-      component:SubTop
+    {
+      path: '/subTop/:id',
+      component: SubTop
     },
   ]
 }

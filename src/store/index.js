@@ -14,6 +14,7 @@ export default new Vuex.Store({
   mutations:{
     changeId(state,id){
       state.musicId=id;
+      console.log(state.musicId)
     }
   }
 

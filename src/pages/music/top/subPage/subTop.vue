@@ -55,7 +55,6 @@ export default {
     created() {
         this.$http.get('http://localhost:3000/playlist/detail?id=' + this.listId)
             .then(data => {
-                console.log(data)
                 var result = data.body;
                 this.listData = result.playlist;
                 this.coverImg = result.playlist.coverImgUrl;
@@ -65,7 +64,6 @@ export default {
                 this.shareCount = result.playlist.shareCount;
                 this.avatarUrl = result.playlist.creator.avatarUrl;
                 this.tracks = result.playlist.tracks;
-                // console.log(this.tracks)
                 this.isDone = true;
             });
     },

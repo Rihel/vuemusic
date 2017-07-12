@@ -31,7 +31,7 @@
         </div>
         <div class="c-songs" v-for="item,index in tracks" :key="index">
             <span class="c-no">{{index+1}}</span>
-            <div class="c-songs-info">
+            <div class="c-songs-info" @click="changeId(item.id)">
                 <div class="c-songs-info-2">
                     <h4 class="c-songs-name">{{item.name}}</h4>
                     <p class="c-songer">{{item.ar[0].name}}-{{item.al.name}}</p>
@@ -45,15 +45,22 @@
     </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
-    props: ['listData','tracks'],
+    props: ['listData', 'tracks'],
     data() {
         return {
-           
+
         }
     },
-    created(){
-       
+    created() {
+
+    },
+    methods: {
+        ...mapMutations([
+            'changeId'
+        ]),
     }
 }
 </script>

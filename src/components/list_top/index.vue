@@ -1,7 +1,7 @@
 <template>
     <div class="list-top">
         <div class="top-left">
-            <router-link to="/music/list"><i class="fa fa-arrow-left"></i></router-link>
+            <router-link to="/music"><i class="fa fa-arrow-left"></i></router-link>
             <span>歌单</span>
         </div>
         <div class="top-right">

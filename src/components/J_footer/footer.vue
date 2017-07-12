@@ -41,6 +41,7 @@ export default {
     computed: mapState({
         musicId: state => state.musicId
     }),
+  
     created() {
         Promise.all([this.$http.get('http://localhost:3000/music/url?id='+this.musicId),
         this.$http.get('http://localhost:3000/song/detail?ids='+this.musicId)]).
