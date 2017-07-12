@@ -3,8 +3,8 @@ const api1 = 'http://localhost:3000'
 export default {
 
   getRadioApi: store => {
-    Promise.all([Vue.http.get('http://localhost:3000/banner'),
-        Vue.http.get('http://localhost:3000/dj/recommend'),
+    Promise.all([Vue.http.get(`${api1}/banner`),
+        Vue.http.get(`${api1}/dj/recommend`),
         Vue.http.get('http://localhost:3000/dj/recommend/type?type=1'),
         Vue.http.get('http://localhost:3000/dj/recommend/type?type=2'),
         Vue.http.get('http://localhost:3000/dj/recommend/type?type=3'),
@@ -46,7 +46,7 @@ export default {
         Vue.http.get(`${api1}/personalized/djprogram`)
       ])
       .then((datas) => {
-        // console.log(datas);
+        console.log(datas);
         let musicInfo = {};
         datas.forEach((item, index, arr) => {
           if (item.ok) {
