@@ -8,7 +8,7 @@ export default {
   path: '/song',
   component: Song,
   children: [{
-      path: '/song/songOne',
+      path: '/song/songOne/:id',
       component: songOne
     },
     {

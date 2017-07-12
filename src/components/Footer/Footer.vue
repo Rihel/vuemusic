@@ -6,7 +6,7 @@
     </div>
     <div class="footer">
       <div class="footer-img">
-        <router-link to="/song/songOne">
+        <router-link :to="'/song/songOne/'+detail.id">
           <img :src="detail.picUrl" alt="">
         </router-link>
       </div>
@@ -27,10 +27,7 @@
 </template>
 
 <script>
-  import {
-    mapMutations,
-    mapState
-  } from 'vuex';
+  import { mapMutations,mapState } from 'vuex';
   export default {
     data() {
       return {
@@ -39,7 +36,8 @@
         detail: {
           name: '',
           singer: '',
-          picUrl: ''
+          picUrl: '',
+          id:''
         }
       }
     },
@@ -61,10 +59,12 @@
           this.$http.get('http://localhost:3000/music/url?id=' + id),
           this.$http.get('http://localhost:3000/song/detail?ids=' + id)
         ]).then(data => {
+          // console.log(data);
           this.url = data[0].data.data[0].url;
           this.detail.name = data[1].data.songs[0].name;
           this.detail.picUrl = data[1].data.songs[0].al.picUrl;
           this.detail.singer = data[1].data.songs[0].ar[0].name;
+          this.detail.id=id;
         })
       }
     },

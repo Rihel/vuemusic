@@ -28,7 +28,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           setWrapperSize :true,
           pagination : '.swiper-pagination',
           paginationClickable :true,
-          mousewheelControl : true,
+          mousewheelControl : false,
           observeParents:true,
           loop:true
         },

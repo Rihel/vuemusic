@@ -73,17 +73,21 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           setWrapperSize :true,
           pagination : '.swiper-pagination',
           paginationClickable :true,
-          mousewheelControl : true,
+          mousewheelControl : false,
           observeParents:true,
-          loop:true
+          loop:true,
+          onSlideChangeEnd: swiper => {  
+                  //这个位置放swiper的回调方法  
+                this.isActive = swiper.realIndex;  
+             } 
         },
       }
       
     },
     methods:{
         moveActive(index){
-      this.isActive=index;
-    } 
+          this.isActive=index;
+         } 
       },
 }
 </script>
