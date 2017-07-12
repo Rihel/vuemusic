@@ -67,7 +67,7 @@ import lazyImage from '../../../components/lazyImage'
           }
         },
         created(){
-          this.$http.get('http://localhost:3000/top/playlist/highquality')
+          this.$http.get('http://localhost:3000/top/playlist')
           .then(data=>{
             // console.log(data);
             if(data.data.code===200){

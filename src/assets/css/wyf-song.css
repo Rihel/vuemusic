@@ -3,7 +3,7 @@ html,body{
 }
 body{
     position: relative;
-    background: url(../img/bg.png) no-repeat;
+    /*background: url(../img/bg.png) no-repeat;*/
     background-size: cover;
 }
 .yf-view{

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <img class="main-bg" src="../../assets/img/bg.png" alt="">
     <tou></tou>
     <div>
       <sub-nav :navs="subNavs"></sub-nav>
