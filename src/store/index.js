@@ -6,9 +6,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    musicId: '',
+    musicId: '165340',
     modules: {
       Music,
+    }
+  },
+  mutations:{
+    changeId(state,id){
+      state.musicId=id;
     }
   }
 

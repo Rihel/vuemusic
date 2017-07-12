@@ -6,12 +6,12 @@
             <p class="play-songer">{{singer}}</p>
         </div>
         <ul class="play-control pull-right">
-          
+    
             <li>
                 <i class="fa fa-play fa-2x" v-if="!isPlay" @click="play()"></i>
-                 <i class="fa fa-pause fa-2x" v-if="isPlay" @click="play()"></i>
+                <i class="fa fa-pause fa-2x" v-if="isPlay" @click="play()"></i>
             </li>
-            
+    
             <li>
                 <i class="fa fa-step-forward fa-2x"></i>
             </li>
@@ -24,44 +24,50 @@
 </template>
     
 <script>
+import { mapMutations, mapState } from 'vuex';//引进辅助，使mutations的方法引用和state的参数引用可以简写
+
 export default {
 
-    data(){
-        return{
-            isPlay:true,
-            url:'',
-            singer:'',
-            songname:'',
-            pic:'',
-            cuttentTime:0
+    data() {
+        return {
+            isPlay: true,
+            url: '',
+            singer: '',
+            songname: '',
+            pic: '',
+            cuttentTime: 0
         }
     },
-    created(){
-        Promise.all([this.$http.get('http://localhost:3000/music/url?id=165340'),
-        this.$http.get('http://localhost:3000/song/detail?ids=165340')]).
-        then(data=>{
-            console.log(data);
-           this.url=data[0].body.data[0].url;
-           this.singdata=data[1].data.songs[0];
-           this.songname=this.singdata.name;
-           this.singer=this.singdata.ar[0].name;
-           this.pic=this.singdata.al.picUrl;
-         
-          console.log(this.url);
-        })
+    computed: mapState({
+        musicId: state => state.musicId
+    }),
+    created() {
+        Promise.all([this.$http.get('http://localhost:3000/music/url?id='+this.musicId),
+        this.$http.get('http://localhost:3000/song/detail?ids='+this.musicId)]).
+            then(data => {
+                this.url = data[0].body.data[0].url;
+                this.singdata = data[1].data.songs[0];
+                this.songname = this.singdata.name;
+                this.singer = this.singdata.ar[0].name;
+                this.pic = this.singdata.al.picUrl;
+
+            })
     },
-    methods:{
-        play(){
-            this.isPlay=!this.isPlay;
+    methods: {
+        ...mapMutations([
+            'changeId'
+        ]),
+        play() {
+            this.isPlay = !this.isPlay;
             let audio = this.$refs.audio;
 
-            if(this.isPlay){
-              
+            if (this.isPlay) {
+
                 audio.play();
-            }else{
+            } else {
                 audio.pause();
             }
-           
+
         }
     }
 
@@ -76,6 +82,7 @@ export default {
     width: 100%;
     padding: 8px;
     background: rgba(255, 255, 255, .8);
+    z-index: 999;
     .play-info {
         width: 70%;
         img {

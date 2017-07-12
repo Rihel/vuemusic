@@ -33,7 +33,7 @@ export default {
     background: #fdfcfa;
     justify-content: space-around;
     align-items: center;
-    z-index: 999;
+    z-index: 998;
     li {
         width: 25%;
         height: 100%;

@@ -22,7 +22,7 @@ export default new Router({
   routes: [{
       path:'/',
       name:'music',
-      redirect:'/music/hot',
+      redirect:'/music',
       component:Music
     },
     MusicRouter,Trends,User

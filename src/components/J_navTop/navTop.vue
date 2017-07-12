@@ -47,9 +47,10 @@ export default {
     li {
         a {
             font-size: rem(36);
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
         }
-        .router-link-exact-active.active{
+      
+        .router-link-exact-active.active {
             color: #fff;
         }
     }

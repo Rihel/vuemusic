@@ -2,7 +2,6 @@
     <div>
         <template v-if="isDone">
             <listtop></listtop>
-    
             <div class="c-list-info">
                 <div class="c-image-info">
                     <img :src="coverImg" alt="">

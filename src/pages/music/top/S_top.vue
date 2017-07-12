@@ -1,34 +1,30 @@
 <template>
-    <!--音乐>榜单 的页面组件
-            作者：陈嘉验-->
-            <div>
+    <div>
         <template v-if="isDone">
-                
-                <ul class="c-top">
-                    <li class="c-item" v-for="item,index in newList">
-                        <router-link :to="'/SubTop/'+item.body.result.id">
-                            <div class="c-billboard">
-                                <div class="c-img">
-                                    <img :src="item.body.result.coverImgUrl" alt="">
-                                    <i class="fa fa-play-circle-o"></i>
-                                </div>
-                                <dl>
-                                    <dt>{{item.body.result.name}}</dt>
-                                    <dd>
-                                        <span class="NO-1">1</span>{{item.body.result.tracks[0].name}} - {{item.body.result.tracks[0].artists[0].name}}</dd>
-                                    <dd>
-                                        <span class="NO-2">2</span>{{item.body.result.tracks[1].name}} - {{item.body.result.tracks[1].artists[0].name}}</dd>
-                                    <dd>
-                                        <span class="NO-3">3</span>{{item.body.result.tracks[2].name}} - {{item.body.result.tracks[2].artists[0].name}}</dd>
-                                </dl>
+            <ul class="c-top">
+                <li class="c-item" v-for="item,index in newList">
+                    <router-link :to="'/SubTop/'+item.body.result.id">
+                        <div class="c-billboard">
+                            <div class="c-img">
+                                <img :src="item.body.result.coverImgUrl" alt="">
+                                <i class="fa fa-play-circle-o"></i>
                             </div>
-                        </router-link>
-                    </li>
-    
-                </ul>
+                            <dl>
+                                <dt>{{item.body.result.name}}</dt>
+                                <dd>
+                                    <span class="NO-1">1</span>{{item.body.result.tracks[0].name}} - {{item.body.result.tracks[0].artists[0].name}}</dd>
+                                <dd>
+                                    <span class="NO-2">2</span>{{item.body.result.tracks[1].name}} - {{item.body.result.tracks[1].artists[0].name}}</dd>
+                                <dd>
+                                    <span class="NO-3">3</span>{{item.body.result.tracks[2].name}} - {{item.body.result.tracks[2].artists[0].name}}</dd>
+                            </dl>
+                        </div>
+                    </router-link>
+                </li>
+            </ul>
         </template>
-        <loading v-if="!isDone"></loading>              
-            </div>
+        <loading v-if="!isDone"></loading>
+    </div>
 </template>
 <script>
 import loading from '../../../components/loading/loading';
@@ -83,7 +79,7 @@ export default {
     .c-item {
         display: flex;
         justify-content: space-between;
-        align-items: center;       
+        align-items: center;
         padding: rem(10) 0 rem(10);
         border-bottom: 1px solid #c4c3b6;
         .c-billboard {
