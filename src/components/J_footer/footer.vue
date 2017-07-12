@@ -19,7 +19,7 @@
                 <i class="fa fa-list fa-2x"></i>
             </li>
         </ul>
-        <audio :src="url" ref="audio"></audio>
+        <audio :src="url" ref="audio" autoplay></audio>
     </footer>
 </template>
     
@@ -28,7 +28,7 @@ export default {
 
     data(){
         return{
-            isPlay:false,
+            isPlay:true,
             url:'',
             singer:'',
             songname:'',

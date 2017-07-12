@@ -30,7 +30,6 @@ export default {
     },
     methods: {
         show(trueDom) {
-            console.log(1);
             if (trueDom.getBoundingClientRect().top < window.screen.height) {
                 this.finishSrc = this.src;
                 this.isShow = true;
