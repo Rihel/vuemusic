@@ -2,6 +2,7 @@
   <div id="app">
     <router-view></router-view>
     <musicbox></musicbox>
+    <bg></bg>
   </div>
 </template>
 
@@ -9,17 +10,21 @@
 import { mapActions } from 'vuex';
 import "font-awesome/scss/font-awesome.scss";
 import musicPlayBox from './components/musicPlayBox';
+import bg from './components/bg';
 export default {
   name: 'app',
-  components:{
-    'musicbox':musicPlayBox
+  components: {
+    'musicbox': musicPlayBox,
+    bg
   },
-  created(){
+  created() {
     this.getMusicData();
+    this.getNowMusic(28375374)
   },
   methods: {
     ...mapActions([
-      'getMusicData'
+      'getMusicData',
+      'getNowMusic'
     ])
   }
 }

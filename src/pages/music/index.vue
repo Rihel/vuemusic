@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div >
     <mainnav></mainnav>
     <subnav :navs="navs"></subnav>
     <router-view></router-view>

@@ -9,6 +9,7 @@ export default {
     playList,
     privileges
   }) => {
+   
     state.playList = playList;
     state.privileges = privileges;
   }

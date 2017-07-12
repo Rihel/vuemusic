@@ -30,7 +30,7 @@ export default {
         const result = data.data;
         if (result.code === 200) {
           store.commit('updataPlayListDetail', {
-            playlist: result.playlist,
+            playList: result.playlist,
             privileges: result.privileges
           })
         }

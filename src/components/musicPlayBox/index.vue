@@ -2,10 +2,10 @@
     <div class="con">
         <div class="music-play-box">
             <div class="song-detail">
-                <img :src="detail.picUrl" />
+                <img :src="musicDetail.picUrl" />
                 <div class="text">
-                    <h5 class="song-name">{{detail.songName}}</h5>
-                    <small class="song-author">{{detail.singer}}</small> {{musicId}}
+                    <h5 class="song-name">{{musicDetail.songName}}</h5>
+                    <small class="song-author">{{musicDetail.singer}}</small>
                 </div>
             </div>
             <div class="song-control">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="bg"></div>
-        <audio ref="audio"></audio>
+        <audio ref="audio" :src="musicDetail.url"></audio>
     </div>
 </template>
 <script>
@@ -24,78 +24,22 @@ import { mapMutations, mapState } from 'vuex';
 export default {
     data() {
         return {
-            isPlay: false,
-            url: '',
-            currentTime: 0,
-            detail: {
-                id: 0,
-                name: '',
-                picUrl: '',
-                singer: '',
-            }
+            isPlay: false
         }
     },
     computed: mapState({
-        musicId: state => state.musicId
+        musicDetail: state => state.nowMusicData
     }),
     created() {
-        this.getMusic(this.musicId);
+
     },
     watch: {
-        currentTime(newValue, oldValue) {
-            if (newValue == 0) {
-                return;
-            }
-        },
-        musicId(newValue, oldValue) {
-            if (newValue !== oldValue) {
-                this.getMusic(newValue);
-                let audio = this.$refs.audio;
-                audio.autoPlay = true;
-            }
-        }
+
 
     },
     methods: {
         play() {
             this.isPlay = !this.isPlay;
-            let audio = this.$refs.audio;
-            audio.src = this.url;   
-            console.log(audio.src)
-
-            if (this.isPlay) {
-                console.log(this.currentTime);
-                audio.currentTime = this.currentTime;
-                audio.play();
-            } else {
-
-                audio.pause();
-                console.log(audio.currentTime, '当前播放位置')
-            }
-
-
-        },
-        getMusic(id) {
-            Promise.all([
-                this.$http.get('http://localhost:3000/music/url?id=' + id),
-                this.$http.get('http://localhost:3000/song/detail?ids=' + id)
-            ]).then(data => {
-
-                this.url = data[0].data.data[0].url;
-                this.detail.id = data[1].data.songs[0].al.id;
-                this.detail.songName = data[1].data.songs[0].name;
-                this.detail.picUrl = data[1].data.songs[0].al.picUrl;
-                this.detail.singer = data[1].data.songs[0].ar[0].name;
-                this.play();
-            })
-        }
-    },
-    mounted() {
-        let audio = this.$refs.audio;
-        audio.ontimeupdate = e => {
-            if (this.isPlay) {
-                this.currentTime = audio.currentTime;
-            }
         }
     }
 
