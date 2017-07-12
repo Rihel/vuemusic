@@ -2,8 +2,8 @@
   <div>
     <tou></tou>
     <div>
-      <sub-nav :navs="subNavs"></sub-nav>
-      <router-view></router-view>
+      
+      <musicBanner></musicBanner>
     </div>
     <jiao></jiao>
   </div>
@@ -12,33 +12,17 @@
 <script>
 import tou from '../../components/Header/Header'
 import jiao from '../../components/Footer/Footer'
-import subNav from '../../components/subNav'
+
+import musicBanner from '../../components/musicBanner/index'
 
 export default {
   components: {
     tou,
     jiao,
-    'sub-nav': subNav
+    musicBanner
   },
       data() {
       return {
-        subNavs: [{
-            text: '热门推荐',
-            path: './recommendation'
-          },
-          {
-            text: '榜单',
-            path: './lists'
-          },
-          {
-            text: '歌单',
-            path: './songSheet'
-          },
-          {
-            text: '电台',
-            path: './radioStation'
-          }
-        ]
       }
     }
   

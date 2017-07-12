@@ -6,7 +6,7 @@
         <router-link to="/">我的</router-link>
       </li>
       <li>
-        <router-link to="/music/recommendation">音乐</router-link>
+        <router-link to="/music">音乐</router-link>
       </li>
       <li>
         <router-link to="/dynamic">动态</router-link>
