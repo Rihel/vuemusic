@@ -210,7 +210,7 @@ import { mapMutations } from 'vuex'
     }
 
     .all-song-list {
-
+      background-color: white;
       .play-list {
         display: flex;
         justify-content: space-between;

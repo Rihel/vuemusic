@@ -43,7 +43,7 @@
           </div>
           <div class="zql-s-items private">
             <figure v-for="item,index in musicData.private">
-              <lazy-image :src="item.sPicUrl"></lazy-image>
+              <lazy-image :src="index===2?item.picUrl:item.sPicUrl"></lazy-image>
               <figcaption class="textEllipsis">{{item.name}}</figcaption>
             </figure>
           </div>
