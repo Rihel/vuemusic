@@ -46,7 +46,7 @@ export default {
         Vue.http.get(`${api1}/personalized/djprogram`)
       ])
       .then((datas) => {
-        console.log(datas);
+        // console.log(datas);
         let musicInfo = {};
         datas.forEach((item, index, arr) => {
           if (item.ok) {

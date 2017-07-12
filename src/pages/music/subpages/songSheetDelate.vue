@@ -15,6 +15,10 @@
 
 
       <div class="song-detail">
+         <div class="global-bg song-bg">
+            <div class="mark"></div>
+            <img class="main-bg" :src="detail.coverImgUrl" alt/>
+          </div>
         <div class="song-detail-top">
           <div class="songimg-wrap">
             <img :src="detail.coverImgUrl" alt="">
@@ -66,46 +70,52 @@
       </div>
     </template>
     <loading v-if="!isShow"></loading>
-    <my-footer></my-footer>
+    <my-footer class="song-footer"></my-footer>
   </div>
 </template>
 <script>
-import loading from '../../../components/loading'
-import footer from '../../../components/Footer/Footer'
-import { mapMutations } from 'vuex'
-    export default {
-        components: {
-           loading,
-           'my-footer':footer
-        },
-        data() {
-            return {
-              id: this.$route.params.id,
-              detail:{},
-              tracks:[],
-              isShow:false
-            }
-        },
-        created() {
-            this.$http.get('http://localhost:3000/playlist/detail?id='+this.id)
-                .then(data => {
-                    // console.log(data)
-                    this.detail=data.data.playlist;
-                    this.tracks=this.detail.tracks;
-                    this.isShow=true;
-                })
-        },
-        methods:{
-            ...mapMutations([
-            'changeMusicId'
-          ])
-        }
+  import loading from '../../../components/loading'
+  import footer from '../../../components/Footer/Footer'
+  import { mapMutations } from 'vuex'
+  export default {
+    components: {
+      loading,
+      'my-footer': footer
+    },
+    data() {
+      return {
+        id: this.$route.params.id,
+        detail: {},
+        tracks: [],
+        isShow: false
+      }
+    },
+    created() {
+      this.$http.get('http://localhost:3000/playlist/detail?id='+this.id)
+        .then(data => {
+          // console.log(data)
+          this.detail = data.data.playlist;
+          this.tracks = this.detail.tracks;
+          this.isShow = true;
+        })
+    },
+    methods: {
+      ...mapMutations([
+        'changeMusicId'
+      ])
     }
+  }
+
 </script>
 <style lang="scss">
   body {
     position: relative;
     background-image: none;
+    .song-footer {
+       .global-bg {
+         display: none;
+      }
+    }
     .wyf-header {
       position: fixed;
       top: 0;
@@ -114,7 +124,7 @@ import { mapMutations } from 'vuex'
       justify-content: space-between;
       width: 100%;
       padding: 10px;
-      background: rgba(0, 0, 0, .7);
+      background: rgba(0, 0, 0, .4);
       z-index: 5;
       .wyf-header-left {
         .fonts {
@@ -134,9 +144,17 @@ import { mapMutations } from 'vuex'
       }
     }
     .song-detail {
-      margin-top: 36px;
-      padding: 10px;
-      background: rgba(0, 0, 0, .7);
+      padding:40px 10px 10px;
+      .song-bg {
+       display:block;
+       .mark {
+          position:absolute;
+          background: rgba(0, 0, 0, 0.3);
+       }
+       .main-bg {
+          position:absolute;
+        }
+       }
       .song-detail-top {
         display: flex;
         align-items: center;
