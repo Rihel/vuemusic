@@ -6,8 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    // musicId: '27731239',
-    musicId:'435948397',
+    musicId: '27731239',
     modules: {
       Music,
     },
