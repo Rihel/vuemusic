@@ -38,7 +38,7 @@ export default {
                 setWrapperSize: true,
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
-                mousewheelControl: true,
+                mousewheelControl: false,
                 observeParents: true,
                 loop: true,
             },

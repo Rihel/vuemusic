@@ -4,10 +4,10 @@ import List from '../pages/music/list/C_list';
 import Radio from '../pages/music/radio/J_radio';
 import Top from '../pages/music/top/S_top';
 import Hot from '../pages/music/hot/H_hot';
-import swiper from '../pages/music/swiper/swiper.vue';
-import SubList from "../pages/music/list/subPage/subList.vue"
-import SubTop from "../pages/music/top/subPage/SubTop.vue"
-
+import swiper from '../pages/music/swiper/swiper';
+import SubList from "../pages/music/list/subPage/subList"
+import SubTop from "../pages/music/top/subPage/SubTop"
+import Songpage from '../pages/music/songpage'
 
 export default {
   path: '/music',
@@ -38,6 +38,10 @@ export default {
     {
       path: '/subTop/:id',
       component: SubTop
+    },
+     {
+      path: '/songpage',
+      component: Songpage
     },
   ]
 }

@@ -1,33 +1,41 @@
 <template>
-    <footer class="play">
-        <div class="play-info pull-left">
-            <img :src="pic" alt="fff">
-            <h6 class="play-name">{{songname}}</h6>
-            <p class="play-songer">{{singer}}</p>
-        </div>
-        <ul class="play-control pull-right">
     
-            <li>
-                <i class="fa fa-play fa-2x" v-if="!isPlay" @click="play()"></i>
-                <i class="fa fa-pause fa-2x" v-if="isPlay" @click="play()"></i>
-            </li>
+        <footer class="play">
+            <router-link to="/songpage/">
+            <div class="play-info pull-left">
+                <img :src="pic" alt="fff">
+                <h6 class="play-name">{{songname}}</h6>
+                <p class="play-songer">{{singer}}</p>
+            </div>
+              </router-link>
+            <ul class="play-control pull-right">
     
-            <li>
-                <i class="fa fa-step-forward fa-2x"></i>
-            </li>
-            <li>
-                <i class="fa fa-list fa-2x"></i>
-            </li>
-        </ul>
-        <audio :src="url" ref="audio" autoplay></audio>
-    </footer>
+                <li>
+                    <i class="fa fa-play fa-2x" v-if="!isPlay" @click="play()"></i>
+                    <i class="fa fa-pause fa-2x" v-if="isPlay" @click="play()"></i>
+                </li>
+    
+                <li>
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </li>
+                <li>
+                    <i class="fa fa-list fa-2x"></i>
+                </li>
+            </ul>
+            <audio :src="url" ref="audio" autoplay></audio>
+        </footer>
+  
 </template>
     
 <script>
 import { mapMutations, mapState } from 'vuex';//引进辅助，使mutations的方法引用和state的参数引用可以简写
 
 export default {
-
+    computed: {
+        ...mapState({
+            musicId: state => state.musicId
+        })
+    },
     data() {
         return {
             isPlay: true,
@@ -35,24 +43,22 @@ export default {
             singer: '',
             songname: '',
             pic: '',
-            cuttentTime: 0
+            cuttentTime: 0,
         }
     },
     computed: mapState({
         musicId: state => state.musicId
     }),
+    watch: {
+        musicId(newValue, old) {
+            if (newValue !== old) {
+                this.getId(newValue)
+            }
+        }
+    },
   
-    created() {
-        Promise.all([this.$http.get('http://localhost:3000/music/url?id='+this.musicId),
-        this.$http.get('http://localhost:3000/song/detail?ids='+this.musicId)]).
-            then(data => {
-                this.url = data[0].body.data[0].url;
-                this.singdata = data[1].data.songs[0];
-                this.songname = this.singdata.name;
-                this.singer = this.singdata.ar[0].name;
-                this.pic = this.singdata.al.picUrl;
-
-            })
+    created(){
+        this.getId(this.musicId)
     },
     methods: {
         ...mapMutations([
@@ -69,7 +75,20 @@ export default {
                 audio.pause();
             }
 
-        }
+        },
+          getId(id) {
+        Promise.all([this.$http.get('http://localhost:3000/music/url?id=' + id),
+        this.$http.get('http://localhost:3000/song/detail?ids=' + id)]).
+            then(data => {
+                this.url = data[0].body.data[0].url;
+                this.singdata = data[1].data.songs[0];
+                this.songname = this.singdata.name;
+                this.singer = this.singdata.ar[0].name;
+                this.pic = this.singdata.al.picUrl;
+
+            })
+
+    },
     }
 
 }
